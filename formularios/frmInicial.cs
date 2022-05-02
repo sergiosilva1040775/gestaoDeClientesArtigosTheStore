@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace foiPicadaDeEnfermeiro
+namespace gestaoDeClientesArtigosTheStore
 {
     public partial class frmInicial : Form
     {

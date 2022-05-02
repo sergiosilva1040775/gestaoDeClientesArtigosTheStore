@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace foiPicadaDeEnfermeiro.formularios
+namespace gestaoDeClientesArtigosTheStore.formularios
 {
     public partial class frmListasConsultas : Form
     {

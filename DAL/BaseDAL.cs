@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace foiPicadaDeEnfermeiro.DAL
+namespace gestaoDeClientesArtigosTheStore.DAL
 {
     static class BaseDAL
     { 

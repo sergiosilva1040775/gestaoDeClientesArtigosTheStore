@@ -1,4 +1,4 @@
-﻿namespace foiPicadaDeEnfermeiro.formularios
+﻿namespace gestaoDeClientesArtigosTheStore.formularios
 {
     partial class frmEditarConsultas
     {

@@ -1,4 +1,4 @@
-﻿namespace foiPicadaDeEnfermeiro
+﻿namespace gestaoDeClientesArtigosTheStore
 {
     partial class frmInicial
     {

@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace foiPicadaDeEnfermeiro.formularios
+namespace gestaoDeClientesArtigosTheStore.formularios
 {
     public partial class frmClientes : Form
     {

@@ -1,37 +1,37 @@
 ﻿using System;
 
-namespace foiPicadaDeEnfermeiro.Models
+namespace gestaoDeClientesArtigosTheStore.Models
 {
-    public class funcionario
+    public class gestaoConsultasPlus
     {
 
-        public int id_artigo { get; }        
+        public int id { get; }
 
-        public string descricao { get; }
+      
 
-        public string numeroIdPaciente { get; }
+        public string numfuncionario { get; }
 
-        public string nomeMedico { get; }
-
-        public string nomeCliente { get; }
-
-
+        public string pass { get; }
+        public string nome { get; }
+        public string contacto { get; }
 
 
-        public funcionario(int _id_artigo,  string _descricao, string numeroIdPaciente, string nomeMedico, string nomeCliente)
+
+
+        public gestaoConsultasPlus(int _id, string _numfuncionario, string _pass, string _nome, string contacto)
         //ctor cria construtor prop cria propriedade
         {
 
-            this.id_artigo = _id_artigo;
-            this.descricao = _descricao;
-            this.numeroIdMedico = numeroIdMedico;
-            this.numeroIdPaciente = numeroIdPaciente;
-            this.nomeMedico = nomeMedico;
-            this.nomeCliente = nomeCliente;
+            this.id = _id;
+            this.numfuncionario = _numfuncionario;
+            this.pass = _pass;
+            this.nome = _nome;
+            this.contacto = _contacto;
+      
 
 
         }
-        public funcionario()
+        public gestaoConsultasPlus()
         {
 
         }

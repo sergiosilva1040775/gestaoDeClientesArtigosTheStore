@@ -3,7 +3,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 
-namespace foiPicadaDeEnfermeiro.DAL
+namespace gestaoDeClientesArtigosTheStore.DAL
 {
     public class pessoalMedicoDAL
 

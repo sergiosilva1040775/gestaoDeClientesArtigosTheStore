@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace foiPicadaDeEnfermeiro.Handlers
+namespace gestaoDeClientesArtigosTheStore.Handlers
 {
     public class clientePacienteHander
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace foiPicadaDeEnfermeiro.Handlers
+namespace gestaoDeClientesArtigosTheStore.Handlers
 {
     public class pessoalMedicoHander
     {

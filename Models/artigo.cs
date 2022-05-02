@@ -1,33 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace foiPicadaDeEnfermeiro.Models
+﻿namespace gestaoDeClientesArtigosTheStore.Models
 {
     public class artigo
     {
-        public int numeroId { get; set; }
+        public int id_artigo { get; }
 
-        public string description { get; set; }
+        public string descricao { get; }
 
+        public string valor_unitario { get; }
 
+        public string stock { get; }
 
-
-
-        public artigo(int numeroId, string description )
+        public artigo(int _id_artigo, string _descricao, string _valor_unitario, string _stock)
         //ctor cria construtor prop cria propriedade
         {
-
-            this.numeroId = numeroId;
-            this.description = description;
-            
-
+            this.id_artigo = _id_artigo;
+            this.descricao = _descricao;
+            this.valor_unitario = _valor_unitario;
+            this.stock = _stock;
         }
+
         public artigo()
         {
 
         }
+
     }
 }
