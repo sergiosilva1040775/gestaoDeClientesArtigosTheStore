@@ -7,29 +7,21 @@ namespace gestaoDeClientesArtigosTheStore.Models
 {
     public class cartao
     {
+        public int num_cartao { get; set; }
 
-        public string numeroNIF { get; set; }
+        public int pontos { get; set; }
 
-        public string nomeAplido { get; set; }
-
-        public string contactoMovel { get; set; }
-
-        public string numeroSNS { get; set; }
+        public int id_cliente { get; set; }
 
 
-
-        public cartao(string numeroNIF, string nomeAplido,   string contactoMovel, string numeroSNS)
+        public cartao(int _num_cartao, int _pontos, int _id_cliente)
         //ctor cria construtor prop cria propriedade
         {
-
-            this.numeroNIF = numeroNIF;
-            this.nomeAplido = nomeAplido;
-            this.contactoMovel = contactoMovel;
-            this.numeroSNS = numeroSNS;
-
-
-
+            this.num_cartao = _num_cartao;
+            this.pontos = _pontos;
+            this.id_cliente = _id_cliente;
         }
+
         public cartao()
         {
 

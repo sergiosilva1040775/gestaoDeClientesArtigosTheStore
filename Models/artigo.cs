@@ -6,11 +6,11 @@
 
         public string descricao { get; }
 
-        public string valor_unitario { get; }
+        public decimal  valor_unitario { get; }
 
-        public string stock { get; }
+        public decimal stock { get; }
 
-        public artigo(int _id_artigo, string _descricao, string _valor_unitario, string _stock)
+        public artigo(int _id_artigo, string _descricao, decimal _valor_unitario, decimal _stock)
         //ctor cria construtor prop cria propriedade
         {
             this.id_artigo = _id_artigo;

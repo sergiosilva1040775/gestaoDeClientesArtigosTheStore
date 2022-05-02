@@ -1,5 +1,5 @@
-﻿using foiPicadaDeEnfermeiro.DAL;
-using foiPicadaDeEnfermeiro.Models;
+﻿using gestaoDeClientesArtigosTheStore.DAL;
+using gestaoDeClientesArtigosTheStore.Models;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;

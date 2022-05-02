@@ -1,4 +1,4 @@
-﻿using foiPicadaDeEnfermeiro.Models;
+﻿using gestaoDeClientesArtigosTheStore.Models;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;

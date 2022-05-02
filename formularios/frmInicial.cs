@@ -1,6 +1,6 @@
-﻿using foiPicadaDeEnfermeiro.DAL;
-using foiPicadaDeEnfermeiro.Handlers;
-using foiPicadaDeEnfermeiro.Models;
+﻿using gestaoDeClientesArtigosTheStore.DAL;
+using gestaoDeClientesArtigosTheStore.Handlers;
+using gestaoDeClientesArtigosTheStore.Models;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -16,20 +16,20 @@ namespace gestaoDeClientesArtigosTheStore
 
         private void ToolStripMenuItem_gerirEspecialidades_Click(object sender, EventArgs e)
         {
-            foiPicadaDeEnfermeiro.formularios.frmEspecialidades frmEspecialidades = new foiPicadaDeEnfermeiro.formularios.frmEspecialidades();
+            gestaoDeClientesArtigosTheStore.formularios.frmEspecialidades frmEspecialidades = new gestaoDeClientesArtigosTheStore.formularios.frmEspecialidades();
             frmEspecialidades.ShowDialog();
 
         }
 
         private void ToolStripMenuItem_gerirMedicos_Click(object sender, EventArgs e)
         {
-            foiPicadaDeEnfermeiro.formularios.frmMedico frmMedico = new foiPicadaDeEnfermeiro.formularios.frmMedico();
+            gestaoDeClientesArtigosTheStore.formularios.frmMedico frmMedico = new gestaoDeClientesArtigosTheStore.formularios.frmMedico();
             frmMedico.ShowDialog();
         }
 
         private void ToolStripMenuItem_gerirClientes_Click(object sender, EventArgs e)
         {
-            foiPicadaDeEnfermeiro.formularios.frmClientes frmClientes = new foiPicadaDeEnfermeiro.formularios.frmClientes();
+            gestaoDeClientesArtigosTheStore.formularios.frmClientes frmClientes = new gestaoDeClientesArtigosTheStore.formularios.frmClientes();
             frmClientes.ShowDialog();
         }
 
@@ -171,7 +171,7 @@ namespace gestaoDeClientesArtigosTheStore
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foiPicadaDeEnfermeiro.formularios.frmListasConsultas frmListasConsulta = new foiPicadaDeEnfermeiro.formularios.frmListasConsultas();
+            gestaoDeClientesArtigosTheStore.formularios.frmListasConsultas frmListasConsulta = new gestaoDeClientesArtigosTheStore.formularios.frmListasConsultas();
             frmListasConsulta.ShowDialog();
         }
 
