@@ -135,11 +135,11 @@
     <Compile Include="Handlers\pessoalMedicoHander.cs" />
     <Compile Include="Handlers\especialidadeMedicaHander.cs" />
     <Compile Include="Handlers\Class1.cs" />
-    <Compile Include="Models\clientePaciente.cs" />
-    <Compile Include="Models\gestaoConsultasPlus.cs" />
-    <Compile Include="Models\pessoalMedico.cs" />
-    <Compile Include="Models\gestaoConsultas.cs" />
-    <Compile Include="Models\especialidadeMedica.cs" />
+    <Compile Include="Models\cartao.cs" />
+    <Compile Include="Models\funcionario.cs" />
+    <Compile Include="Models\linhascompras.cs" />
+    <Compile Include="Models\clientes.cs" />
+    <Compile Include="Models\artigo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formularios\frmClientes.resx">

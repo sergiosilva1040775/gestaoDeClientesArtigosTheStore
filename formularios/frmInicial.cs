@@ -35,6 +35,7 @@ namespace foiPicadaDeEnfermeiro
 
         private void frmInicial_Load(object sender, EventArgs e)
         {
+           
             carregarLista();
             textBox_hora.Text = DateTime.Now.Hour.ToString();
             textBox_Minutos.Text = DateTime.Now.Minute.ToString();
@@ -44,14 +45,14 @@ namespace foiPicadaDeEnfermeiro
         {
 
             EspecialidadeMedicaDAL EspecialidadeMedicasDAL = new EspecialidadeMedicaDAL();
-            List<especialidadeMedica> especialidadeMedicas = EspecialidadeMedicasDAL.listarEspecialidadesMedica();
+            List<artigo> especialidadeMedicas = EspecialidadeMedicasDAL.listarEspecialidadesMedica();
             comboBox_especialidademedica.DataSource = especialidadeMedicas;
             comboBox_especialidademedica.DisplayMember = "description";
             comboBox_especialidademedica.ValueMember = "numeroId";
 
 
             clientePacienteDAL clientePacientesDAL = new clientePacienteDAL();
-            List<clientePaciente> clientePacientes = clientePacientesDAL.listarClientePaciente();
+            List<cartao> clientePacientes = clientePacientesDAL.listarClientePaciente();
             comboBox_ClientePaciente.DataSource = clientePacientes;
             comboBox_ClientePaciente.DisplayMember = "nomeAplido";
             comboBox_ClientePaciente.ValueMember = "numeroNIF";
@@ -64,14 +65,14 @@ namespace foiPicadaDeEnfermeiro
             LimparFormulario();
             pessoalMedicoDAL pessoalMedicosDAL = new pessoalMedicoDAL();
             pessoalMedicoHander pmh = new pessoalMedicoHander();
-            (int codigo, pessoalMedico pessoalMedicos, string error) = pmh.ValidarPessoalMedicoPesquisaEspecialidade(comboBox_especialidademedica.SelectedValue.ToString());
+            (int codigo, linhascompras pessoalMedicos, string error) = pmh.ValidarPessoalMedicoPesquisaEspecialidade(comboBox_especialidademedica.SelectedValue.ToString());
             if (codigo == 1)
             {
                 MessageBox.Show(error);
                 comboBox_especialidademedica.Focus();
                 return;
             }
-            List<pessoalMedico> pessoalMedicoLista = pessoalMedicosDAL.listarPessoalMedicoByEspecialidade(pessoalMedicos);
+            List<linhascompras> pessoalMedicoLista = pessoalMedicosDAL.listarPessoalMedicoByEspecialidade(pessoalMedicos);
 
 
 

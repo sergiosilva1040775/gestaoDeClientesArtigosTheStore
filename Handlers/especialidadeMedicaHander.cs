@@ -6,8 +6,8 @@ namespace foiPicadaDeEnfermeiro.Handlers
     {
 
 
-        Models.especialidadeMedica especialidadeMedicaModel = new Models.especialidadeMedica();
-        public (int, Models.especialidadeMedica, string mensagemDeErro) ValidarEspecialidadeMedicaInsert(string description)
+        Models.artigo especialidadeMedicaModel = new Models.artigo();
+        public (int, Models.artigo, string mensagemDeErro) ValidarEspecialidadeMedicaInsert(string description)
         {
 
             if (description.Length == 0) { return (1, null, "Falta  descricao"); }
@@ -19,7 +19,7 @@ namespace foiPicadaDeEnfermeiro.Handlers
             }
 
         }
-        public (int, Models.especialidadeMedica , string mensagemDeErro) ValidarEspecialidadeMedicaUpdate(string numeroId, string description)
+        public (int, Models.artigo , string mensagemDeErro) ValidarEspecialidadeMedicaUpdate(string numeroId, string description)
         {
 
             if (numeroId.Length == 0 || numeroId == "0") { return (1, null, "Select one item to update"); }
@@ -39,7 +39,7 @@ namespace foiPicadaDeEnfermeiro.Handlers
 
         }
 
-        public (int, Models.especialidadeMedica, string mensagemDeErro) ValidarEspecialidadeMedicaDelete(string numeroId )
+        public (int, Models.artigo, string mensagemDeErro) ValidarEspecialidadeMedicaDelete(string numeroId )
         {
 
             if (numeroId.Length == 0 || numeroId == "0") { return (1, null, "Select one item to delete"); }

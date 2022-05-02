@@ -6,8 +6,8 @@ namespace foiPicadaDeEnfermeiro.Handlers
     {
 
 
-        Models.clientePaciente clientePacienteModel = new Models.clientePaciente();
-        public (int, Models.clientePaciente, string mensagemDeErro) ValidarClientePacienteInsert(string numeroNIF, string nomeAplido, string contactoMovel, string numeroSNS)
+        Models.cartao clientePacienteModel = new Models.cartao();
+        public (int, Models.cartao, string mensagemDeErro) ValidarClientePacienteInsert(string numeroNIF, string nomeAplido, string contactoMovel, string numeroSNS)
         {
 
             if (numeroNIF.Length == 0) { return (1, null, "Falta  numero NIF"); }
@@ -35,7 +35,7 @@ namespace foiPicadaDeEnfermeiro.Handlers
             }
 
         }
-        public (int, Models.clientePaciente, string mensagemDeErro) ValidarClientePacienteUpdate(string numeroNIF, string nomeAplido, string contactoMovel, string numeroSNS)
+        public (int, Models.cartao, string mensagemDeErro) ValidarClientePacienteUpdate(string numeroNIF, string nomeAplido, string contactoMovel, string numeroSNS)
         {
 
             if (numeroNIF.Length == 0) { return (1, null, "Falta  numero NIF"); }
@@ -64,7 +64,7 @@ namespace foiPicadaDeEnfermeiro.Handlers
 
         }
 
-        public (int, Models.clientePaciente, string mensagemDeErro) VValidarClientePacienteDelete(string numeroId )
+        public (int, Models.cartao, string mensagemDeErro) VValidarClientePacienteDelete(string numeroId )
         {
 
             if (numeroId.Length == 0 || numeroId == "0") { return (1, null, "Select one item to delete"); }

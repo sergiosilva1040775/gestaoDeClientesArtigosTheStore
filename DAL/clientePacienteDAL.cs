@@ -11,7 +11,7 @@ namespace foiPicadaDeEnfermeiro.DAL
     {
         private string connStr = BaseDAL.connStr;
 
-        public (int registo, string erro) inserirClientePaciente(clientePaciente clientePacientes)
+        public (int registo, string erro) inserirClientePaciente(cartao clientePacientes)
         {
             int registo = 0;
             if (!RefExiste(clientePacientes.numeroNIF ))
@@ -49,9 +49,9 @@ namespace foiPicadaDeEnfermeiro.DAL
 
         }
 
-        public List<clientePaciente > listarClientePaciente()
+        public List<cartao > listarClientePaciente()
         {
-            List<clientePaciente > ListarclientePaciente = new List<clientePaciente>();
+            List<cartao > ListarclientePaciente = new List<cartao>();
 
             string query = "SELECT * FROM clientepaciente";
 
@@ -70,7 +70,7 @@ namespace foiPicadaDeEnfermeiro.DAL
                             while (sdr.Read())
                             {
 
-                                ListarclientePaciente.Add(new clientePaciente(
+                                ListarclientePaciente.Add(new cartao(
                                     sdr["numeroNIF"].ToString(),
                                     sdr["nomeAplido"].ToString(),
                                      sdr["contactoMovel"].ToString(),
@@ -85,7 +85,7 @@ namespace foiPicadaDeEnfermeiro.DAL
         }
 
 
-        public (int registo, string erro) eliminarClientePaciente(clientePaciente clientePacientes)
+        public (int registo, string erro) eliminarClientePaciente(cartao clientePacientes)
         {
             int result = 0;
             if (RefExiste(clientePacientes.numeroNIF ))
@@ -119,7 +119,7 @@ namespace foiPicadaDeEnfermeiro.DAL
             }
         }
 
-        public (int registo, string erro) atualizarClientePaciente(clientePaciente clientePacientes)
+        public (int registo, string erro) atualizarClientePaciente(cartao clientePacientes)
         {
             int registo = 0;
 

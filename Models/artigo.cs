@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace foiPicadaDeEnfermeiro.Models
 {
-    public class especialidadeMedica
+    public class artigo
     {
         public int numeroId { get; set; }
 
@@ -16,7 +16,7 @@ namespace foiPicadaDeEnfermeiro.Models
 
 
 
-        public especialidadeMedica(int numeroId, string description )
+        public artigo(int numeroId, string description )
         //ctor cria construtor prop cria propriedade
         {
 
@@ -25,7 +25,7 @@ namespace foiPicadaDeEnfermeiro.Models
             
 
         }
-        public especialidadeMedica()
+        public artigo()
         {
 
         }

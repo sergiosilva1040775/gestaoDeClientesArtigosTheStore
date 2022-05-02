@@ -5,8 +5,8 @@ namespace foiPicadaDeEnfermeiro.Handlers
 {
     public class pessoalMedicoHander
     {
-        Models.pessoalMedico pessoalMedicoModel = new Models.pessoalMedico();
-        public (int, Models.pessoalMedico, string mensagemDeErro) ValidarPessoalMedicoInsert(string numeroCedulaProfissional, string nomeAplido, string contactoMovel, string numeroIdEspecialidade)
+        Models.linhascompras pessoalMedicoModel = new Models.linhascompras();
+        public (int, Models.linhascompras, string mensagemDeErro) ValidarPessoalMedicoInsert(string numeroCedulaProfissional, string nomeAplido, string contactoMovel, string numeroIdEspecialidade)
         {
             
           
@@ -34,7 +34,7 @@ namespace foiPicadaDeEnfermeiro.Handlers
                 }
             }
         }
-        public (int, Models.pessoalMedico, string mensagemDeErro) ValidarPessoalMedicoUpdate(string numeroCedulaProfissional, string nomeAplido, string contactoMovel, string numeroIdEspecialidade)
+        public (int, Models.linhascompras, string mensagemDeErro) ValidarPessoalMedicoUpdate(string numeroCedulaProfissional, string nomeAplido, string contactoMovel, string numeroIdEspecialidade)
         {
             
            
@@ -63,7 +63,7 @@ namespace foiPicadaDeEnfermeiro.Handlers
 
         }
 
-        public (int, Models.pessoalMedico, string mensagemDeErro) ValidarPessoalMedicoDelete(string numeroCedulaProfissional)
+        public (int, Models.linhascompras, string mensagemDeErro) ValidarPessoalMedicoDelete(string numeroCedulaProfissional)
         {
             
             if (numeroCedulaProfissional.Length == 0 ) { return (1, null, "Falta  item a eliminar"); }
@@ -74,7 +74,7 @@ namespace foiPicadaDeEnfermeiro.Handlers
             }
         }
 
-        public (int, Models.pessoalMedico, string mensagemDeErro) ValidarPessoalMedicoPesquisaEspecialidade(string numeroIdEspecialidade)
+        public (int, Models.linhascompras, string mensagemDeErro) ValidarPessoalMedicoPesquisaEspecialidade(string numeroIdEspecialidade)
         {
            if (numeroIdEspecialidade == "-1") { return (1, null, "Falta  item a pesquisar"); }
             else

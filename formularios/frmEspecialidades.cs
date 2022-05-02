@@ -24,7 +24,7 @@ namespace foiPicadaDeEnfermeiro.formularios
 
             EspecialidadeMedicaDAL dal = new EspecialidadeMedicaDAL();
 
-            List<especialidadeMedica> especialidadeMedicas = dal.listarEspecialidadesMedica();
+            List<artigo> especialidadeMedicas = dal.listarEspecialidadesMedica();
 
             dataGridView_Especialidades.DataSource = especialidadeMedicas;
 
@@ -36,7 +36,7 @@ namespace foiPicadaDeEnfermeiro.formularios
         private void button_Adicionar_Click(object sender, EventArgs e)
         {
             especialidadeMedicaHander emh = new especialidadeMedicaHander();
-            (int codigo, especialidadeMedica especialidadeMedicas, string error) = emh.ValidarEspecialidadeMedicaInsert(textBox_Descricao.Text);
+            (int codigo, artigo especialidadeMedicas, string error) = emh.ValidarEspecialidadeMedicaInsert(textBox_Descricao.Text);
 
             if (codigo == 1)
             {
@@ -78,7 +78,7 @@ namespace foiPicadaDeEnfermeiro.formularios
         private void button_Actualizar_Click(object sender, EventArgs e)
         {
             especialidadeMedicaHander emh = new especialidadeMedicaHander();
-            (int codigo, especialidadeMedica especialidadeMedicas, string error) = emh.ValidarEspecialidadeMedicaUpdate(textBox_Id.Text, textBox_Descricao.Text);
+            (int codigo, artigo especialidadeMedicas, string error) = emh.ValidarEspecialidadeMedicaUpdate(textBox_Id.Text, textBox_Descricao.Text);
 
             if (codigo == 1)
             {
@@ -122,7 +122,7 @@ namespace foiPicadaDeEnfermeiro.formularios
         private void button_Delete_Click(object sender, EventArgs e)
         {
             especialidadeMedicaHander emh = new especialidadeMedicaHander();
-            (int codigo, especialidadeMedica especialidadeMedicas, string error) = emh.ValidarEspecialidadeMedicaDelete(textBox_Id.Text);
+            (int codigo, artigo especialidadeMedicas, string error) = emh.ValidarEspecialidadeMedicaDelete(textBox_Id.Text);
 
             if (codigo == 1)
             {

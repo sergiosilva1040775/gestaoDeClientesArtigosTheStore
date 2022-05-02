@@ -11,7 +11,7 @@ namespace foiPicadaDeEnfermeiro.DAL
     {
         private string connStr = BaseDAL.connStr;
 
-        public (int registo, string erro) inserirPessoalMedico(pessoalMedico pessoalMedicos)
+        public (int registo, string erro) inserirPessoalMedico(linhascompras pessoalMedicos)
         {
             int registo = 0;
             if (!RefExiste(pessoalMedicos.numeroCedulaProfissional))
@@ -49,9 +49,9 @@ namespace foiPicadaDeEnfermeiro.DAL
 
         }
 
-        public List<pessoalMedico> listarPessoalMedico()
+        public List<linhascompras> listarPessoalMedico()
         {
-            List<pessoalMedico> ListarPessoalMedicos = new List<pessoalMedico>();
+            List<linhascompras> ListarPessoalMedicos = new List<linhascompras>();
 
             string query = "SELECT * FROM pessoalmedico";
 
@@ -70,7 +70,7 @@ namespace foiPicadaDeEnfermeiro.DAL
                             while (sdr.Read())
                             {
 
-                                ListarPessoalMedicos.Add(new pessoalMedico(
+                                ListarPessoalMedicos.Add(new linhascompras(
                                     sdr["numeroCedulaProfissional"].ToString(),
                                     sdr["nomeAplido"].ToString(),
                                      sdr["contactoMovel"].ToString(),
@@ -84,9 +84,9 @@ namespace foiPicadaDeEnfermeiro.DAL
             return ListarPessoalMedicos;
         }
 
-        public List<pessoalMedico> listarPessoalMedicoByEspecialidade(pessoalMedico pessoalMedicos)
+        public List<linhascompras> listarPessoalMedicoByEspecialidade(linhascompras pessoalMedicos)
         {
-            List<pessoalMedico> ListarPessoalMedicos = new List<pessoalMedico>();
+            List<linhascompras> ListarPessoalMedicos = new List<linhascompras>();
 
             string query = "SELECT * FROM pessoalmedico where numeroIdEspecialidade = @numeroIdEspecialidade";
 
@@ -105,7 +105,7 @@ namespace foiPicadaDeEnfermeiro.DAL
                             while (sdr.Read())
                             {
                                 // MessageBox.Show(pessoalMedicos.numeroIdEspecialidade.ToString());
-                                ListarPessoalMedicos.Add(new pessoalMedico(
+                                ListarPessoalMedicos.Add(new linhascompras(
                                     sdr["numeroCedulaProfissional"].ToString(),
                                     sdr["nomeAplido"].ToString(),
                                      sdr["contactoMovel"].ToString(),
@@ -122,7 +122,7 @@ namespace foiPicadaDeEnfermeiro.DAL
         public string listarPessoalMedicoById(string numeroCedulaProfissional)
         {
             string id = "0";
-            List<pessoalMedico> ListarPessoalMedicos = new List<pessoalMedico>();
+            List<linhascompras> ListarPessoalMedicos = new List<linhascompras>();
 
             string query = "SELECT * FROM pessoalmedico where numeroCedulaProfissional = @numeroCedulaProfissional";
 
@@ -151,7 +151,7 @@ namespace foiPicadaDeEnfermeiro.DAL
             return id;
         }
 
-        public (int registo, string erro) eliminarPessoalMedico(pessoalMedico pessoalMedicos)
+        public (int registo, string erro) eliminarPessoalMedico(linhascompras pessoalMedicos)
         {
             int result = 0;
             if (RefExiste(pessoalMedicos.numeroCedulaProfissional))
@@ -185,7 +185,7 @@ namespace foiPicadaDeEnfermeiro.DAL
             }
         }
 
-        public (int registo, string erro) atualizarPessoalMedico(pessoalMedico pessoalMedicos)
+        public (int registo, string erro) atualizarPessoalMedico(linhascompras pessoalMedicos)
         {
             int registo = 0;
 

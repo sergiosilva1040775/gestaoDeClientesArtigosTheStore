@@ -5,7 +5,7 @@ using System.Text;
 
 namespace foiPicadaDeEnfermeiro.Models
 {
-    public class clientePaciente
+    public class cartao
     {
 
         public string numeroNIF { get; set; }
@@ -18,7 +18,7 @@ namespace foiPicadaDeEnfermeiro.Models
 
 
 
-        public clientePaciente(string numeroNIF, string nomeAplido,   string contactoMovel, string numeroSNS)
+        public cartao(string numeroNIF, string nomeAplido,   string contactoMovel, string numeroSNS)
         //ctor cria construtor prop cria propriedade
         {
 
@@ -30,7 +30,7 @@ namespace foiPicadaDeEnfermeiro.Models
 
 
         }
-        public clientePaciente()
+        public cartao()
         {
 
         }

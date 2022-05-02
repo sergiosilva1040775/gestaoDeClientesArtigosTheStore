@@ -9,7 +9,7 @@ namespace foiPicadaDeEnfermeiro.DAL
     {
         private string connStr = BaseDAL.connStr;
 
-        public (int registo, string erro) inserirEspecialidadeMedica(especialidadeMedica especialidadesMedicas)
+        public (int registo, string erro) inserirEspecialidadeMedica(artigo especialidadesMedicas)
         {
             int registo = 0;
 
@@ -47,9 +47,9 @@ namespace foiPicadaDeEnfermeiro.DAL
 
         }
 
-        public List<especialidadeMedica> listarEspecialidadesMedica()
+        public List<artigo> listarEspecialidadesMedica()
         {
-            List<especialidadeMedica> ListarespecialidadesMedicas = new List<especialidadeMedica>();
+            List<artigo> ListarespecialidadesMedicas = new List<artigo>();
 
             string query = "SELECT * FROM especialidademedica";
 
@@ -67,7 +67,7 @@ namespace foiPicadaDeEnfermeiro.DAL
                         {
                             while (sdr.Read())
                             {
-                                ListarespecialidadesMedicas.Add(new especialidadeMedica(
+                                ListarespecialidadesMedicas.Add(new artigo(
                                     Int32.Parse(sdr["numeroId"].ToString()),
                                     sdr["description"].ToString()
                                     ));
@@ -80,7 +80,7 @@ namespace foiPicadaDeEnfermeiro.DAL
         }
 
 
-        public (int registo, string erro) eliminarEspecialidadeMedica(especialidadeMedica especialidadesMedicas)
+        public (int registo, string erro) eliminarEspecialidadeMedica(artigo especialidadesMedicas)
         {
             int result = 0;
 
@@ -107,7 +107,7 @@ namespace foiPicadaDeEnfermeiro.DAL
             }
         }
 
-        public (int registo, string erro) atualizarEspecialidadeMedica(especialidadeMedica especialidadesMedicas)
+        public (int registo, string erro) atualizarEspecialidadeMedica(artigo especialidadesMedicas)
         {
             int registo = 0;
             if (!RefExiste(especialidadesMedicas.description))

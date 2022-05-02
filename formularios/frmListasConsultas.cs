@@ -22,7 +22,7 @@ namespace foiPicadaDeEnfermeiro.formularios
         {
 
             gestaoConsultasDAL gestaoConsultaDAL = new gestaoConsultasDAL();
-            List<gestaoConsultasPlus> gestaoConsultas = gestaoConsultaDAL.listarGestaoConsultaPlus();
+            List<funcionario> gestaoConsultas = gestaoConsultaDAL.listarGestaoConsultaPlus();
             dataGridView_listasConsultas.DataSource = gestaoConsultas;
 
 
@@ -33,7 +33,7 @@ namespace foiPicadaDeEnfermeiro.formularios
         }
         private void button_actualizarConsulta_Click(object sender, EventArgs e)
         {
-            var selectedRow = dataGridView_listasConsultas.CurrentRow.DataBoundItem as gestaoConsultasPlus;
+            var selectedRow = dataGridView_listasConsultas.CurrentRow.DataBoundItem as funcionario;
             frmEditarConsultas frmEditarConsulta = new frmEditarConsultas();
             frmEditarConsulta.setValores(selectedRow);
             DialogResult dr = frmEditarConsulta.ShowDialog();
@@ -53,7 +53,7 @@ namespace foiPicadaDeEnfermeiro.formularios
 
             if (dr == DialogResult.Yes)
             {
-                var selectedRow = dataGridView_listasConsultas.CurrentRow.DataBoundItem as gestaoConsultasPlus;
+                var selectedRow = dataGridView_listasConsultas.CurrentRow.DataBoundItem as funcionario;
 
                 gestaoConsultasDAL gestaoConsultaDAL = new gestaoConsultasDAL();
 

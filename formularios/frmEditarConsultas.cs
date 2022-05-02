@@ -20,14 +20,14 @@ namespace foiPicadaDeEnfermeiro.formularios
 
             pessoalMedicoDAL pessoalMedicosDAL = new pessoalMedicoDAL();
             pessoalMedicoHander pmh = new pessoalMedicoHander();
-            (int codigo, pessoalMedico pessoalMedicos, string error) = pmh.ValidarPessoalMedicoPesquisaEspecialidade(especialidade);
+            (int codigo, linhascompras pessoalMedicos, string error) = pmh.ValidarPessoalMedicoPesquisaEspecialidade(especialidade);
             if (codigo == 1)
             {
                 MessageBox.Show(error);
                 comboBox_especialidademedica.Focus();
                 return;
             }
-            List<pessoalMedico> pessoalMedicoLista = pessoalMedicosDAL.listarPessoalMedicoByEspecialidade(pessoalMedicos);
+            List<linhascompras> pessoalMedicoLista = pessoalMedicosDAL.listarPessoalMedicoByEspecialidade(pessoalMedicos);
 
 
 
@@ -52,14 +52,14 @@ namespace foiPicadaDeEnfermeiro.formularios
         {
 
             EspecialidadeMedicaDAL EspecialidadeMedicasDAL = new EspecialidadeMedicaDAL();
-            List<especialidadeMedica> especialidadeMedicas = EspecialidadeMedicasDAL.listarEspecialidadesMedica();
+            List<artigo> especialidadeMedicas = EspecialidadeMedicasDAL.listarEspecialidadesMedica();
             comboBox_especialidademedica.DataSource = especialidadeMedicas;
             comboBox_especialidademedica.DisplayMember = "description";
             comboBox_especialidademedica.ValueMember = "numeroId";
 
 
             clientePacienteDAL clientePacientesDAL = new clientePacienteDAL();
-            List<clientePaciente> clientePacientes = clientePacientesDAL.listarClientePaciente();
+            List<cartao> clientePacientes = clientePacientesDAL.listarClientePaciente();
             comboBox_ClientePaciente.DataSource = clientePacientes;
             comboBox_ClientePaciente.DisplayMember = "nomeAplido";
             comboBox_ClientePaciente.ValueMember = "numeroNIF";
@@ -68,7 +68,7 @@ namespace foiPicadaDeEnfermeiro.formularios
         }
         int idConsulta;
 
-        public void setValores(gestaoConsultasPlus updateConsultasPlus)
+        public void setValores(funcionario updateConsultasPlus)
         {
             carregarLista();
             string[] data = updateConsultasPlus.dataHora.ToString().Split(' ');

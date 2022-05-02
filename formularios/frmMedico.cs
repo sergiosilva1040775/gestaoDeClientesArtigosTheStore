@@ -19,12 +19,12 @@ namespace foiPicadaDeEnfermeiro.formularios
         {
 
             EspecialidadeMedicaDAL especialidadeMedicasDal = new EspecialidadeMedicaDAL();
-            List<especialidadeMedica> especialidadeMedicas = especialidadeMedicasDal.listarEspecialidadesMedica();
+            List<artigo> especialidadeMedicas = especialidadeMedicasDal.listarEspecialidadesMedica();
             comboBox_especialidademedica.DataSource = especialidadeMedicas;
             comboBox_especialidademedica.DisplayMember = "description";
             comboBox_especialidademedica.ValueMember = "numeroId";
            
-            List<pessoalMedico> pessoalMedicos = PessoalMedicoDAL.listarPessoalMedico();
+            List<linhascompras> pessoalMedicos = PessoalMedicoDAL.listarPessoalMedico();
             dataGridView_Medicos.DataSource = pessoalMedicos;
 
         }
@@ -36,7 +36,7 @@ namespace foiPicadaDeEnfermeiro.formularios
         private void button_Adicionar_Click(object sender, EventArgs e)
         {
             pessoalMedicoHander pmh = new pessoalMedicoHander();
-            (int codigo, pessoalMedico pessoalMedicos, string error) = pmh.ValidarPessoalMedicoInsert(textBox_NCD.Text, textBox_NomeApelido.Text, textBox_Contacto.Text, comboBox_especialidademedica.SelectedValue.ToString());
+            (int codigo, linhascompras pessoalMedicos, string error) = pmh.ValidarPessoalMedicoInsert(textBox_NCD.Text, textBox_NomeApelido.Text, textBox_Contacto.Text, comboBox_especialidademedica.SelectedValue.ToString());
 
             switch (codigo)
             {
@@ -79,7 +79,7 @@ namespace foiPicadaDeEnfermeiro.formularios
         private void button_Actualizar_Click(object sender, EventArgs e)
         {
             pessoalMedicoHander pmh = new pessoalMedicoHander();
-            (int codigo, pessoalMedico pessoalMedicos, string error) = pmh.ValidarPessoalMedicoUpdate(textBox_NCD.Text, textBox_NomeApelido.Text, textBox_Contacto.Text, comboBox_especialidademedica.SelectedValue.ToString());
+            (int codigo, linhascompras pessoalMedicos, string error) = pmh.ValidarPessoalMedicoUpdate(textBox_NCD.Text, textBox_NomeApelido.Text, textBox_Contacto.Text, comboBox_especialidademedica.SelectedValue.ToString());
             switch (codigo)
             {
                 case 1:
@@ -118,7 +118,7 @@ namespace foiPicadaDeEnfermeiro.formularios
         private void button_Delete_Click(object sender, EventArgs e)
         {
             pessoalMedicoHander pmh = new pessoalMedicoHander();
-            (int codigo, pessoalMedico pessoalMedicos, string error) = pmh.ValidarPessoalMedicoDelete(textBox_NCD.Text);
+            (int codigo, linhascompras pessoalMedicos, string error) = pmh.ValidarPessoalMedicoDelete(textBox_NCD.Text);
 
             if (codigo == 1)
             {

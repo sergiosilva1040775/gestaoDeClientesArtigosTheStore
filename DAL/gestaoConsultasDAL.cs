@@ -73,9 +73,9 @@ namespace foiPicadaDeEnfermeiro.DAL
             return ListarGestaoConsulta;
         }
 
-        public List<gestaoConsultasPlus> listarGestaoConsultaPlus()
+        public List<funcionario> listarGestaoConsultaPlus()
         {
-            List<gestaoConsultasPlus> ListarGestaoConsultasPlus = new List<gestaoConsultasPlus>();
+            List<funcionario> ListarGestaoConsultasPlus = new List<funcionario>();
 
             string query = "SELECT A.*, B.nomeAplido As momeMedico, C.nomeAplido As nomePaciente FROM gestaoconsulta as A, pessoalmedico as B, clientepaciente as C Where A.numeroIdMedico = B.numeroCedulaProfissional And C. numeroNIF = A.numeroIdPaciente    ";
 
@@ -93,7 +93,7 @@ namespace foiPicadaDeEnfermeiro.DAL
                         {
                             while (sdr.Read())
                             {
-                                ListarGestaoConsultasPlus.Add(new gestaoConsultasPlus(
+                                ListarGestaoConsultasPlus.Add(new funcionario(
                                     Int32.Parse(sdr["numeroIdConsulta"].ToString()),
                                     DateTime.Parse(sdr["data"].ToString()),
                                     sdr["numeroIdMedico"].ToString(),
@@ -136,7 +136,7 @@ namespace foiPicadaDeEnfermeiro.DAL
         }
 
 
-        public (int registo, string erro) eliminarConsultaMedicaPlus(gestaoConsultasPlus gestaoConsultas)
+        public (int registo, string erro) eliminarConsultaMedicaPlus(funcionario gestaoConsultas)
         {
             int result = 0;
 

@@ -26,7 +26,7 @@ namespace foiPicadaDeEnfermeiro.formularios
         private void button_Adicionar_Click(object sender, EventArgs e)
         {
             clientePacienteHander cph = new clientePacienteHander();
-            (int codigo, clientePaciente clientePacientes, string error) = cph.ValidarClientePacienteInsert(textBox_ID.Text, textBox_NomeApelido.Text, textBox_Contacto.Text, textBox_SNS.Text .ToString());
+            (int codigo, cartao clientePacientes, string error) = cph.ValidarClientePacienteInsert(textBox_ID.Text, textBox_NomeApelido.Text, textBox_Contacto.Text, textBox_SNS.Text .ToString());
 
             switch (codigo)
             {
@@ -67,7 +67,7 @@ namespace foiPicadaDeEnfermeiro.formularios
         {
 
    
-            List<clientePaciente> clientePacientes = clientePacientesDAL.listarClientePaciente ();
+            List<cartao> clientePacientes = clientePacientesDAL.listarClientePaciente ();
             dataGridView_Clientes.DataSource = clientePacientes;
 
         }
@@ -103,7 +103,7 @@ namespace foiPicadaDeEnfermeiro.formularios
         private void button_Actualizar_Click(object sender, EventArgs e)
         {
             clientePacienteHander cph = new clientePacienteHander();
-            (int codigo, clientePaciente clientePacientes, string error) = cph.ValidarClientePacienteUpdate(textBox_ID.Text, textBox_NomeApelido.Text, textBox_Contacto.Text, textBox_SNS.Text.ToString());
+            (int codigo, cartao clientePacientes, string error) = cph.ValidarClientePacienteUpdate(textBox_ID.Text, textBox_NomeApelido.Text, textBox_Contacto.Text, textBox_SNS.Text.ToString());
 
             switch (codigo)
             {
@@ -143,7 +143,7 @@ namespace foiPicadaDeEnfermeiro.formularios
         private void button_Delete_Click(object sender, EventArgs e)
         {
             clientePacienteHander cph = new clientePacienteHander();
-            (int codigo, clientePaciente clientePacientes, string error) = cph.VValidarClientePacienteDelete(textBox_ID.Text);
+            (int codigo, cartao clientePacientes, string error) = cph.VValidarClientePacienteDelete(textBox_ID.Text);
 
             switch (codigo)
             {

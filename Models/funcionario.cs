@@ -2,28 +2,28 @@
 
 namespace foiPicadaDeEnfermeiro.Models
 {
-    public class gestaoConsultasPlus
+    public class funcionario
     {
 
-        public int numeroIdConsulta { get; }
+        public int id_artigo { get; }        
 
-        public DateTime dataHora { get; }
-
-        public string numeroIdMedico { get; }
+        public string descricao { get; }
 
         public string numeroIdPaciente { get; }
+
         public string nomeMedico { get; }
+
         public string nomeCliente { get; }
 
 
 
 
-        public gestaoConsultasPlus(int numeroIdConsulta, DateTime dataHora, string numeroIdMedico, string numeroIdPaciente, string nomeMedico, string nomeCliente)
+        public funcionario(int _id_artigo,  string _descricao, string numeroIdPaciente, string nomeMedico, string nomeCliente)
         //ctor cria construtor prop cria propriedade
         {
 
-            this.numeroIdConsulta = numeroIdConsulta;
-            this.dataHora = dataHora;
+            this.id_artigo = _id_artigo;
+            this.descricao = _descricao;
             this.numeroIdMedico = numeroIdMedico;
             this.numeroIdPaciente = numeroIdPaciente;
             this.nomeMedico = nomeMedico;
@@ -31,7 +31,7 @@ namespace foiPicadaDeEnfermeiro.Models
 
 
         }
-        public gestaoConsultasPlus()
+        public funcionario()
         {
 
         }
