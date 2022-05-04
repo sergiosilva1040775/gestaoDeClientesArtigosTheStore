@@ -16,20 +16,20 @@ namespace gestaoDeClientesArtigosTheStore
 
         private void ToolStripMenuItem_gerirEspecialidades_Click(object sender, EventArgs e)
         {
-            gestaoDeClientesArtigosTheStore.formularios.frmEspecialidades frmEspecialidades = new gestaoDeClientesArtigosTheStore.formularios.frmEspecialidades();
+            gestaoDeClientesArtigosTheStore.formularios.frmGestaoFuncionario frmEspecialidades = new gestaoDeClientesArtigosTheStore.formularios.frmGestaoFuncionario();
             frmEspecialidades.ShowDialog();
 
         }
 
         private void ToolStripMenuItem_gerirMedicos_Click(object sender, EventArgs e)
         {
-            gestaoDeClientesArtigosTheStore.formularios.frmMedico frmMedico = new gestaoDeClientesArtigosTheStore.formularios.frmMedico();
+            gestaoDeClientesArtigosTheStore.formularios.frmGestaoClientes frmMedico = new gestaoDeClientesArtigosTheStore.formularios.frmGestaoClientes();
             frmMedico.ShowDialog();
         }
 
         private void ToolStripMenuItem_gerirClientes_Click(object sender, EventArgs e)
         {
-            gestaoDeClientesArtigosTheStore.formularios.frmClientes frmClientes = new gestaoDeClientesArtigosTheStore.formularios.frmClientes();
+            gestaoDeClientesArtigosTheStore.formularios.frmGestaoArtigo frmClientes = new gestaoDeClientesArtigosTheStore.formularios.frmGestaoArtigo();
             frmClientes.ShowDialog();
         }
 
@@ -93,7 +93,7 @@ namespace gestaoDeClientesArtigosTheStore
                 {
 
                     string dataHora = dateTimePicker_data.Value.ToString("dd/MM/yyyy") + " " + textBox_hora.Text + ":" + textBox_Minutos.Text + ":00";
-                    gestaoConsultaHander gch = new gestaoConsultaHander();
+                    compraHander gch = new compraHander();
                     (int codigo, gestaoConsulta gestaoConsultas, string error) = gch.ValidarGestaoConsultaInsert(dataHora, comboBox_MedicosEspecialistas.SelectedValue.ToString(), comboBox_ClientePaciente.SelectedValue.ToString());
                     switch (codigo)
                     {

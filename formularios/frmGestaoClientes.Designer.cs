@@ -1,6 +1,6 @@
 ﻿namespace gestaoDeClientesArtigosTheStore.formularios
 {
-    partial class frmMedico
+    partial class frmGestaoClientes
     {
         /// <summary>
         /// Required designer variable.

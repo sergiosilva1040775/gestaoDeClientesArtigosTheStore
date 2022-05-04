@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace gestaoDeClientesArtigosTheStore.formularios
 {
-    public partial class frmClientes : Form
+    public partial class frmGestaoArtigo : Form
     {
-        public frmClientes()
+        public frmGestaoArtigo()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
 
         private void button_Adicionar_Click(object sender, EventArgs e)
         {
-            clientePacienteHander cph = new clientePacienteHander();
+            artigoHander cph = new artigoHander();
             (int codigo, cartao clientePacientes, string error) = cph.ValidarClientePacienteInsert(textBox_ID.Text, textBox_NomeApelido.Text, textBox_Contacto.Text, textBox_SNS.Text .ToString());
 
             switch (codigo)
@@ -102,7 +102,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
 
         private void button_Actualizar_Click(object sender, EventArgs e)
         {
-            clientePacienteHander cph = new clientePacienteHander();
+            artigoHander cph = new artigoHander();
             (int codigo, cartao clientePacientes, string error) = cph.ValidarClientePacienteUpdate(textBox_ID.Text, textBox_NomeApelido.Text, textBox_Contacto.Text, textBox_SNS.Text.ToString());
 
             switch (codigo)
@@ -142,7 +142,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
 
         private void button_Delete_Click(object sender, EventArgs e)
         {
-            clientePacienteHander cph = new clientePacienteHander();
+            artigoHander cph = new artigoHander();
             (int codigo, cartao clientePacientes, string error) = cph.VValidarClientePacienteDelete(textBox_ID.Text);
 
             switch (codigo)

@@ -2,7 +2,7 @@
 
 namespace gestaoDeClientesArtigosTheStore.Models
 {
-    public class gestaoConsulta
+    public class cliente
     {
 
         public int id { get; set; }
@@ -27,7 +27,7 @@ namespace gestaoDeClientesArtigosTheStore.Models
 
 
 
-        public gestaoConsulta(int _id, DateTime dataHora, string _nome, string _morada, string _telefone, string _e_mail, string _contribuinte, string _localidade, int _num_cartao, string _fotografia, string _pass)
+        public cliente(int _id, string _nome, string _morada, string _telefone, string _e_mail, string _contribuinte, string _localidade, int _num_cartao, string _fotografia, string _pass)
         //ctor cria construtor prop cria propriedade
         {
             this.id = _id;
@@ -42,7 +42,7 @@ namespace gestaoDeClientesArtigosTheStore.Models
             this.pass = _pass;
         }
 
-        public gestaoConsulta()
+        public cliente()
         {
 
         }

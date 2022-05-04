@@ -2,15 +2,15 @@
 {
     public class artigo
     {
-        public int id_artigo { get; }
+        public int id_artigo { get; set; }
 
-        public string descricao { get; }
+        public string descricao { get; set; }
 
-        public decimal  valor_unitario { get; }
+        public double   valor_unitario { get; set; }
 
-        public decimal stock { get; }
+        public double stock { get; set; }
 
-        public artigo(int _id_artigo, string _descricao, decimal _valor_unitario, decimal _stock)
+        public artigo(int _id_artigo, string _descricao, double _valor_unitario, double _stock)
         //ctor cria construtor prop cria propriedade
         {
             this.id_artigo = _id_artigo;

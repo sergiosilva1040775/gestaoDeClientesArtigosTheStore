@@ -89,7 +89,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         {
             gestaoConsultasDAL gestaoConsultaDAL = new gestaoConsultasDAL();
             string dataHora = dateTimePicker_data.Value.ToString("dd/MM/yyyy") + " " + textBox_hora.Text + ":" + textBox_Minutos.Text + ":00";
-            gestaoConsultaHander gch = new gestaoConsultaHander();
+            compraHander gch = new compraHander();
             (int codigo, gestaoConsulta gestaoConsultas, string error) = gch.ValidarGestaoConsultaUpdate (idConsulta.ToString (),dataHora, comboBox_MedicosEspecialistas.SelectedValue.ToString(), comboBox_ClientePaciente.SelectedValue.ToString());
             switch (codigo)
             {

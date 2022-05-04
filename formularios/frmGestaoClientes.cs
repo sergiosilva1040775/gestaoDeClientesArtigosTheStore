@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace gestaoDeClientesArtigosTheStore.formularios
 {
-    public partial class frmMedico : Form
+    public partial class frmGestaoClientes : Form
     {
-        public frmMedico()
+        public frmGestaoClientes()
         {
             InitializeComponent();
         }

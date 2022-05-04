@@ -109,11 +109,11 @@
     <Compile Include="DAL\gestaoConsultasDAL.cs" />
     <Compile Include="DAL\pessoalMedicoDAL.cs" />
     <Compile Include="DAL\EspecialidadeMedicaDAL.cs" />
-    <Compile Include="formularios\frmClientes.cs">
+    <Compile Include="formularios\frmGestaoArtigo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\frmClientes.Designer.cs">
-      <DependentUpon>frmClientes.cs</DependentUpon>
+    <Compile Include="formularios\frmGestaoArtigo.Designer.cs">
+      <DependentUpon>frmGestaoArtigo.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\frmEditarConsultas.cs">
       <SubType>Form</SubType>
@@ -121,11 +121,11 @@
     <Compile Include="formularios\frmEditarConsultas.Designer.cs">
       <DependentUpon>frmEditarConsultas.cs</DependentUpon>
     </Compile>
-    <Compile Include="formularios\frmEspecialidades.cs">
+    <Compile Include="formularios\frmGestaoFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\frmEspecialidades.Designer.cs">
-      <DependentUpon>frmEspecialidades.cs</DependentUpon>
+    <Compile Include="formularios\frmGestaoFuncionario.Designer.cs">
+      <DependentUpon>frmGestaoFuncionario.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\frmInicial.cs">
       <SubType>Form</SubType>
@@ -139,33 +139,33 @@
     <Compile Include="formularios\frmListasConsultas.Designer.cs">
       <DependentUpon>frmListasConsultas.cs</DependentUpon>
     </Compile>
-    <Compile Include="formularios\frmMedico.cs">
+    <Compile Include="formularios\frmGestaoClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\frmMedico.Designer.cs">
-      <DependentUpon>frmMedico.cs</DependentUpon>
+    <Compile Include="formularios\frmGestaoClientes.Designer.cs">
+      <DependentUpon>frmGestaoClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Handlers\clientePacienteHander.cs" />
-    <Compile Include="Handlers\gestaoConsultaHander.cs" />
+    <Compile Include="Handlers\artigoHander.cs" />
+    <Compile Include="Handlers\compraHander.cs" />
     <Compile Include="Handlers\pessoalMedicoHander.cs" />
-    <Compile Include="Handlers\especialidadeMedicaHander.cs" />
+    <Compile Include="Handlers\clienteHander.cs" />
     <Compile Include="Handlers\Class1.cs" />
-    <Compile Include="Models\compras .cs" />
+    <Compile Include="Models\compra.cs" />
     <Compile Include="Models\cartao.cs" />
     <Compile Include="Models\funcionario.cs" />
     <Compile Include="Models\linhascompras.cs" />
-    <Compile Include="Models\clientes.cs" />
+    <Compile Include="Models\cliente.cs" />
     <Compile Include="Models\artigo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="formularios\frmClientes.resx">
-      <DependentUpon>frmClientes.cs</DependentUpon>
+    <EmbeddedResource Include="formularios\frmGestaoArtigo.resx">
+      <DependentUpon>frmGestaoArtigo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\frmEditarConsultas.resx">
       <DependentUpon>frmEditarConsultas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formularios\frmEspecialidades.resx">
-      <DependentUpon>frmEspecialidades.cs</DependentUpon>
+    <EmbeddedResource Include="formularios\frmGestaoFuncionario.resx">
+      <DependentUpon>frmGestaoFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\frmInicial.resx">
       <DependentUpon>frmInicial.cs</DependentUpon>
@@ -173,8 +173,8 @@
     <EmbeddedResource Include="formularios\frmListasConsultas.resx">
       <DependentUpon>frmListasConsultas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formularios\frmMedico.resx">
-      <DependentUpon>frmMedico.cs</DependentUpon>
+    <EmbeddedResource Include="formularios\frmGestaoClientes.resx">
+      <DependentUpon>frmGestaoClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
