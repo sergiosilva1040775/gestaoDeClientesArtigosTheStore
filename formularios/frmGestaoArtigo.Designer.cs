@@ -54,7 +54,6 @@
             this.dataGridView_Clientes.ReadOnly = true;
             this.dataGridView_Clientes.Size = new System.Drawing.Size(476, 154);
             this.dataGridView_Clientes.TabIndex = 0;
-            this.dataGridView_Clientes.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Clientes_MouseDown);
             // 
             // label1
             // 
@@ -99,7 +98,6 @@
             this.textBox_ID.Name = "textBox_ID";
             this.textBox_ID.Size = new System.Drawing.Size(164, 20);
             this.textBox_ID.TabIndex = 5;
-            this.textBox_ID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_ID_KeyPress);
             // 
             // textBox_SNS
             // 
@@ -108,7 +106,6 @@
             this.textBox_SNS.Name = "textBox_SNS";
             this.textBox_SNS.Size = new System.Drawing.Size(164, 20);
             this.textBox_SNS.TabIndex = 6;
-            this.textBox_SNS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_SNS_KeyPress);
             // 
             // textBox_NomeApelido
             // 
@@ -124,7 +121,6 @@
             this.textBox_Contacto.Name = "textBox_Contacto";
             this.textBox_Contacto.Size = new System.Drawing.Size(164, 20);
             this.textBox_Contacto.TabIndex = 8;
-            this.textBox_Contacto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Contacto_KeyPress);
             // 
             // button_Adicionar
             // 
@@ -134,7 +130,6 @@
             this.button_Adicionar.TabIndex = 9;
             this.button_Adicionar.Text = "Adicionar";
             this.button_Adicionar.UseVisualStyleBackColor = true;
-            this.button_Adicionar.Click += new System.EventHandler(this.button_Adicionar_Click);
             // 
             // button_Actualizar
             // 
@@ -144,7 +139,6 @@
             this.button_Actualizar.TabIndex = 10;
             this.button_Actualizar.Text = "Actualizar";
             this.button_Actualizar.UseVisualStyleBackColor = true;
-            this.button_Actualizar.Click += new System.EventHandler(this.button_Actualizar_Click);
             // 
             // button_Delete
             // 
@@ -154,7 +148,6 @@
             this.button_Delete.TabIndex = 11;
             this.button_Delete.Text = "Apagar";
             this.button_Delete.UseVisualStyleBackColor = true;
-            this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
             // 
             // button_LimparCampos
             // 
@@ -164,9 +157,8 @@
             this.button_LimparCampos.TabIndex = 12;
             this.button_LimparCampos.Text = "Limpar Campos";
             this.button_LimparCampos.UseVisualStyleBackColor = true;
-            this.button_LimparCampos.Click += new System.EventHandler(this.button_LimparCampos_Click);
             // 
-            // frmClientes
+            // frmGestaoArtigo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -185,11 +177,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView_Clientes);
             this.MaximizeBox = false;
-            this.Name = "frmClientes";
+            this.Name = "frmGestaoArtigo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.frmClientes_Load);
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

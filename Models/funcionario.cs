@@ -2,17 +2,17 @@
 {
     public class funcionario
     {
-        public int id { get; }
+        public int id { get; set; }
 
-        public string numfuncionario { get; }
+        public int numfuncionario { get; set; }
 
-        public string pass { get; }
+        public string pass { get; set; }
 
-        public string nome { get; }
+        public string nome { get; set; }
 
-        public string contacto { get; }
-        
-        public funcionario(int _id, string _numfuncionario, string _pass, string _nome, string _contacto)
+        public string contacto { get; set; }
+
+        public funcionario(int _id, int  _numfuncionario, string _pass, string _nome, string _contacto)
         //ctor cria construtor prop cria propriedade
         {
             this.id = _id;

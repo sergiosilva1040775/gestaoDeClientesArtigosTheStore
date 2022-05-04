@@ -1,6 +1,6 @@
 ﻿namespace gestaoDeClientesArtigosTheStore.formularios
 {
-    partial class frmListasConsultas
+    partial class frmCompras_LinhasCompras
     {
         /// <summary>
         /// Required designer variable.
@@ -53,7 +53,6 @@
             this.button_apagarConsulta.TabIndex = 17;
             this.button_apagarConsulta.Text = "Eliminar Consultas";
             this.button_apagarConsulta.UseVisualStyleBackColor = true;
-            this.button_apagarConsulta.Click += new System.EventHandler(this.button_apagarConsulta_Click);
             // 
             // button_actualizarConsulta
             // 
@@ -63,7 +62,6 @@
             this.button_actualizarConsulta.TabIndex = 18;
             this.button_actualizarConsulta.Text = "Actualizar Consulta";
             this.button_actualizarConsulta.UseVisualStyleBackColor = true;
-            this.button_actualizarConsulta.Click += new System.EventHandler(this.button_actualizarConsulta_Click);
             // 
             // frmListasConsultas
             // 
@@ -77,8 +75,7 @@
             this.MaximizeBox = false;
             this.Name = "frmListasConsultas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Listas de Consultas";
-            this.Load += new System.EventHandler(this.frmListasConsultas_Load);
+            this.Text = "Listas de Consultas";   
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_listasConsultas)).EndInit();
             this.ResumeLayout(false);
 

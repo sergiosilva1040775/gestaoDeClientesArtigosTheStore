@@ -1,23 +1,23 @@
 ﻿using System;
-using System;
+
 using System.Collections.Generic;
 using System.Text;
 
 namespace gestaoDeClientesArtigosTheStore.Models
 {
-    public class linhascompras
+    public class linhaCompra
     {
         public int id { get; set; }
 
         public int id_compra { get; set; }
 
-        public float qdd { get; set; }
+        public double qdd { get; set; }
 
         public int artigo { get; set; }
 
-        public float total { get; set; }
+        public double total { get; set; }
         
-        public linhascompras(int _id, int _id_compra, float _qdd, int _artigo, float _total)
+        public linhaCompra(int _id, int _id_compra, double _qdd, int _artigo, double _total)
         //ctor cria construtor prop cria propriedade
         {
             this.id = _id;
@@ -26,7 +26,7 @@ namespace gestaoDeClientesArtigosTheStore.Models
             this.artigo = _artigo;
             this.total = _total;
         }
-        public linhascompras()
+        public linhaCompra()
         {
 
         }

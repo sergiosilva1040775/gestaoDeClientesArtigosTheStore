@@ -90,7 +90,7 @@
             int.TryParse(_id_funcionario, out _id_funcionarioOk);
             if (_id_funcionarioOk == 0) { return (6, null, "Falta  numero identificador do funcionario"); }
 
-       
+
             compraModel.valor = _valorOk;
             compraModel.data = _data;
             compraModel.pontos = _pontosOk;
@@ -109,7 +109,7 @@
             int.TryParse(_id_compras, out _id_comprasOk);
             if (_id_comprasOk == 0) { return (1, null, "Formato do  numero identificador da compra incorrecto"); }
 
-            compraModel.id_compras = _id_comprasOk;  
+            compraModel.id_compras = _id_comprasOk;
 
 
             return (0, compraModel, null);

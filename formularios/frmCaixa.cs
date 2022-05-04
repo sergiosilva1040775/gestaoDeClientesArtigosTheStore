@@ -5,18 +5,16 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace gestaoDeClientesArtigosTheStore
+namespace gestaoDeClientesArtigosTheStore.formularios
 {
-    public partial class frmInicial : Form
+    public partial class frmCaixa : Form
     {
-        public frmInicial()
+        public frmCaixa()
         {
             InitializeComponent();
-        }
-
-        private void frmInicial_Load(object sender, EventArgs e)
-        {
 
         }
+
+    
     }
 }

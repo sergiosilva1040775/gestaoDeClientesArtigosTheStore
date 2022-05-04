@@ -2,11 +2,6 @@
 {
     public class artigoHander
     {
-        //id_artigo
-        //        descricao
-        // valor_unitario
-        //stock
-
         Models.artigo artigoModel = new Models.artigo();
         public (int errorId, Models.artigo, string mensagemDeErro) ValidarArtigoInsert(string _descricao, string _valor_unitario, string _stock)
         {

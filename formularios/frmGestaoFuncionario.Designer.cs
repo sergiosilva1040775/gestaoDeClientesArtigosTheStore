@@ -48,7 +48,6 @@
             this.button_LimparCampos.TabIndex = 25;
             this.button_LimparCampos.Text = "Limpar Campos";
             this.button_LimparCampos.UseVisualStyleBackColor = true;
-            this.button_LimparCampos.Click += new System.EventHandler(this.button_LimparCampos_Click);
             // 
             // button_Delete
             // 
@@ -58,7 +57,6 @@
             this.button_Delete.TabIndex = 24;
             this.button_Delete.Text = "Apagar";
             this.button_Delete.UseVisualStyleBackColor = true;
-            this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
             // 
             // button_Actualizar
             // 
@@ -68,7 +66,6 @@
             this.button_Actualizar.TabIndex = 23;
             this.button_Actualizar.Text = "Actualizar";
             this.button_Actualizar.UseVisualStyleBackColor = true;
-            this.button_Actualizar.Click += new System.EventHandler(this.button_Actualizar_Click);
             // 
             // button_Adicionar
             // 
@@ -78,7 +75,6 @@
             this.button_Adicionar.TabIndex = 22;
             this.button_Adicionar.Text = "Adicionar";
             this.button_Adicionar.UseVisualStyleBackColor = true;
-            this.button_Adicionar.Click += new System.EventHandler(this.button_Adicionar_Click);
             // 
             // textBox_Descricao
             // 
@@ -123,9 +119,8 @@
             this.dataGridView_Especialidades.ReadOnly = true;
             this.dataGridView_Especialidades.Size = new System.Drawing.Size(476, 154);
             this.dataGridView_Especialidades.TabIndex = 13;
-            this.dataGridView_Especialidades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Especialidades_CellContentClick);
             // 
-            // frmEspecialidades
+            // frmGestaoFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -140,11 +135,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView_Especialidades);
             this.MaximizeBox = false;
-            this.Name = "frmEspecialidades";
+            this.Name = "frmGestaoFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Especialidades";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.frmEspecialidades_Load);
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Especialidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

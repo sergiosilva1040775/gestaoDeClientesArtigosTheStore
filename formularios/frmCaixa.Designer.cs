@@ -1,6 +1,6 @@
 ﻿namespace gestaoDeClientesArtigosTheStore.formularios
 {
-    partial class frmEditarConsultas
+    partial class frmCaixa
     {
         /// <summary>
         /// Required designer variable.
@@ -52,7 +52,6 @@
             this.button_Agendar.TabIndex = 30;
             this.button_Agendar.Text = "Re-Agendar";
             this.button_Agendar.UseVisualStyleBackColor = true;
-            this.button_Agendar.Click += new System.EventHandler(this.button_Agendar_Click);
             // 
             // button_pesquisaMedicos
             // 
@@ -62,7 +61,6 @@
             this.button_pesquisaMedicos.TabIndex = 29;
             this.button_pesquisaMedicos.Text = "Pesquisar Médicos";
             this.button_pesquisaMedicos.UseVisualStyleBackColor = true;
-            this.button_pesquisaMedicos.Click += new System.EventHandler(this.button_pesquisaMedicos_Click);
             // 
             // textBox_Minutos
             // 
@@ -196,8 +194,7 @@
             this.Name = "frmEditarConsultas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Consultas";
-            this.Load += new System.EventHandler(this.frmEditarConsultas_Load);
-            this.ResumeLayout(false);
+             this.ResumeLayout(false);
             this.PerformLayout();
 
         }

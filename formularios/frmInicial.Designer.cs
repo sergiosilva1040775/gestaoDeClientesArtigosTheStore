@@ -81,7 +81,6 @@
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.sairToolStripMenuItem.Text = "&Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // especialidadesToolStripMenuItem
             // 
@@ -96,7 +95,6 @@
             this.ToolStripMenuItem_gerirEspecialidades.Name = "ToolStripMenuItem_gerirEspecialidades";
             this.ToolStripMenuItem_gerirEspecialidades.Size = new System.Drawing.Size(99, 22);
             this.ToolStripMenuItem_gerirEspecialidades.Text = "Gerir";
-            this.ToolStripMenuItem_gerirEspecialidades.Click += new System.EventHandler(this.ToolStripMenuItem_gerirEspecialidades_Click);
             // 
             // médicosToolStripMenuItem
             // 
@@ -111,7 +109,6 @@
             this.ToolStripMenuItem_gerirMedicos.Name = "ToolStripMenuItem_gerirMedicos";
             this.ToolStripMenuItem_gerirMedicos.Size = new System.Drawing.Size(99, 22);
             this.ToolStripMenuItem_gerirMedicos.Text = "Gerir";
-            this.ToolStripMenuItem_gerirMedicos.Click += new System.EventHandler(this.ToolStripMenuItem_gerirMedicos_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -126,7 +123,6 @@
             this.ToolStripMenuItem_gerirClientes.Name = "ToolStripMenuItem_gerirClientes";
             this.ToolStripMenuItem_gerirClientes.Size = new System.Drawing.Size(99, 22);
             this.ToolStripMenuItem_gerirClientes.Text = "Gerir";
-            this.ToolStripMenuItem_gerirClientes.Click += new System.EventHandler(this.ToolStripMenuItem_gerirClientes_Click);
             // 
             // comboBox_especialidademedica
             // 
@@ -216,7 +212,6 @@
             this.textBox_hora.TabIndex = 10;
             this.textBox_hora.Text = "00";
             this.textBox_hora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_hora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label6
             // 
@@ -236,7 +231,6 @@
             this.textBox_Minutos.TabIndex = 13;
             this.textBox_Minutos.Text = "00";
             this.textBox_Minutos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_Minutos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // button_pesquisaMedicos
             // 
@@ -246,7 +240,6 @@
             this.button_pesquisaMedicos.TabIndex = 14;
             this.button_pesquisaMedicos.Text = "Pesquisar Médicos";
             this.button_pesquisaMedicos.UseVisualStyleBackColor = true;
-            this.button_pesquisaMedicos.Click += new System.EventHandler(this.button_pesquisaMedicos_Click);
             // 
             // button_Agendar
             // 
@@ -256,7 +249,6 @@
             this.button_Agendar.TabIndex = 15;
             this.button_Agendar.Text = "Agendar";
             this.button_Agendar.UseVisualStyleBackColor = true;
-            this.button_Agendar.Click += new System.EventHandler(this.button_Agendar_Click);
             // 
             // buttonListarActualizarDelete
             // 
@@ -266,7 +258,6 @@
             this.buttonListarActualizarDelete.TabIndex = 16;
             this.buttonListarActualizarDelete.Text = "Listar Consultas";
             this.buttonListarActualizarDelete.UseVisualStyleBackColor = true;
-            this.buttonListarActualizarDelete.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmInicial
             // 
