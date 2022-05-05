@@ -39,24 +39,33 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox_NumFuncionario = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_NumeroFuncionario = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label_ArtigoId = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Descricao = new System.Windows.Forms.ComboBox();
             this.textBox_ArtigoId = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label_Descricao = new System.Windows.Forms.Label();
+            this.label_Quantidade = new System.Windows.Forms.Label();
+            this.textBox_Quantidade = new System.Windows.Forms.TextBox();
+            this.button_Adicionar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label_Total = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button_FecharCompra = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox_Cliente
             // 
             this.textBox_Cliente.Location = new System.Drawing.Point(108, 16);
-            this.textBox_Cliente.MaxLength = 2;
+            this.textBox_Cliente.MaxLength = 9999999;
             this.textBox_Cliente.Name = "textBox_Cliente";
             this.textBox_Cliente.Size = new System.Drawing.Size(200, 20);
             this.textBox_Cliente.TabIndex = 26;
@@ -148,26 +157,26 @@
             // textBox_NumFuncionario
             // 
             this.textBox_NumFuncionario.Location = new System.Drawing.Point(109, 23);
-            this.textBox_NumFuncionario.MaxLength = 2;
+            this.textBox_NumFuncionario.MaxLength = 9999999;
             this.textBox_NumFuncionario.Name = "textBox_NumFuncionario";
             this.textBox_NumFuncionario.ReadOnly = true;
             this.textBox_NumFuncionario.Size = new System.Drawing.Size(200, 20);
             this.textBox_NumFuncionario.TabIndex = 39;
             this.textBox_NumFuncionario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // comboBox1
+            // comboBox_NumeroFuncionario
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(109, 49);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 37;
+            this.comboBox_NumeroFuncionario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_NumeroFuncionario.FormattingEnabled = true;
+            this.comboBox_NumeroFuncionario.Location = new System.Drawing.Point(109, 49);
+            this.comboBox_NumeroFuncionario.Name = "comboBox_NumeroFuncionario";
+            this.comboBox_NumeroFuncionario.Size = new System.Drawing.Size(200, 21);
+            this.comboBox_NumeroFuncionario.TabIndex = 37;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBox_NumeroFuncionario);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox_NumFuncionario);
             this.groupBox1.Location = new System.Drawing.Point(12, 3);
@@ -196,22 +205,26 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Location = new System.Drawing.Point(355, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(364, 413);
+            this.groupBox3.Size = new System.Drawing.Size(364, 312);
             this.groupBox3.TabIndex = 44;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lista de produtos";
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button_Adicionar);
+            this.groupBox4.Controls.Add(this.label_Quantidade);
+            this.groupBox4.Controls.Add(this.textBox_Quantidade);
             this.groupBox4.Controls.Add(this.label_ArtigoId);
-            this.groupBox4.Controls.Add(this.comboBox2);
-            this.groupBox4.Controls.Add(this.label3);
+            this.groupBox4.Controls.Add(this.comboBox_Descricao);
+            this.groupBox4.Controls.Add(this.label_Descricao);
             this.groupBox4.Controls.Add(this.textBox_ArtigoId);
             this.groupBox4.Location = new System.Drawing.Point(12, 235);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(309, 174);
+            this.groupBox4.Size = new System.Drawing.Size(325, 162);
             this.groupBox4.TabIndex = 45;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Artigos";
@@ -219,44 +232,109 @@
             // label_ArtigoId
             // 
             this.label_ArtigoId.AutoSize = true;
-            this.label_ArtigoId.Location = new System.Drawing.Point(62, 23);
+            this.label_ArtigoId.Location = new System.Drawing.Point(49, 23);
             this.label_ArtigoId.Name = "label_ArtigoId";
             this.label_ArtigoId.Size = new System.Drawing.Size(40, 13);
             this.label_ArtigoId.TabIndex = 39;
             this.label_ArtigoId.Text = "Código";
             // 
-            // comboBox2
+            // comboBox_Descricao
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(109, 46);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 21);
-            this.comboBox2.TabIndex = 37;
+            this.comboBox_Descricao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Descricao.FormattingEnabled = true;
+            this.comboBox_Descricao.Location = new System.Drawing.Point(96, 46);
+            this.comboBox_Descricao.Name = "comboBox_Descricao";
+            this.comboBox_Descricao.Size = new System.Drawing.Size(200, 21);
+            this.comboBox_Descricao.TabIndex = 37;
             // 
             // textBox_ArtigoId
             // 
-            this.textBox_ArtigoId.Location = new System.Drawing.Point(109, 20);
-            this.textBox_ArtigoId.MaxLength = 2;
+            this.textBox_ArtigoId.Location = new System.Drawing.Point(96, 20);
+            this.textBox_ArtigoId.MaxLength = 9999999;
             this.textBox_ArtigoId.Name = "textBox_ArtigoId";
             this.textBox_ArtigoId.Size = new System.Drawing.Size(200, 20);
             this.textBox_ArtigoId.TabIndex = 38;
             this.textBox_ArtigoId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label3
+            // label_Descricao
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 50);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "Nome";
+            this.label_Descricao.AutoSize = true;
+            this.label_Descricao.Location = new System.Drawing.Point(59, 50);
+            this.label_Descricao.Name = "label_Descricao";
+            this.label_Descricao.Size = new System.Drawing.Size(35, 13);
+            this.label_Descricao.TabIndex = 40;
+            this.label_Descricao.Text = "Nome";
+            // 
+            // label_Quantidade
+            // 
+            this.label_Quantidade.AutoSize = true;
+            this.label_Quantidade.Location = new System.Drawing.Point(32, 76);
+            this.label_Quantidade.Name = "label_Quantidade";
+            this.label_Quantidade.Size = new System.Drawing.Size(62, 13);
+            this.label_Quantidade.TabIndex = 42;
+            this.label_Quantidade.Text = "Quantidade";
+            // 
+            // textBox_Quantidade
+            // 
+            this.textBox_Quantidade.Location = new System.Drawing.Point(96, 73);
+            this.textBox_Quantidade.MaxLength = 9999999;
+            this.textBox_Quantidade.Name = "textBox_Quantidade";
+            this.textBox_Quantidade.Size = new System.Drawing.Size(200, 20);
+            this.textBox_Quantidade.TabIndex = 41;
+            this.textBox_Quantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button_Adicionar
+            // 
+            this.button_Adicionar.Location = new System.Drawing.Point(214, 98);
+            this.button_Adicionar.Name = "button_Adicionar";
+            this.button_Adicionar.Size = new System.Drawing.Size(82, 58);
+            this.button_Adicionar.TabIndex = 43;
+            this.button_Adicionar.Text = "Adicionar";
+            this.button_Adicionar.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(352, 287);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // label_Total
+            // 
+            this.label_Total.AutoSize = true;
+            this.label_Total.Location = new System.Drawing.Point(479, 337);
+            this.label_Total.Name = "label_Total";
+            this.label_Total.Size = new System.Drawing.Size(31, 13);
+            this.label_Total.TabIndex = 47;
+            this.label_Total.Text = "Total";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(513, 333);
+            this.textBox1.MaxLength = 9999999;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.TabIndex = 46;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button_FecharCompra
+            // 
+            this.button_FecharCompra.Location = new System.Drawing.Point(631, 359);
+            this.button_FecharCompra.Name = "button_FecharCompra";
+            this.button_FecharCompra.Size = new System.Drawing.Size(82, 58);
+            this.button_FecharCompra.TabIndex = 44;
+            this.button_FecharCompra.Text = "Fechar Compra";
+            this.button_FecharCompra.UseVisualStyleBackColor = true;
             // 
             // frmCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 515);
+            this.ClientSize = new System.Drawing.Size(731, 424);
+            this.Controls.Add(this.button_FecharCompra);
+            this.Controls.Add(this.label_Total);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -271,9 +349,12 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -289,14 +370,21 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox_NumFuncionario;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_NumeroFuncionario;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label_ArtigoId;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox_Descricao;
+        private System.Windows.Forms.Label label_Descricao;
         private System.Windows.Forms.TextBox textBox_ArtigoId;
+        private System.Windows.Forms.Button button_Adicionar;
+        private System.Windows.Forms.Label label_Quantidade;
+        private System.Windows.Forms.TextBox textBox_Quantidade;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label_Total;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button_FecharCompra;
     }
 }
