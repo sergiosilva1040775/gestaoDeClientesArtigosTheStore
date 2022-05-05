@@ -28,192 +28,275 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_Agendar = new System.Windows.Forms.Button();
-            this.button_pesquisaMedicos = new System.Windows.Forms.Button();
-            this.textBox_Minutos = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox_hora = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker_data = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.textBox_Cliente = new System.Windows.Forms.TextBox();
+            this.comboBox_Cliente = new System.Windows.Forms.ComboBox();
+            this.label_Contacto = new System.Windows.Forms.Label();
+            this.label_Nome = new System.Windows.Forms.Label();
+            this.label_NumeroCartao = new System.Windows.Forms.Label();
+            this.textBox_NumeroCartao = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox_PontosAcumulados = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox_ClientePaciente = new System.Windows.Forms.ComboBox();
-            this.comboBox_MedicosEspecialistas = new System.Windows.Forms.ComboBox();
-            this.comboBox_especialidademedica = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox_NumFuncionario = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label_ArtigoId = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBox_ArtigoId = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button_Agendar
+            // textBox_Cliente
             // 
-            this.button_Agendar.Location = new System.Drawing.Point(251, 137);
-            this.button_Agendar.Name = "button_Agendar";
-            this.button_Agendar.Size = new System.Drawing.Size(75, 23);
-            this.button_Agendar.TabIndex = 30;
-            this.button_Agendar.Text = "Re-Agendar";
-            this.button_Agendar.UseVisualStyleBackColor = true;
+            this.textBox_Cliente.Location = new System.Drawing.Point(108, 16);
+            this.textBox_Cliente.MaxLength = 2;
+            this.textBox_Cliente.Name = "textBox_Cliente";
+            this.textBox_Cliente.Size = new System.Drawing.Size(200, 20);
+            this.textBox_Cliente.TabIndex = 26;
+            this.textBox_Cliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button_pesquisaMedicos
+            // comboBox_Cliente
             // 
-            this.button_pesquisaMedicos.Location = new System.Drawing.Point(332, 10);
-            this.button_pesquisaMedicos.Name = "button_pesquisaMedicos";
-            this.button_pesquisaMedicos.Size = new System.Drawing.Size(113, 23);
-            this.button_pesquisaMedicos.TabIndex = 29;
-            this.button_pesquisaMedicos.Text = "Pesquisar Médicos";
-            this.button_pesquisaMedicos.UseVisualStyleBackColor = true;
+            this.comboBox_Cliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Cliente.FormattingEnabled = true;
+            this.comboBox_Cliente.Location = new System.Drawing.Point(108, 42);
+            this.comboBox_Cliente.Name = "comboBox_Cliente";
+            this.comboBox_Cliente.Size = new System.Drawing.Size(200, 21);
+            this.comboBox_Cliente.TabIndex = 17;
             // 
-            // textBox_Minutos
+            // label_Contacto
             // 
-            this.textBox_Minutos.Location = new System.Drawing.Point(166, 133);
-            this.textBox_Minutos.MaxLength = 2;
-            this.textBox_Minutos.Name = "textBox_Minutos";
-            this.textBox_Minutos.Size = new System.Drawing.Size(26, 20);
-            this.textBox_Minutos.TabIndex = 28;
-            this.textBox_Minutos.Text = "00";
-            this.textBox_Minutos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label_Contacto.AutoSize = true;
+            this.label_Contacto.Location = new System.Drawing.Point(56, 19);
+            this.label_Contacto.Name = "label_Contacto";
+            this.label_Contacto.Size = new System.Drawing.Size(50, 13);
+            this.label_Contacto.TabIndex = 31;
+            this.label_Contacto.Text = "Contacto";
             // 
-            // label6
+            // label_Nome
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(154, 137);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(10, 13);
-            this.label6.TabIndex = 27;
-            this.label6.Text = ":";
+            this.label_Nome.AutoSize = true;
+            this.label_Nome.Location = new System.Drawing.Point(71, 46);
+            this.label_Nome.Name = "label_Nome";
+            this.label_Nome.Size = new System.Drawing.Size(35, 13);
+            this.label_Nome.TabIndex = 32;
+            this.label_Nome.Text = "Nome";
             // 
-            // textBox_hora
+            // label_NumeroCartao
             // 
-            this.textBox_hora.Location = new System.Drawing.Point(126, 133);
-            this.textBox_hora.MaxLength = 2;
-            this.textBox_hora.Name = "textBox_hora";
-            this.textBox_hora.Size = new System.Drawing.Size(26, 20);
-            this.textBox_hora.TabIndex = 26;
-            this.textBox_hora.Text = "00";
-            this.textBox_hora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label_NumeroCartao.AutoSize = true;
+            this.label_NumeroCartao.Location = new System.Drawing.Point(28, 72);
+            this.label_NumeroCartao.Name = "label_NumeroCartao";
+            this.label_NumeroCartao.Size = new System.Drawing.Size(78, 13);
+            this.label_NumeroCartao.TabIndex = 34;
+            this.label_NumeroCartao.Text = "Número Cartão";
             // 
-            // label5
+            // textBox_NumeroCartao
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(94, 137);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 13);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Hora";
+            this.textBox_NumeroCartao.Location = new System.Drawing.Point(108, 69);
+            this.textBox_NumeroCartao.MaxLength = 2;
+            this.textBox_NumeroCartao.Name = "textBox_NumeroCartao";
+            this.textBox_NumeroCartao.ReadOnly = true;
+            this.textBox_NumeroCartao.Size = new System.Drawing.Size(200, 20);
+            this.textBox_NumeroCartao.TabIndex = 33;
+            this.textBox_NumeroCartao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label4
+            // label7
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(94, 106);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Data";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(5, 99);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(101, 13);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "Pontos Acumulados";
             // 
-            // dateTimePicker_data
+            // textBox_PontosAcumulados
             // 
-            this.dateTimePicker_data.Location = new System.Drawing.Point(126, 103);
-            this.dateTimePicker_data.Name = "dateTimePicker_data";
-            this.dateTimePicker_data.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker_data.TabIndex = 23;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 13);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Clientes/Paciente";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(77, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Médicos";
+            this.textBox_PontosAcumulados.Location = new System.Drawing.Point(108, 95);
+            this.textBox_PontosAcumulados.MaxLength = 2;
+            this.textBox_PontosAcumulados.Name = "textBox_PontosAcumulados";
+            this.textBox_PontosAcumulados.ReadOnly = true;
+            this.textBox_PontosAcumulados.Size = new System.Drawing.Size(200, 20);
+            this.textBox_PontosAcumulados.TabIndex = 35;
+            this.textBox_PontosAcumulados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 16);
+            this.label1.Location = new System.Drawing.Point(72, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Especialidade Médica";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Nome";
             // 
-            // comboBox_ClientePaciente
+            // label8
             // 
-            this.comboBox_ClientePaciente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_ClientePaciente.FormattingEnabled = true;
-            this.comboBox_ClientePaciente.Location = new System.Drawing.Point(126, 66);
-            this.comboBox_ClientePaciente.Name = "comboBox_ClientePaciente";
-            this.comboBox_ClientePaciente.Size = new System.Drawing.Size(200, 21);
-            this.comboBox_ClientePaciente.TabIndex = 19;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 26);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 13);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "Número Funcionário";
             // 
-            // comboBox_MedicosEspecialistas
+            // textBox_NumFuncionario
             // 
-            this.comboBox_MedicosEspecialistas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_MedicosEspecialistas.FormattingEnabled = true;
-            this.comboBox_MedicosEspecialistas.Location = new System.Drawing.Point(126, 39);
-            this.comboBox_MedicosEspecialistas.Name = "comboBox_MedicosEspecialistas";
-            this.comboBox_MedicosEspecialistas.Size = new System.Drawing.Size(200, 21);
-            this.comboBox_MedicosEspecialistas.TabIndex = 18;
+            this.textBox_NumFuncionario.Location = new System.Drawing.Point(109, 23);
+            this.textBox_NumFuncionario.MaxLength = 2;
+            this.textBox_NumFuncionario.Name = "textBox_NumFuncionario";
+            this.textBox_NumFuncionario.ReadOnly = true;
+            this.textBox_NumFuncionario.Size = new System.Drawing.Size(200, 20);
+            this.textBox_NumFuncionario.TabIndex = 39;
+            this.textBox_NumFuncionario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // comboBox_especialidademedica
+            // comboBox1
             // 
-            this.comboBox_especialidademedica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_especialidademedica.FormattingEnabled = true;
-            this.comboBox_especialidademedica.Location = new System.Drawing.Point(126, 12);
-            this.comboBox_especialidademedica.Name = "comboBox_especialidademedica";
-            this.comboBox_especialidademedica.Size = new System.Drawing.Size(200, 21);
-            this.comboBox_especialidademedica.TabIndex = 17;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(109, 49);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 21);
+            this.comboBox1.TabIndex = 37;
             // 
-            // frmEditarConsultas
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textBox_NumFuncionario);
+            this.groupBox1.Location = new System.Drawing.Point(12, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(325, 88);
+            this.groupBox1.TabIndex = 42;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Funcionário";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label_Contacto);
+            this.groupBox2.Controls.Add(this.comboBox_Cliente);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.textBox_Cliente);
+            this.groupBox2.Controls.Add(this.textBox_PontosAcumulados);
+            this.groupBox2.Controls.Add(this.label_Nome);
+            this.groupBox2.Controls.Add(this.label_NumeroCartao);
+            this.groupBox2.Controls.Add(this.textBox_NumeroCartao);
+            this.groupBox2.Location = new System.Drawing.Point(12, 102);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(325, 127);
+            this.groupBox2.TabIndex = 43;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Informção Cliente";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Location = new System.Drawing.Point(355, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(364, 413);
+            this.groupBox3.TabIndex = 44;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Lista de produtos";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label_ArtigoId);
+            this.groupBox4.Controls.Add(this.comboBox2);
+            this.groupBox4.Controls.Add(this.label3);
+            this.groupBox4.Controls.Add(this.textBox_ArtigoId);
+            this.groupBox4.Location = new System.Drawing.Point(12, 235);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(309, 174);
+            this.groupBox4.TabIndex = 45;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Artigos";
+            // 
+            // label_ArtigoId
+            // 
+            this.label_ArtigoId.AutoSize = true;
+            this.label_ArtigoId.Location = new System.Drawing.Point(62, 23);
+            this.label_ArtigoId.Name = "label_ArtigoId";
+            this.label_ArtigoId.Size = new System.Drawing.Size(40, 13);
+            this.label_ArtigoId.TabIndex = 39;
+            this.label_ArtigoId.Text = "Código";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(109, 46);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(200, 21);
+            this.comboBox2.TabIndex = 37;
+            // 
+            // textBox_ArtigoId
+            // 
+            this.textBox_ArtigoId.Location = new System.Drawing.Point(109, 20);
+            this.textBox_ArtigoId.MaxLength = 2;
+            this.textBox_ArtigoId.Name = "textBox_ArtigoId";
+            this.textBox_ArtigoId.Size = new System.Drawing.Size(200, 20);
+            this.textBox_ArtigoId.TabIndex = 38;
+            this.textBox_ArtigoId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(72, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "Nome";
+            // 
+            // frmCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 174);
-            this.Controls.Add(this.button_Agendar);
-            this.Controls.Add(this.button_pesquisaMedicos);
-            this.Controls.Add(this.textBox_Minutos);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox_hora);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker_data);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox_ClientePaciente);
-            this.Controls.Add(this.comboBox_MedicosEspecialistas);
-            this.Controls.Add(this.comboBox_especialidademedica);
+            this.ClientSize = new System.Drawing.Size(731, 515);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "frmEditarConsultas";
+            this.Name = "frmCaixa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Editar Consultas";
-             this.ResumeLayout(false);
-            this.PerformLayout();
+            this.Text = "Caixa";
+            this.Load += new System.EventHandler(this.frmCaixa_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button_Agendar;
-        private System.Windows.Forms.Button button_pesquisaMedicos;
-        private System.Windows.Forms.TextBox textBox_Minutos;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox_hora;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_data;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox_Cliente;
+        private System.Windows.Forms.ComboBox comboBox_Cliente;
+        private System.Windows.Forms.Label label_Contacto;
+        private System.Windows.Forms.Label label_Nome;
+        private System.Windows.Forms.Label label_NumeroCartao;
+        private System.Windows.Forms.TextBox textBox_NumeroCartao;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox_PontosAcumulados;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox_ClientePaciente;
-        private System.Windows.Forms.ComboBox comboBox_MedicosEspecialistas;
-        private System.Windows.Forms.ComboBox comboBox_especialidademedica;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox_NumFuncionario;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label_ArtigoId;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox_ArtigoId;
     }
 }

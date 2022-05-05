@@ -15,6 +15,9 @@ namespace gestaoDeClientesArtigosTheStore.formularios
 
         }
 
-    
+        private void frmCaixa_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

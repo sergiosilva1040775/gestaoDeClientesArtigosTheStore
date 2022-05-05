@@ -43,5 +43,11 @@ namespace gestaoDeClientesArtigosTheStore
             formularios.frmCompras_LinhasCompras frmCompras_LinhasCompras = new formularios.frmCompras_LinhasCompras();
             frmCompras_LinhasCompras.ShowDialog();
         }
+
+        private void button_Nova_Venda_Click(object sender, EventArgs e)
+        {
+            formularios.frmCaixa frmCaixa = new formularios.frmCaixa();
+            frmCaixa.ShowDialog();
+        }
     }
 }

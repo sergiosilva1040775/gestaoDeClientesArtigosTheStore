@@ -34,7 +34,7 @@
             this.label_Stock = new System.Windows.Forms.Label();
             this.label_Valor_Unitario = new System.Windows.Forms.Label();
             this.textBox_ID = new System.Windows.Forms.TextBox();
-            this.textBoxlabel_descricao = new System.Windows.Forms.TextBox();
+            this.textBox_descricao = new System.Windows.Forms.TextBox();
             this.textBox_Valor_Unitario = new System.Windows.Forms.TextBox();
             this.textBox_Stock = new System.Windows.Forms.TextBox();
             this.button_Adicionar = new System.Windows.Forms.Button();
@@ -99,13 +99,13 @@
             this.textBox_ID.Size = new System.Drawing.Size(164, 20);
             this.textBox_ID.TabIndex = 5;
             // 
-            // textBoxlabel_descricao
+            // textBox_descricao
             // 
-            this.textBoxlabel_descricao.Location = new System.Drawing.Point(93, 207);
-            this.textBoxlabel_descricao.MaxLength = 12;
-            this.textBoxlabel_descricao.Name = "textBoxlabel_descricao";
-            this.textBoxlabel_descricao.Size = new System.Drawing.Size(164, 20);
-            this.textBoxlabel_descricao.TabIndex = 6;
+            this.textBox_descricao.Location = new System.Drawing.Point(93, 207);
+            this.textBox_descricao.MaxLength = 12;
+            this.textBox_descricao.Name = "textBox_descricao";
+            this.textBox_descricao.Size = new System.Drawing.Size(164, 20);
+            this.textBox_descricao.TabIndex = 6;
             // 
             // textBox_Valor_Unitario
             // 
@@ -130,6 +130,7 @@
             this.button_Adicionar.TabIndex = 9;
             this.button_Adicionar.Text = "Adicionar";
             this.button_Adicionar.UseVisualStyleBackColor = true;
+            this.button_Adicionar.Click += new System.EventHandler(this.button_Adicionar_Click);
             // 
             // button_Actualizar
             // 
@@ -139,6 +140,7 @@
             this.button_Actualizar.TabIndex = 10;
             this.button_Actualizar.Text = "Actualizar";
             this.button_Actualizar.UseVisualStyleBackColor = true;
+            this.button_Actualizar.Click += new System.EventHandler(this.button_Actualizar_Click);
             // 
             // button_Delete
             // 
@@ -148,6 +150,7 @@
             this.button_Delete.TabIndex = 11;
             this.button_Delete.Text = "Apagar";
             this.button_Delete.UseVisualStyleBackColor = true;
+            this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
             // 
             // button_LimparCampos
             // 
@@ -157,6 +160,7 @@
             this.button_LimparCampos.TabIndex = 12;
             this.button_LimparCampos.Text = "Limpar Campos";
             this.button_LimparCampos.UseVisualStyleBackColor = true;
+            this.button_LimparCampos.Click += new System.EventHandler(this.button_LimparCampos_Click);
             // 
             // frmGestaoArtigo
             // 
@@ -169,7 +173,7 @@
             this.Controls.Add(this.button_Adicionar);
             this.Controls.Add(this.textBox_Stock);
             this.Controls.Add(this.textBox_Valor_Unitario);
-            this.Controls.Add(this.textBoxlabel_descricao);
+            this.Controls.Add(this.textBox_descricao);
             this.Controls.Add(this.textBox_ID);
             this.Controls.Add(this.label_Stock);
             this.Controls.Add(this.label_Valor_Unitario);
@@ -181,6 +185,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestão de Artigos";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.frmGestaoArtigo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,7 +200,7 @@
         private System.Windows.Forms.Label label_Stock;
         private System.Windows.Forms.Label label_Valor_Unitario;
         private System.Windows.Forms.TextBox textBox_ID;
-        private System.Windows.Forms.TextBox textBoxlabel_descricao;
+        private System.Windows.Forms.TextBox textBox_descricao;
         private System.Windows.Forms.TextBox textBox_Valor_Unitario;
         private System.Windows.Forms.TextBox textBox_Stock;
         private System.Windows.Forms.Button button_Adicionar;

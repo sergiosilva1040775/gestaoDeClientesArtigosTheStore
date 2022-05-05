@@ -22,7 +22,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
                 textBox_Contacto.Text,
                 textBox_PalavraChave.Text);
 
-            if (codigoFTH >= 0)
+            if (codigoFTH > 0)
             {
                 MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mostrarErrosValidacao(codigoFTH);
@@ -43,7 +43,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             (int codigoFTH, Models.funcionario clienteCC, string mensagemDeErrooFTH) = funcionarioHander.ValidarFuncionarioUpdate(textBox_Id.Text, textBox_numFuncionario.Text, textBox_Nome.Text,
                  textBox_Contacto.Text,
                  textBox_PalavraChave.Text);
-            if (codigoFTH >= 0)
+            if (codigoFTH > 0)
             {
                 MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mostrarErrosValidacao(codigoFTH);
@@ -62,7 +62,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             LimparCor();
             Handlers.funcionarioHander funcionarioHander = new Handlers.funcionarioHander();
             (int codigoFTH, Models.funcionario clienteCC, string mensagemDeErrooFTH) = funcionarioHander.ValidarFuncionarioApagar (textBox_Id.Text);
-            if (codigoFTH >= 0)
+            if (codigoFTH > 0)
             {
                 MessageBox.Show(this.Text, mensagemDeErrooFTH, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mostrarErrosValidacao(codigoFTH);

@@ -123,7 +123,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
                 textBox_Foto.Text,
                 textBox_PalavraChave.Text);
 
-            if (codigoFTH >= 0)
+            if (codigoFTH > 0)
             {
                 MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mostrarErrosValidacao(codigoFTH);
@@ -154,7 +154,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
                 textBox_Foto.Text,
                 textBox_PalavraChave.Text);
 
-            if (codigoFTH >= 0)
+            if (codigoFTH > 0)
             {
                 MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mostrarErrosValidacao(codigoFTH);
@@ -175,7 +175,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             LimparCor();
             Handlers.clienteHander clienteHanders = new Handlers.clienteHander();
             (int codigoFTH, Models.cliente clienteCC, string mensagemDeErrooFTH) = clienteHanders.ValidarClienteApagar(textBox_Id.Text);
-            if (codigoFTH >= 0)
+            if (codigoFTH > 0)
             {
                 MessageBox.Show(this.Text, mensagemDeErrooFTH, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mostrarErrosValidacao(codigoFTH);

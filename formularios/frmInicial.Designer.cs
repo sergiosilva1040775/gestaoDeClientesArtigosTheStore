@@ -38,6 +38,7 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_gerirClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.cartãoDeClienteComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_Nova_Venda = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +82,7 @@
             // ToolStripMenuItem_gerirEspecialidades
             // 
             this.ToolStripMenuItem_gerirEspecialidades.Name = "ToolStripMenuItem_gerirEspecialidades";
-            this.ToolStripMenuItem_gerirEspecialidades.Size = new System.Drawing.Size(99, 22);
+            this.ToolStripMenuItem_gerirEspecialidades.Size = new System.Drawing.Size(218, 22);
             this.ToolStripMenuItem_gerirEspecialidades.Text = "Gerir";
             this.ToolStripMenuItem_gerirEspecialidades.Click += new System.EventHandler(this.ToolStripMenuItem_gerirEspecialidades_Click);
             // 
@@ -122,11 +123,23 @@
             this.cartãoDeClienteComprasToolStripMenuItem.Text = "Cartão de Cliente/Compras";
             this.cartãoDeClienteComprasToolStripMenuItem.Click += new System.EventHandler(this.cartãoDeClienteComprasToolStripMenuItem_Click);
             // 
+            // button_Nova_Venda
+            // 
+            this.button_Nova_Venda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Nova_Venda.Location = new System.Drawing.Point(126, 52);
+            this.button_Nova_Venda.Name = "button_Nova_Venda";
+            this.button_Nova_Venda.Size = new System.Drawing.Size(180, 120);
+            this.button_Nova_Venda.TabIndex = 1;
+            this.button_Nova_Venda.Text = "Nova Venda";
+            this.button_Nova_Venda.UseVisualStyleBackColor = true;
+            this.button_Nova_Venda.Click += new System.EventHandler(this.button_Nova_Venda_Click);
+            // 
             // frmInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(449, 215);
+            this.Controls.Add(this.button_Nova_Venda);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
@@ -154,6 +167,7 @@
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_gerirClientes;
         private System.Windows.Forms.ToolStripMenuItem cartãoDeClienteComprasToolStripMenuItem;
+        private System.Windows.Forms.Button button_Nova_Venda;
     }
 }
 
