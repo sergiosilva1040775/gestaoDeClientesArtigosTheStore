@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.dataGridView_Clientes = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label_Id = new System.Windows.Forms.Label();
+            this.label_descricao = new System.Windows.Forms.Label();
+            this.label_Stock = new System.Windows.Forms.Label();
+            this.label_Valor_Unitario = new System.Windows.Forms.Label();
             this.textBox_ID = new System.Windows.Forms.TextBox();
-            this.textBox_SNS = new System.Windows.Forms.TextBox();
-            this.textBox_NomeApelido = new System.Windows.Forms.TextBox();
-            this.textBox_Contacto = new System.Windows.Forms.TextBox();
+            this.textBoxlabel_descricao = new System.Windows.Forms.TextBox();
+            this.textBox_Valor_Unitario = new System.Windows.Forms.TextBox();
+            this.textBox_Stock = new System.Windows.Forms.TextBox();
             this.button_Adicionar = new System.Windows.Forms.Button();
             this.button_Actualizar = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
@@ -55,41 +55,41 @@
             this.dataGridView_Clientes.Size = new System.Drawing.Size(476, 154);
             this.dataGridView_Clientes.TabIndex = 0;
             // 
-            // label1
+            // label_Id
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 179);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Número NIF";
+            this.label_Id.AutoSize = true;
+            this.label_Id.Location = new System.Drawing.Point(12, 179);
+            this.label_Id.Name = "label_Id";
+            this.label_Id.Size = new System.Drawing.Size(56, 13);
+            this.label_Id.TabIndex = 1;
+            this.label_Id.Text = "Número Id";
             // 
-            // label2
+            // label_descricao
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 207);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Número SNS";
+            this.label_descricao.AutoSize = true;
+            this.label_descricao.Location = new System.Drawing.Point(12, 207);
+            this.label_descricao.Name = "label_descricao";
+            this.label_descricao.Size = new System.Drawing.Size(55, 13);
+            this.label_descricao.TabIndex = 2;
+            this.label_descricao.Text = "Descrição";
             // 
-            // label3
+            // label_Stock
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 266);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Contacto";
+            this.label_Stock.AutoSize = true;
+            this.label_Stock.Location = new System.Drawing.Point(12, 266);
+            this.label_Stock.Name = "label_Stock";
+            this.label_Stock.Size = new System.Drawing.Size(68, 13);
+            this.label_Stock.TabIndex = 4;
+            this.label_Stock.Text = "Stock Actual";
             // 
-            // label4
+            // label_Valor_Unitario
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 238);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Nome Apelido";
+            this.label_Valor_Unitario.AutoSize = true;
+            this.label_Valor_Unitario.Location = new System.Drawing.Point(12, 238);
+            this.label_Valor_Unitario.Name = "label_Valor_Unitario";
+            this.label_Valor_Unitario.Size = new System.Drawing.Size(70, 13);
+            this.label_Valor_Unitario.TabIndex = 3;
+            this.label_Valor_Unitario.Text = "Valor Unitário";
             // 
             // textBox_ID
             // 
@@ -99,28 +99,28 @@
             this.textBox_ID.Size = new System.Drawing.Size(164, 20);
             this.textBox_ID.TabIndex = 5;
             // 
-            // textBox_SNS
+            // textBoxlabel_descricao
             // 
-            this.textBox_SNS.Location = new System.Drawing.Point(93, 207);
-            this.textBox_SNS.MaxLength = 12;
-            this.textBox_SNS.Name = "textBox_SNS";
-            this.textBox_SNS.Size = new System.Drawing.Size(164, 20);
-            this.textBox_SNS.TabIndex = 6;
+            this.textBoxlabel_descricao.Location = new System.Drawing.Point(93, 207);
+            this.textBoxlabel_descricao.MaxLength = 12;
+            this.textBoxlabel_descricao.Name = "textBoxlabel_descricao";
+            this.textBoxlabel_descricao.Size = new System.Drawing.Size(164, 20);
+            this.textBoxlabel_descricao.TabIndex = 6;
             // 
-            // textBox_NomeApelido
+            // textBox_Valor_Unitario
             // 
-            this.textBox_NomeApelido.Location = new System.Drawing.Point(91, 238);
-            this.textBox_NomeApelido.Name = "textBox_NomeApelido";
-            this.textBox_NomeApelido.Size = new System.Drawing.Size(164, 20);
-            this.textBox_NomeApelido.TabIndex = 7;
+            this.textBox_Valor_Unitario.Location = new System.Drawing.Point(91, 238);
+            this.textBox_Valor_Unitario.Name = "textBox_Valor_Unitario";
+            this.textBox_Valor_Unitario.Size = new System.Drawing.Size(164, 20);
+            this.textBox_Valor_Unitario.TabIndex = 7;
             // 
-            // textBox_Contacto
+            // textBox_Stock
             // 
-            this.textBox_Contacto.Location = new System.Drawing.Point(91, 266);
-            this.textBox_Contacto.MaxLength = 9;
-            this.textBox_Contacto.Name = "textBox_Contacto";
-            this.textBox_Contacto.Size = new System.Drawing.Size(164, 20);
-            this.textBox_Contacto.TabIndex = 8;
+            this.textBox_Stock.Location = new System.Drawing.Point(91, 266);
+            this.textBox_Stock.MaxLength = 9;
+            this.textBox_Stock.Name = "textBox_Stock";
+            this.textBox_Stock.Size = new System.Drawing.Size(164, 20);
+            this.textBox_Stock.TabIndex = 8;
             // 
             // button_Adicionar
             // 
@@ -167,21 +167,20 @@
             this.Controls.Add(this.button_Delete);
             this.Controls.Add(this.button_Actualizar);
             this.Controls.Add(this.button_Adicionar);
-            this.Controls.Add(this.textBox_Contacto);
-            this.Controls.Add(this.textBox_NomeApelido);
-            this.Controls.Add(this.textBox_SNS);
+            this.Controls.Add(this.textBox_Stock);
+            this.Controls.Add(this.textBox_Valor_Unitario);
+            this.Controls.Add(this.textBoxlabel_descricao);
             this.Controls.Add(this.textBox_ID);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_Stock);
+            this.Controls.Add(this.label_Valor_Unitario);
+            this.Controls.Add(this.label_descricao);
+            this.Controls.Add(this.label_Id);
             this.Controls.Add(this.dataGridView_Clientes);
             this.MaximizeBox = false;
             this.Name = "frmGestaoArtigo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Clientes";
+            this.Text = "Gestão de Artigos";
             this.TopMost = true;
-
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -191,14 +190,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView_Clientes;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label_Id;
+        private System.Windows.Forms.Label label_descricao;
+        private System.Windows.Forms.Label label_Stock;
+        private System.Windows.Forms.Label label_Valor_Unitario;
         private System.Windows.Forms.TextBox textBox_ID;
-        private System.Windows.Forms.TextBox textBox_SNS;
-        private System.Windows.Forms.TextBox textBox_NomeApelido;
-        private System.Windows.Forms.TextBox textBox_Contacto;
+        private System.Windows.Forms.TextBox textBoxlabel_descricao;
+        private System.Windows.Forms.TextBox textBox_Valor_Unitario;
+        private System.Windows.Forms.TextBox textBox_Stock;
         private System.Windows.Forms.Button button_Adicionar;
         private System.Windows.Forms.Button button_Actualizar;
         private System.Windows.Forms.Button button_Delete;

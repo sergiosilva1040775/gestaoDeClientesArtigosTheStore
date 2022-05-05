@@ -126,11 +126,11 @@
     <Compile Include="formularios\frmCaixa.Designer.cs">
       <DependentUpon>frmCaixa.cs</DependentUpon>
     </Compile>
-    <Compile Include="formularios\frmGestaoFuncionario.cs">
+    <Compile Include="formularios\frmGestaoClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\frmGestaoFuncionario.Designer.cs">
-      <DependentUpon>frmGestaoFuncionario.cs</DependentUpon>
+    <Compile Include="formularios\frmGestaoClientes.Designer.cs">
+      <DependentUpon>frmGestaoClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\frmInicial.cs">
       <SubType>Form</SubType>
@@ -144,11 +144,11 @@
     <Compile Include="formularios\frmCompras_LinhasCompras.Designer.cs">
       <DependentUpon>frmCompras_LinhasCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="formularios\frmGestaoCliente.cs">
+    <Compile Include="formularios\frmGestaoFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formularios\frmGestaoCliente.Designer.cs">
-      <DependentUpon>frmGestaoCliente.cs</DependentUpon>
+    <Compile Include="formularios\frmGestaoFuncionario.Designer.cs">
+      <DependentUpon>frmGestaoFuncionario.cs</DependentUpon>
     </Compile>
     <Compile Include="Handlers\artigoHander.cs" />
     <Compile Include="Handlers\compraHander.cs" />
@@ -169,8 +169,8 @@
     <EmbeddedResource Include="formularios\frmCaixa.resx">
       <DependentUpon>frmCaixa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formularios\frmGestaoFuncionario.resx">
-      <DependentUpon>frmGestaoFuncionario.cs</DependentUpon>
+    <EmbeddedResource Include="formularios\frmGestaoClientes.resx">
+      <DependentUpon>frmGestaoClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\frmInicial.resx">
       <DependentUpon>frmInicial.cs</DependentUpon>
@@ -178,8 +178,8 @@
     <EmbeddedResource Include="formularios\frmCompras_LinhasCompras.resx">
       <DependentUpon>frmCompras_LinhasCompras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formularios\frmGestaoCliente.resx">
-      <DependentUpon>frmGestaoCliente.cs</DependentUpon>
+    <EmbeddedResource Include="formularios\frmGestaoFuncionario.resx">
+      <DependentUpon>frmGestaoFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
