@@ -81,34 +81,37 @@
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.sairToolStripMenuItem.Text = "&Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // especialidadesToolStripMenuItem
             // 
             this.especialidadesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_gerirEspecialidades});
             this.especialidadesToolStripMenuItem.Name = "especialidadesToolStripMenuItem";
-            this.especialidadesToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
-            this.especialidadesToolStripMenuItem.Text = "Especialidades";
+            this.especialidadesToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.especialidadesToolStripMenuItem.Text = "Funcionários";
             // 
             // ToolStripMenuItem_gerirEspecialidades
             // 
             this.ToolStripMenuItem_gerirEspecialidades.Name = "ToolStripMenuItem_gerirEspecialidades";
             this.ToolStripMenuItem_gerirEspecialidades.Size = new System.Drawing.Size(99, 22);
             this.ToolStripMenuItem_gerirEspecialidades.Text = "Gerir";
+            this.ToolStripMenuItem_gerirEspecialidades.Click += new System.EventHandler(this.ToolStripMenuItem_gerirEspecialidades_Click);
             // 
             // médicosToolStripMenuItem
             // 
             this.médicosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_gerirMedicos});
             this.médicosToolStripMenuItem.Name = "médicosToolStripMenuItem";
-            this.médicosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.médicosToolStripMenuItem.Text = "Médicos";
+            this.médicosToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.médicosToolStripMenuItem.Text = "Clientes";
             // 
             // ToolStripMenuItem_gerirMedicos
             // 
             this.ToolStripMenuItem_gerirMedicos.Name = "ToolStripMenuItem_gerirMedicos";
-            this.ToolStripMenuItem_gerirMedicos.Size = new System.Drawing.Size(99, 22);
+            this.ToolStripMenuItem_gerirMedicos.Size = new System.Drawing.Size(180, 22);
             this.ToolStripMenuItem_gerirMedicos.Text = "Gerir";
+            this.ToolStripMenuItem_gerirMedicos.Click += new System.EventHandler(this.ToolStripMenuItem_gerirMedicos_Click);
             // 
             // clientesToolStripMenuItem
             // 
