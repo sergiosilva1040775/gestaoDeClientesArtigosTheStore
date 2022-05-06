@@ -22,7 +22,6 @@
             artigoModel.stock = _stockOk;
 
             return (0, artigoModel, null);
-
         }
 
         public (int errorId, Models.artigo, string mensagemDeErro) ValidarArtigoUpdate(string _descricao, string _valor_unitario, string _stock, string _id_artigo)
@@ -62,8 +61,6 @@
             artigoModel.id_artigo = _id_artigoOk;
 
             return (0, artigoModel, null);
-
-
         }
     }
 
