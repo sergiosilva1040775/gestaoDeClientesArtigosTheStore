@@ -33,11 +33,11 @@
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.especialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_gerirEspecialidades = new System.Windows.Forms.ToolStripMenuItem();
+            this.cartãoDeClienteComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.médicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_gerirMedicos = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_gerirClientes = new System.Windows.Forms.ToolStripMenuItem();
-            this.cartãoDeClienteComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button_Nova_Venda = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +86,13 @@
             this.ToolStripMenuItem_gerirEspecialidades.Text = "Gerir";
             this.ToolStripMenuItem_gerirEspecialidades.Click += new System.EventHandler(this.ToolStripMenuItem_gerirEspecialidades_Click);
             // 
+            // cartãoDeClienteComprasToolStripMenuItem
+            // 
+            this.cartãoDeClienteComprasToolStripMenuItem.Name = "cartãoDeClienteComprasToolStripMenuItem";
+            this.cartãoDeClienteComprasToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.cartãoDeClienteComprasToolStripMenuItem.Text = "Cartão de Cliente/Compras";
+            this.cartãoDeClienteComprasToolStripMenuItem.Click += new System.EventHandler(this.cartãoDeClienteComprasToolStripMenuItem_Click);
+            // 
             // médicosToolStripMenuItem
             // 
             this.médicosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -97,7 +104,7 @@
             // ToolStripMenuItem_gerirMedicos
             // 
             this.ToolStripMenuItem_gerirMedicos.Name = "ToolStripMenuItem_gerirMedicos";
-            this.ToolStripMenuItem_gerirMedicos.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_gerirMedicos.Size = new System.Drawing.Size(99, 22);
             this.ToolStripMenuItem_gerirMedicos.Text = "Gerir";
             this.ToolStripMenuItem_gerirMedicos.Click += new System.EventHandler(this.ToolStripMenuItem_gerirMedicos_Click);
             // 
@@ -112,23 +119,16 @@
             // ToolStripMenuItem_gerirClientes
             // 
             this.ToolStripMenuItem_gerirClientes.Name = "ToolStripMenuItem_gerirClientes";
-            this.ToolStripMenuItem_gerirClientes.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_gerirClientes.Size = new System.Drawing.Size(99, 22);
             this.ToolStripMenuItem_gerirClientes.Text = "Gerir";
             this.ToolStripMenuItem_gerirClientes.Click += new System.EventHandler(this.ToolStripMenuItem_gerirClientes_Click);
-            // 
-            // cartãoDeClienteComprasToolStripMenuItem
-            // 
-            this.cartãoDeClienteComprasToolStripMenuItem.Name = "cartãoDeClienteComprasToolStripMenuItem";
-            this.cartãoDeClienteComprasToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.cartãoDeClienteComprasToolStripMenuItem.Text = "Cartão de Cliente/Compras";
-            this.cartãoDeClienteComprasToolStripMenuItem.Click += new System.EventHandler(this.cartãoDeClienteComprasToolStripMenuItem_Click);
             // 
             // button_Nova_Venda
             // 
             this.button_Nova_Venda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Nova_Venda.Location = new System.Drawing.Point(126, 52);
+            this.button_Nova_Venda.Location = new System.Drawing.Point(31, 39);
             this.button_Nova_Venda.Name = "button_Nova_Venda";
-            this.button_Nova_Venda.Size = new System.Drawing.Size(180, 120);
+            this.button_Nova_Venda.Size = new System.Drawing.Size(377, 164);
             this.button_Nova_Venda.TabIndex = 1;
             this.button_Nova_Venda.Text = "Nova Venda";
             this.button_Nova_Venda.UseVisualStyleBackColor = true;
