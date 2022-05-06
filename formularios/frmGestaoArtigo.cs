@@ -1,10 +1,14 @@
-﻿using System;
+﻿using gestaoDeClientesArtigosTheStore.DAL;
+using gestaoDeClientesArtigosTheStore.Models;
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace gestaoDeClientesArtigosTheStore.formularios
 {
     public partial class frmGestaoArtigo : Form
     {
+        artigoDAL dal = new artigoDAL();
         public frmGestaoArtigo()
         {
             InitializeComponent();
@@ -14,6 +18,17 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         {
             LimparConteudo();
             LimparCor();
+            carregarListaArtigos();
+        }
+
+        private void carregarListaArtigos()
+        {        
+
+            List<artigo> artigo = dal.listarEspecialidadesMedica();
+
+            dataGridView_Artigos.DataSource = artigo;
+
+            dataGridView_Artigos.Columns["id_artigo"].Visible = false;
         }
 
         private void LimparCor()

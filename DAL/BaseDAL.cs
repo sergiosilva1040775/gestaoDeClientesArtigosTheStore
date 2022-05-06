@@ -9,7 +9,7 @@ namespace gestaoDeClientesArtigosTheStore.DAL
     static class BaseDAL
     { 
         
-        public static string connStr { get; } = "datasource=localhost;port=3306;username=root;password=;database=gestaoclinica;SslMode=none";
+        public static string connStr { get; } = "datasource=localhost;port=3306;username=root;password=;database=thestorealdiartigosclientes;SslMode=none";
 
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView_Clientes = new System.Windows.Forms.DataGridView();
+            this.dataGridView_Artigos = new System.Windows.Forms.DataGridView();
             this.label_Id = new System.Windows.Forms.Label();
             this.label_descricao = new System.Windows.Forms.Label();
             this.label_Stock = new System.Windows.Forms.Label();
@@ -41,19 +41,19 @@
             this.button_Actualizar = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.button_LimparCampos = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Artigos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView_Clientes
+            // dataGridView_Artigos
             // 
-            this.dataGridView_Clientes.AllowUserToAddRows = false;
-            this.dataGridView_Clientes.AllowUserToDeleteRows = false;
-            this.dataGridView_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Clientes.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView_Clientes.Name = "dataGridView_Clientes";
-            this.dataGridView_Clientes.ReadOnly = true;
-            this.dataGridView_Clientes.Size = new System.Drawing.Size(476, 154);
-            this.dataGridView_Clientes.TabIndex = 0;
+            this.dataGridView_Artigos.AllowUserToAddRows = false;
+            this.dataGridView_Artigos.AllowUserToDeleteRows = false;
+            this.dataGridView_Artigos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Artigos.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView_Artigos.Name = "dataGridView_Artigos";
+            this.dataGridView_Artigos.ReadOnly = true;
+            this.dataGridView_Artigos.Size = new System.Drawing.Size(476, 154);
+            this.dataGridView_Artigos.TabIndex = 0;
             // 
             // label_Id
             // 
@@ -179,14 +179,14 @@
             this.Controls.Add(this.label_Valor_Unitario);
             this.Controls.Add(this.label_descricao);
             this.Controls.Add(this.label_Id);
-            this.Controls.Add(this.dataGridView_Clientes);
+            this.Controls.Add(this.dataGridView_Artigos);
             this.MaximizeBox = false;
             this.Name = "frmGestaoArtigo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestão de Artigos";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmGestaoArtigo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Artigos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,7 +194,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView_Clientes;
+        private System.Windows.Forms.DataGridView dataGridView_Artigos;
         private System.Windows.Forms.Label label_Id;
         private System.Windows.Forms.Label label_descricao;
         private System.Windows.Forms.Label label_Stock;
