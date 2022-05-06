@@ -22,6 +22,15 @@
             this.contacto = _contacto;
         }
 
+        public funcionario(int _id, int _numfuncionario, string _nome, string _contacto)
+        //ctor cria construtor prop cria propriedade
+        {
+            this.id = _id;
+            this.numfuncionario = _numfuncionario;           
+            this.nome = _nome;
+            this.contacto = _contacto;
+        }
+
         public funcionario()
         {
 

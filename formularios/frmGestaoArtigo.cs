@@ -2,13 +2,14 @@
 using gestaoDeClientesArtigosTheStore.Models;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace gestaoDeClientesArtigosTheStore.formularios
 {
     public partial class frmGestaoArtigo : Form
     {
-        artigoDAL dal = new artigoDAL();
+        artigoDAL artigoDAL = new artigoDAL();
         public frmGestaoArtigo()
         {
             InitializeComponent();
@@ -22,9 +23,9 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         }
 
         private void carregarListaArtigos()
-        {        
+        {
 
-            List<artigo> artigo = dal.listarEspecialidadesMedica();
+            List<artigo> artigo = artigoDAL.listarArtigosActivos();
 
             dataGridView_Artigos.DataSource = artigo;
 
@@ -77,13 +78,14 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         {
             LimparConteudo();
             LimparCor();
+            carregarListaArtigos();
         }
 
         private void button_Adicionar_Click(object sender, EventArgs e)
         {
             LimparCor();
             Handlers.artigoHander artigoHander = new Handlers.artigoHander();
-            (int codigoFTH, Models.artigo clienteCC, string mensagemDeErrooFTH) = artigoHander.ValidarArtigoInsert(textBox_descricao.Text, textBox_Valor_Unitario.Text,
+            (int codigoFTH, Models.artigo artigoCC, string mensagemDeErrooFTH) = artigoHander.ValidarArtigoInsert(textBox_descricao.Text, textBox_Valor_Unitario.Text,
             textBox_Stock.Text);
 
             if (codigoFTH > 0)
@@ -93,10 +95,16 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             }
             else
             {
-                //vehiclesDAL.vehicleCCGeral = vehicleCC;
-                //(int codigoIn, string respostaIn) = vehiclesDAL.insertVehicle();
-                //if (codigoIn == 1) { MessageBox.Show(mensagemDeErrooFTH,this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
-                //else { MessageBox.Show(mensagemDeErrooFTH,this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                artigoDAL.artigo = artigoCC;
+                (int codigoIn, string respostaIn) = artigoDAL.inserirartigo();
+                if (codigoIn == 1)
+                {
+                    carregarListaArtigos();
+                    LimparConteudo();
+                    LimparCor();
+                    MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else { MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
         }
 
@@ -104,8 +112,10 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         {
             LimparCor();
             Handlers.artigoHander artigoHander = new Handlers.artigoHander();
-            (int codigoFTH, Models.artigo clienteCC, string mensagemDeErrooFTH) = artigoHander.ValidarArtigoUpdate(textBox_ID.Text, textBox_descricao.Text, textBox_Valor_Unitario.Text,
-            textBox_Stock.Text);
+            (int codigoFTH, Models.artigo artigoCC, string mensagemDeErrooFTH) = artigoHander.ValidarArtigoUpdate(textBox_descricao.Text,
+                textBox_Valor_Unitario.Text,
+               textBox_Stock.Text,
+          textBox_ID.Text);
 
             if (codigoFTH > 0)
             {
@@ -114,10 +124,16 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             }
             else
             {
-                //vehiclesDAL.vehicleCCGeral = vehicleCC;
-                //(int codigoIn, string respostaIn) = vehiclesDAL.insertVehicle();
-                //if (codigoIn == 1) { MessageBox.Show(mensagemDeErrooFTH,this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
-                //else { MessageBox.Show(mensagemDeErrooFTH,this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                artigoDAL.artigo = artigoCC; 
+                (int codigoIn, string respostaIn) = artigoDAL.atualizarArtigoInformacaoGeral();
+                if (codigoIn == 1)
+                {
+                    carregarListaArtigos();
+                    LimparConteudo();
+                    LimparCor();
+                    MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else { MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
         }
 
@@ -125,7 +141,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         {
             LimparCor();
             Handlers.artigoHander artigoHander = new Handlers.artigoHander();
-            (int codigoFTH, Models.artigo clienteCC, string mensagemDeErrooFTH) = artigoHander.ValidarArtigoaApagar(textBox_ID.Text);
+            (int codigoFTH, Models.artigo artigoCC, string mensagemDeErrooFTH) = artigoHander.ValidarArtigoaApagar(textBox_ID.Text);
 
             if (codigoFTH > 0)
             {
@@ -134,10 +150,54 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             }
             else
             {
-                //vehiclesDAL.vehicleCCGeral = vehicleCC;
-                //(int codigoIn, string respostaIn) = vehiclesDAL.insertVehicle();
-                //if (codigoIn == 1) { MessageBox.Show(mensagemDeErrooFTH,this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
-                //else { MessageBox.Show(mensagemDeErrooFTH,this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                artigoDAL.artigo = artigoCC;
+                (int codigoIn, string respostaIn) = artigoDAL.desactivarartigo ();
+                if (codigoIn == 1)
+                {
+                    carregarListaArtigos();
+                    LimparConteudo();
+                    LimparCor();
+                    MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else { MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+        }
+
+        private void dataGridView_Artigos_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            textBox_ID.Text = dataGridView_Artigos[0, dataGridView_Artigos.CurrentRow.Index].Value.ToString();
+            textBox_descricao.Text = dataGridView_Artigos[1, dataGridView_Artigos.CurrentRow.Index].Value.ToString();
+            textBox_Valor_Unitario.Text = dataGridView_Artigos[2, dataGridView_Artigos.CurrentRow.Index].Value.ToString();
+            textBox_Stock.Text = dataGridView_Artigos[3, dataGridView_Artigos.CurrentRow.Index].Value.ToString();
+        }
+
+        private void textBox_Valor_Unitario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+          (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_Stock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace gestaoDeClientesArtigosTheStore.DAL
 {
@@ -20,32 +21,32 @@ namespace gestaoDeClientesArtigosTheStore.DAL
         {
             int registo = 0;
 
-          
-                string query = @"UPDATE artigo set  descricao=@descricao, valor_unitario=@valor_unitario, stock=@stock WHERE id_artigo =@id_artigo ";
 
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+            string query = "UPDATE artigo set  descricao=@descricao, valor_unitario=@valor_unitario, stock=@stock WHERE id_artigo = @id_artigo;";
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query))
                 {
-                    using (MySqlCommand cmd = new MySqlCommand(query))
+                    cmd.Parameters.AddWithValue("@descricao", _artigo.descricao);
+                    cmd.Parameters.AddWithValue("@valor_unitario", _artigo.valor_unitario);    
+                    cmd.Parameters.AddWithValue("@stock", _artigo.stock);
+                    cmd.Parameters.AddWithValue("@id_artigo", _artigo.id_artigo);             
+                    cmd.Connection = conn;
+                    conn.Open();
+                    try
                     {
-                        cmd.Connection = conn;
-                        conn.Open();
-                        cmd.Parameters.AddWithValue("@descricao", _artigo.descricao );
-                        cmd.Parameters.AddWithValue("@valor_unitario", _artigo.valor_unitario );
-                        cmd.Parameters.AddWithValue("@stock", _artigo.stock );
-                        cmd.Parameters.AddWithValue("@id_artigo ", _artigo.id_artigo );
-                        try
-                        {
-                            registo = cmd.ExecuteNonQuery();
-                            return (registo, null);
-                        }
-                        catch (Exception e)
-                        {
-                            return (-1, e.Message.ToString());
-                        }
+                        registo = cmd.ExecuteNonQuery();
+                        return (registo, "Artigo actualizado com sucesso");
+                    }
+                    catch (Exception e)
+                    {
+                        return (-1, e.Message.ToString());
                     }
                 }
+            }
 
-       
+
 
 
         }
@@ -64,11 +65,11 @@ namespace gestaoDeClientesArtigosTheStore.DAL
                     cmd.Connection = conn;
                     conn.Open();
 
-                    cmd.Parameters.AddWithValue("@id_artigo ", _artigo.id_artigo);
+                    cmd.Parameters.AddWithValue("@id_artigo", _artigo.id_artigo);
                     try
                     {
                         registo = cmd.ExecuteNonQuery();
-                        return (registo, null);
+                        return (registo, "Artigo desativado com sucesso");
                     }
                     catch (Exception e)
                     {
@@ -91,13 +92,13 @@ namespace gestaoDeClientesArtigosTheStore.DAL
                 {
                     cmd.Connection = conn;
                     conn.Open();
-               
+
                     cmd.Parameters.AddWithValue("@stock", _artigo.stock);
-                    cmd.Parameters.AddWithValue("@id_artigo ", _artigo.id_artigo);
+                    cmd.Parameters.AddWithValue("@id_artigo", _artigo.id_artigo);
                     try
                     {
                         registo = cmd.ExecuteNonQuery();
-                        return (registo, null);
+                        return (registo, "Artigo actualizado com sucesso");
                     }
                     catch (Exception e)
                     {
@@ -111,15 +112,15 @@ namespace gestaoDeClientesArtigosTheStore.DAL
         public (int registo, string erro) inserirartigo()
         {
             int registo = 0;
-          
-                string query = "INSERT INTO artigo (descricao, valor_unitario, stock)" +
-                                               "VALUES(@descricao, @valor_unitario, @stock)";
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+
+            string query = "INSERT INTO artigo (descricao, valor_unitario, stock, ativo )" +
+                                           "VALUES(@descricao, @valor_unitario, @stock, 1)";
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query))
                 {
-                    using (MySqlCommand cmd = new MySqlCommand(query))
-                    {
-                        cmd.Connection = conn;
-                        conn.Open();
+                    cmd.Connection = conn;
+                    conn.Open();
 
                     cmd.Parameters.AddWithValue("@descricao", _artigo.descricao);
                     cmd.Parameters.AddWithValue("@valor_unitario", _artigo.valor_unitario);
@@ -127,26 +128,26 @@ namespace gestaoDeClientesArtigosTheStore.DAL
                     cmd.Parameters.AddWithValue("@id_artigo ", _artigo.id_artigo);
 
                     try
-                        {
-                            registo = cmd.ExecuteNonQuery();
-                            return (registo, null);
-                        }
-                        catch (Exception e)
-                        {
-                            return (0, e.Message.ToString());
-                        }
+                    {
+                        registo = cmd.ExecuteNonQuery();
+                        return (registo, "Artigo adicionado com sucesso");
+                    }
+                    catch (Exception e)
+                    {
+                        return (0, e.Message.ToString());
                     }
                 }
-        
+            }
+
 
         }
 
 
-        public List<artigo> listarEspecialidadesMedica()
+        public List<artigo> listarArtigosActivos()
         {
             List<artigo> ListarArtigo = new List<artigo>();
 
-            string query = "SELECT * FROM artigo";
+            string query = "SELECT * FROM artigo Where ativo = 1";
 
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
@@ -165,7 +166,7 @@ namespace gestaoDeClientesArtigosTheStore.DAL
                                 ListarArtigo.Add(new artigo(
                                     Int32.Parse(sdr["id_artigo"].ToString()),
                                     sdr["descricao"].ToString(),
-                                 double .Parse(sdr["valor_unitario"].ToString()),
+                                 double.Parse(sdr["valor_unitario"].ToString()),
                                         double.Parse(sdr["stock"].ToString())
                                     ));
                             }

@@ -14,11 +14,13 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             InitializeComponent();
         }
 
+        funcionarioDAL funcionarioDAL = new funcionarioDAL();
+
         private void button_Adicionar_Click(object sender, EventArgs e)
         {
             LimparCor();
             Handlers.funcionarioHander funcionarioHander = new Handlers.funcionarioHander();
-            (int codigoFTH, Models.funcionario  clienteCC, string mensagemDeErrooFTH) = funcionarioHander.ValidarFuncionarioInsert(textBox_numFuncionario.Text,textBox_Nome.Text,
+            (int codigoFTH, Models.funcionario funcionarioCC, string mensagemDeErrooFTH) = funcionarioHander.ValidarFuncionarioInsert(textBox_numFuncionario.Text,textBox_Nome.Text,
                 textBox_Contacto.Text,
                 textBox_PalavraChave.Text);
 
@@ -29,10 +31,16 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             }
             else
             {
-                //vehiclesDAL.vehicleCCGeral = vehicleCC;
-                //(int codigoIn, string respostaIn) = vehiclesDAL.insertVehicle();
-                //if (codigoIn == 1) { MessageBox.Show(mensagemDeErrooFTH,this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
-                //else { MessageBox.Show(mensagemDeErrooFTH,this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                funcionarioDAL .funcionario  = funcionarioCC;
+                (int codigoIn, string respostaIn) = funcionarioDAL.inserirfuncionario();
+                if (codigoIn == 1)
+                {
+                    carregarListaFuncionario();
+                    LimparConteudo();
+                    LimparCor();
+                    MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else { MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
         }
 
@@ -40,7 +48,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         {
             LimparCor();
             Handlers.funcionarioHander funcionarioHander = new Handlers.funcionarioHander();
-            (int codigoFTH, Models.funcionario clienteCC, string mensagemDeErrooFTH) = funcionarioHander.ValidarFuncionarioUpdate(textBox_Id.Text, textBox_numFuncionario.Text, textBox_Nome.Text,
+            (int codigoFTH, Models.funcionario funcionarioCC, string mensagemDeErrooFTH) = funcionarioHander.ValidarFuncionarioUpdate(textBox_Id.Text, textBox_numFuncionario.Text, textBox_Nome.Text,
                  textBox_Contacto.Text,
                  textBox_PalavraChave.Text);
             if (codigoFTH > 0)
@@ -50,10 +58,16 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             }
             else
             {
-                //vehiclesDAL.vehicleCCGeral = vehicleCC;
-                //(int codigoIn, string respostaIn) = vehiclesDAL.insertVehicle();
-                //if (codigoIn == 1) { MessageBox.Show(mensagemDeErrooFTH,this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
-                //else { MessageBox.Show(mensagemDeErrooFTH,this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                funcionarioDAL.funcionario = funcionarioCC;
+                (int codigoIn, string respostaIn) = funcionarioDAL.actualizarfuncionario ();
+                if (codigoIn == 1)
+                {
+                    carregarListaFuncionario();
+                    LimparConteudo();
+                    LimparCor();
+                    MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else { MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
         }
 
@@ -61,7 +75,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         {
             LimparCor();
             Handlers.funcionarioHander funcionarioHander = new Handlers.funcionarioHander();
-            (int codigoFTH, Models.funcionario clienteCC, string mensagemDeErrooFTH) = funcionarioHander.ValidarFuncionarioApagar (textBox_Id.Text);
+            (int codigoFTH, Models.funcionario funcionarioCC, string mensagemDeErrooFTH) = funcionarioHander.ValidarFuncionarioApagar (textBox_Id.Text);
             if (codigoFTH > 0)
             {
                 MessageBox.Show(this.Text, mensagemDeErrooFTH, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -69,10 +83,16 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             }
             else
             {
-                //vehiclesDAL.vehicleCCGeral = vehicleCC;
-                //(int codigoIn, string respostaIn) = vehiclesDAL.insertVehicle();
-                //if (codigoIn == 1) {MessageBox.Show(mensagemDeErrooFTH,this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
-                //else MessageBox.Show(mensagemDeErrooFTH,this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);}
+                funcionarioDAL.funcionario = funcionarioCC;
+                (int codigoIn, string respostaIn) = funcionarioDAL.desactivarfuncionario ();
+                if (codigoIn == 1)
+                {
+                    carregarListaFuncionario();
+                    LimparConteudo();
+                    LimparCor();
+                    MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else { MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
         }
 
@@ -86,8 +106,18 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         {
             LimparConteudo();
             LimparCor();
+            carregarListaFuncionario();
         }
+        private void carregarListaFuncionario()
+        {
 
+            List<funcionario > funcionario = funcionarioDAL.listarFuncionarioActivos ();
+
+            dataGridView_Funcionarios.DataSource = funcionario;
+
+            dataGridView_Funcionarios.Columns["id"].Visible = false;
+            dataGridView_Funcionarios.Columns["pass"].Visible = false;
+        }
 
         private void LimparCor()
         {
@@ -136,6 +166,16 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             textBox_Contacto.Clear();
             textBox_PalavraChave.Clear();
             textBox_numFuncionario.Clear();
+
+        }
+
+        private void dataGridView_Funcionarios_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            textBox_Id.Text = dataGridView_Funcionarios[0, dataGridView_Funcionarios.CurrentRow.Index].Value.ToString();
+
+            textBox_numFuncionario.Text = dataGridView_Funcionarios["numfuncionario", dataGridView_Funcionarios.CurrentRow.Index].Value.ToString();
+            textBox_Nome.Text = dataGridView_Funcionarios["nome", dataGridView_Funcionarios.CurrentRow.Index].Value.ToString();
+            textBox_Contacto.Text = dataGridView_Funcionarios["contacto", dataGridView_Funcionarios.CurrentRow.Index].Value.ToString();
 
         }
     }

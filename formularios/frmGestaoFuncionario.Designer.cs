@@ -32,7 +32,7 @@
             this.button_Delete = new System.Windows.Forms.Button();
             this.button_Actualizar = new System.Windows.Forms.Button();
             this.button_Adicionar = new System.Windows.Forms.Button();
-            this.dataGridView_Medicos = new System.Windows.Forms.DataGridView();
+            this.dataGridView_Funcionarios = new System.Windows.Forms.DataGridView();
             this.textBox_Nome = new System.Windows.Forms.TextBox();
             this.textBox_Id = new System.Windows.Forms.TextBox();
             this.label_Nome = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@
             this.label_PalavraChave = new System.Windows.Forms.Label();
             this.textBox_numFuncionario = new System.Windows.Forms.TextBox();
             this.label_numFuncionario = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Medicos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Funcionarios)).BeginInit();
             this.SuspendLayout();
             // 
             // button_LimparCampos
@@ -86,16 +86,17 @@
             this.button_Adicionar.UseVisualStyleBackColor = true;
             this.button_Adicionar.Click += new System.EventHandler(this.button_Adicionar_Click);
             // 
-            // dataGridView_Medicos
+            // dataGridView_Funcionarios
             // 
-            this.dataGridView_Medicos.AllowUserToAddRows = false;
-            this.dataGridView_Medicos.AllowUserToDeleteRows = false;
-            this.dataGridView_Medicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Medicos.Location = new System.Drawing.Point(11, 15);
-            this.dataGridView_Medicos.Name = "dataGridView_Medicos";
-            this.dataGridView_Medicos.ReadOnly = true;
-            this.dataGridView_Medicos.Size = new System.Drawing.Size(476, 154);
-            this.dataGridView_Medicos.TabIndex = 13;
+            this.dataGridView_Funcionarios.AllowUserToAddRows = false;
+            this.dataGridView_Funcionarios.AllowUserToDeleteRows = false;
+            this.dataGridView_Funcionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Funcionarios.Location = new System.Drawing.Point(11, 15);
+            this.dataGridView_Funcionarios.Name = "dataGridView_Funcionarios";
+            this.dataGridView_Funcionarios.ReadOnly = true;
+            this.dataGridView_Funcionarios.Size = new System.Drawing.Size(476, 154);
+            this.dataGridView_Funcionarios.TabIndex = 13;
+            this.dataGridView_Funcionarios.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Funcionarios_MouseDoubleClick);
             // 
             // textBox_Nome
             // 
@@ -199,14 +200,14 @@
             this.Controls.Add(this.button_Delete);
             this.Controls.Add(this.button_Actualizar);
             this.Controls.Add(this.button_Adicionar);
-            this.Controls.Add(this.dataGridView_Medicos);
+            this.Controls.Add(this.dataGridView_Funcionarios);
             this.MaximizeBox = false;
             this.Name = "frmGestaoFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Funcionários";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmGestaoFuncionario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Medicos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Funcionarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,7 +219,7 @@
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.Button button_Actualizar;
         private System.Windows.Forms.Button button_Adicionar;
-        private System.Windows.Forms.DataGridView dataGridView_Medicos;
+        private System.Windows.Forms.DataGridView dataGridView_Funcionarios;
         private System.Windows.Forms.TextBox textBox_Nome;
         private System.Windows.Forms.TextBox textBox_Id;
         private System.Windows.Forms.Label label_Nome;

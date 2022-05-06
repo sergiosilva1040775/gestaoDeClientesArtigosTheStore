@@ -12,7 +12,7 @@
             double.TryParse(_valor_unitario, out _valor_unitarioOutOk);
             if (_valor_unitarioOutOk == 0) { return (3, null, "Valor Unitário no formato incorreto"); }
 
-            if (_stock.Length == 0) { return (4, null, "Falta  Valor Unitário"); }
+            if (_stock.Length == 0) { return (4, null, "Falta  stock"); }
             double _stockOk = 0;
             double.TryParse(_stock, out _stockOk);
             if (_stockOk == 0) { return (4, null, "Valor stock incorreto"); }

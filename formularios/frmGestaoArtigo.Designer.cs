@@ -54,6 +54,7 @@
             this.dataGridView_Artigos.ReadOnly = true;
             this.dataGridView_Artigos.Size = new System.Drawing.Size(476, 154);
             this.dataGridView_Artigos.TabIndex = 0;
+            this.dataGridView_Artigos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Artigos_MouseDoubleClick);
             // 
             // label_Id
             // 
@@ -94,15 +95,16 @@
             // textBox_ID
             // 
             this.textBox_ID.Location = new System.Drawing.Point(93, 179);
-            this.textBox_ID.MaxLength = 9;
+            this.textBox_ID.MaxLength = 99999;
             this.textBox_ID.Name = "textBox_ID";
+            this.textBox_ID.ReadOnly = true;
             this.textBox_ID.Size = new System.Drawing.Size(164, 20);
             this.textBox_ID.TabIndex = 5;
             // 
             // textBox_descricao
             // 
             this.textBox_descricao.Location = new System.Drawing.Point(93, 207);
-            this.textBox_descricao.MaxLength = 12;
+            this.textBox_descricao.MaxLength = 99999;
             this.textBox_descricao.Name = "textBox_descricao";
             this.textBox_descricao.Size = new System.Drawing.Size(164, 20);
             this.textBox_descricao.TabIndex = 6;
@@ -110,17 +112,20 @@
             // textBox_Valor_Unitario
             // 
             this.textBox_Valor_Unitario.Location = new System.Drawing.Point(91, 238);
+            this.textBox_Valor_Unitario.MaxLength = 99999;
             this.textBox_Valor_Unitario.Name = "textBox_Valor_Unitario";
             this.textBox_Valor_Unitario.Size = new System.Drawing.Size(164, 20);
             this.textBox_Valor_Unitario.TabIndex = 7;
+            this.textBox_Valor_Unitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Valor_Unitario_KeyPress);
             // 
             // textBox_Stock
             // 
             this.textBox_Stock.Location = new System.Drawing.Point(91, 266);
-            this.textBox_Stock.MaxLength = 9;
+            this.textBox_Stock.MaxLength = 99999;
             this.textBox_Stock.Name = "textBox_Stock";
             this.textBox_Stock.Size = new System.Drawing.Size(164, 20);
             this.textBox_Stock.TabIndex = 8;
+            this.textBox_Stock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Stock_KeyPress);
             // 
             // button_Adicionar
             // 
