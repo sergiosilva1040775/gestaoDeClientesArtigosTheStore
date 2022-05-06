@@ -126,9 +126,9 @@
             // button_Nova_Venda
             // 
             this.button_Nova_Venda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Nova_Venda.Location = new System.Drawing.Point(104, 91);
+            this.button_Nova_Venda.Location = new System.Drawing.Point(114, 53);
             this.button_Nova_Venda.Name = "button_Nova_Venda";
-            this.button_Nova_Venda.Size = new System.Drawing.Size(262, 80);
+            this.button_Nova_Venda.Size = new System.Drawing.Size(221, 135);
             this.button_Nova_Venda.TabIndex = 1;
             this.button_Nova_Venda.Text = "Nova Venda";
             this.button_Nova_Venda.UseVisualStyleBackColor = true;
