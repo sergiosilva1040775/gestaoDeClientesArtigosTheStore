@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace gestaoDeClientesArtigosTheStore.DAL
 {
+
     public class clienteDAL
     {
         private string connStr = BaseDAL.connStr;

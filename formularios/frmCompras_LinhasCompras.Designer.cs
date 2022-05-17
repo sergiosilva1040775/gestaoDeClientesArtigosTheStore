@@ -81,7 +81,7 @@
             this.dataGridView_ComprasEfectuadas.AllowUserToAddRows = false;
             this.dataGridView_ComprasEfectuadas.AllowUserToDeleteRows = false;
             this.dataGridView_ComprasEfectuadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_ComprasEfectuadas.Location = new System.Drawing.Point(9, 120);
+            this.dataGridView_ComprasEfectuadas.Location = new System.Drawing.Point(9, 121);
             this.dataGridView_ComprasEfectuadas.Name = "dataGridView_ComprasEfectuadas";
             this.dataGridView_ComprasEfectuadas.ReadOnly = true;
             this.dataGridView_ComprasEfectuadas.Size = new System.Drawing.Size(311, 154);

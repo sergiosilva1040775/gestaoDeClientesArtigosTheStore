@@ -2,6 +2,7 @@
 
 namespace gestaoDeClientesArtigosTheStore.Handlers
 {
+
     public class clienteHander
     {
         bool IsValidEmail(string email)
