@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace gestaoDeClientesArtigosTheStore.DAL
 {
+
     public class artigoDAL
     {
         private string connStr = BaseDAL.connStr;

@@ -2,6 +2,7 @@
 {
     public class artigo
     {
+
         public int id_artigo { get; set; }
 
         public string descricao { get; set; }

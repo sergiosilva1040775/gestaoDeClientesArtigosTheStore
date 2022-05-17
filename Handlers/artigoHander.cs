@@ -1,5 +1,6 @@
 ﻿namespace gestaoDeClientesArtigosTheStore.Handlers
 {
+
     public class artigoHander
     {
         Models.artigo artigoModel = new Models.artigo();
