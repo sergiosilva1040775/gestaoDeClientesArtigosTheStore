@@ -25,6 +25,16 @@
             this.id_funcionario = _id_funcionario;
         }
 
+        public compra(int _id_compras, double _valor, string _data, int _pontos)
+        //ctor cria construtor prop cria propriedade
+        {
+            this.id_compras = _id_compras;
+            this.valor = _valor;
+            this.data = _data;
+            this.pontos = _pontos;
+
+        }
+
         public compra()
         {
 

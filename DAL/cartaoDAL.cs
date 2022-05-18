@@ -22,16 +22,18 @@ namespace gestaoDeClientesArtigosTheStore.DAL
             set { this._cartao = value; }
         }
 
-        public (string erro, string descricaoErro, string numeroCartao, string numeroPontos) listarFuncionarioActivos()
+        public ( string numeroCartao, string numeroPontos) obterPontosCartao()
         {
             List<cliente> ListarCliente = new List<cliente>();
-
-            string query = "SELECT num_cartao, pontos	 FROM  cartao id_cliente = @id_cliente";
+            string numeroCartao="X";
+            string numeroPontos = "X";
+            string query = "SELECT num_cartao, pontos	 FROM  cartao where id_cliente = @id_cliente";
 
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@id_cliente", _cliente.id);
                     //cmd.Connection = conn;
                     conn.Open();
 
@@ -42,26 +44,14 @@ namespace gestaoDeClientesArtigosTheStore.DAL
                         {
                             while (sdr.Read())
                             {
-                                ListarCliente.Add(new cliente(
-                                    Int32.Parse(sdr["id"].ToString()),
-                                    sdr["nome"].ToString(),
-                                    sdr["morada"].ToString(),
-                                    sdr["telefone"].ToString(),
-                                    sdr["e_mail"].ToString(),
-                                    sdr["contribuinte"].ToString(),
-                                    sdr["localidade"].ToString(),
-                                Int32.Parse(sdr["num_cartao"].ToString()),
-                                sdr["fotografia"].ToString()));
-                            }
-
-
-
-
+                                numeroCartao = sdr["num_cartao"].ToString();
+                                numeroPontos = sdr["pontos"].ToString();
+                                   }
                         }
                     }
                 }
             }
-            return ListarCliente;
+            return ( numeroCartao, numeroPontos);
         }
 
 

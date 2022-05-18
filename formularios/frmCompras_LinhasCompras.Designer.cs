@@ -85,8 +85,10 @@
             this.dataGridView_ComprasEfectuadas.Location = new System.Drawing.Point(9, 121);
             this.dataGridView_ComprasEfectuadas.Name = "dataGridView_ComprasEfectuadas";
             this.dataGridView_ComprasEfectuadas.ReadOnly = true;
-            this.dataGridView_ComprasEfectuadas.Size = new System.Drawing.Size(311, 154);
+            this.dataGridView_ComprasEfectuadas.Size = new System.Drawing.Size(572, 154);
             this.dataGridView_ComprasEfectuadas.TabIndex = 8;
+            this.dataGridView_ComprasEfectuadas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_ComprasEfectuadas_CellContentClick);
+            this.dataGridView_ComprasEfectuadas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_ComprasEfectuadas_MouseDoubleClick);
             // 
             // label_ComprasEfectuadas
             // 
@@ -114,7 +116,7 @@
             this.dataGridView_ProdutosComprados.Location = new System.Drawing.Point(9, 304);
             this.dataGridView_ProdutosComprados.Name = "dataGridView_ProdutosComprados";
             this.dataGridView_ProdutosComprados.ReadOnly = true;
-            this.dataGridView_ProdutosComprados.Size = new System.Drawing.Size(311, 154);
+            this.dataGridView_ProdutosComprados.Size = new System.Drawing.Size(572, 154);
             this.dataGridView_ProdutosComprados.TabIndex = 10;
             // 
             // button_Pesquisar
@@ -125,6 +127,7 @@
             this.button_Pesquisar.TabIndex = 23;
             this.button_Pesquisar.Text = "Pesquisar";
             this.button_Pesquisar.UseVisualStyleBackColor = true;
+            this.button_Pesquisar.Click += new System.EventHandler(this.button_Pesquisar_Click);
             // 
             // textBox_NumeroCartao
             // 
@@ -134,12 +137,13 @@
             this.textBox_NumeroCartao.ReadOnly = true;
             this.textBox_NumeroCartao.Size = new System.Drawing.Size(116, 20);
             this.textBox_NumeroCartao.TabIndex = 24;
+            this.textBox_NumeroCartao.Visible = false;
             // 
             // frmCompras_LinhasCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 470);
+            this.ClientSize = new System.Drawing.Size(598, 470);
             this.Controls.Add(this.textBox_NumeroCartao);
             this.Controls.Add(this.button_Pesquisar);
             this.Controls.Add(this.label_ProdutosComprados);
