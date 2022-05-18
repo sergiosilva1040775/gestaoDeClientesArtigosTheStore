@@ -2,7 +2,6 @@
 using gestaoDeClientesArtigosTheStore.Models;
 using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace gestaoDeClientesArtigosTheStore.formularios
@@ -81,61 +80,8 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             carregarListaArtigos();
         }
 
-        private void button_Adicionar_Click(object sender, EventArgs e)
-        {
-            LimparCor();
-            Handlers.artigoHander artigoHander = new Handlers.artigoHander();
-            (int codigoFTH, Models.artigo artigoCC, string mensagemDeErrooFTH) = artigoHander.ValidarArtigoInsert(textBox_descricao.Text, textBox_Valor_Unitario.Text,
-            textBox_Stock.Text);
 
-            if (codigoFTH > 0)
-            {
-                MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                mostrarErrosValidacao(codigoFTH);
-            }
-            else
-            {
-                artigoDAL.artigo = artigoCC;
-                (int codigoIn, string respostaIn) = artigoDAL.inserirartigo();
-                if (codigoIn == 1)
-                {
-                    carregarListaArtigos();
-                    LimparConteudo();
-                    LimparCor();
-                    MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else { MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            }
-        }
 
-        private void button_Actualizar_Click(object sender, EventArgs e)
-        {
-            LimparCor();
-            Handlers.artigoHander artigoHander = new Handlers.artigoHander();
-            (int codigoFTH, Models.artigo artigoCC, string mensagemDeErrooFTH) = artigoHander.ValidarArtigoUpdate(textBox_descricao.Text,
-                textBox_Valor_Unitario.Text,
-               textBox_Stock.Text,
-          textBox_ID.Text);
-
-            if (codigoFTH > 0)
-            {
-                MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                mostrarErrosValidacao(codigoFTH);
-            }
-            else
-            {
-                artigoDAL.artigo = artigoCC; 
-                (int codigoIn, string respostaIn) = artigoDAL.atualizarArtigoInformacaoGeral();
-                if (codigoIn == 1)
-                {
-                    carregarListaArtigos();
-                    LimparConteudo();
-                    LimparCor();
-                    MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else { MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            }
-        }
 
         private void button_Delete_Click(object sender, EventArgs e)
         {
@@ -151,7 +97,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             else
             {
                 artigoDAL.artigo = artigoCC;
-                (int codigoIn, string respostaIn) = artigoDAL.desactivarartigo ();
+                (int codigoIn, string respostaIn) = artigoDAL.desactivarArtigo();
                 if (codigoIn == 1)
                 {
                     carregarListaArtigos();
@@ -198,6 +144,63 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void button_Adicionar_Click(object sender, EventArgs e)
+        {
+            LimparCor();
+            Handlers.artigoHander artigoHander = new Handlers.artigoHander();
+            (int codigoFTH, Models.artigo artigoCC, string mensagemDeErrooFTH) = artigoHander.ValidarArtigoInsert (textBox_descricao.Text,
+                textBox_Valor_Unitario.Text,
+               textBox_Stock.Text);
+
+            if (codigoFTH > 0)
+            {
+                MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mostrarErrosValidacao(codigoFTH);
+            }
+            else
+            {
+                artigoDAL.artigo = artigoCC;
+                (int codigoIn, string respostaIn) = artigoDAL.inserirArtigo();
+                if (codigoIn == 1)
+                {
+                    carregarListaArtigos();
+                    LimparConteudo();
+                    LimparCor();
+                    MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else { MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+        }
+
+        private void button_Actualizar_Click(object sender, EventArgs e)
+        {
+            LimparCor();
+            Handlers.artigoHander artigoHander = new Handlers.artigoHander();
+            (int codigoFTH, Models.artigo artigoCC, string mensagemDeErrooFTH) = artigoHander.ValidarArtigoUpdate(textBox_descricao.Text,
+                textBox_Valor_Unitario.Text,
+               textBox_Stock.Text,
+          textBox_ID.Text);
+
+            if (codigoFTH > 0)
+            {
+                MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mostrarErrosValidacao(codigoFTH);
+            }
+            else
+            {
+                artigoDAL.artigo = artigoCC;
+                (int codigoIn, string respostaIn) = artigoDAL.atualizarArtigoInformacaoGeral();
+                if (codigoIn == 1)
+                {
+                    carregarListaArtigos();
+                    LimparConteudo();
+                    LimparCor();
+                    MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else { MessageBox.Show(respostaIn, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
         }
     }

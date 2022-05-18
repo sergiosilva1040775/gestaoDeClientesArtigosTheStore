@@ -53,7 +53,7 @@ namespace gestaoDeClientesArtigosTheStore.DAL
         }
 
 
-        public (int registo, string erro) desactivarartigo()
+        public (int registo, string erro) desactivarArtigo()
         {
             int registo = 0;
 
@@ -110,7 +110,7 @@ namespace gestaoDeClientesArtigosTheStore.DAL
 
         }
 
-        public (int registo, string erro) inserirartigo()
+        public (int registo, string erro) inserirArtigo()
         {
             int registo = 0;
 

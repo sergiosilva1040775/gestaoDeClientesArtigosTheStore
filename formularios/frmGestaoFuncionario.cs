@@ -20,10 +20,9 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         {
             LimparCor();
             Handlers.funcionarioHander funcionarioHander = new Handlers.funcionarioHander();
-            (int codigoFTH, Models.funcionario funcionarioCC, string mensagemDeErrooFTH) = funcionarioHander.ValidarFuncionarioInsert(textBox_numFuncionario.Text,textBox_Nome.Text,
+            (int codigoFTH, Models.funcionario funcionarioCC, string mensagemDeErrooFTH) = funcionarioHander.ValidarFuncionarioInsert(textBox_numFuncionario.Text, textBox_Nome.Text,
                 textBox_Contacto.Text,
                 textBox_PalavraChave.Text);
-
             if (codigoFTH > 0)
             {
                 MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -31,8 +30,8 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             }
             else
             {
-                funcionarioDAL .funcionario  = funcionarioCC;
-                (int codigoIn, string respostaIn) = funcionarioDAL.inserirfuncionario();
+                funcionarioDAL.funcionario = funcionarioCC;
+                (int codigoIn, string respostaIn) = funcionarioDAL.inserirFuncionario();
                 if (codigoIn == 1)
                 {
                     carregarListaFuncionario();
@@ -59,7 +58,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             else
             {
                 funcionarioDAL.funcionario = funcionarioCC;
-                (int codigoIn, string respostaIn) = funcionarioDAL.actualizarfuncionario ();
+                (int codigoIn, string respostaIn) = funcionarioDAL.actualizarFuncionario ();
                 if (codigoIn == 1)
                 {
                     carregarListaFuncionario();
@@ -84,7 +83,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             else
             {
                 funcionarioDAL.funcionario = funcionarioCC;
-                (int codigoIn, string respostaIn) = funcionarioDAL.desactivarfuncionario ();
+                (int codigoIn, string respostaIn) = funcionarioDAL.desactivarFuncionario ();
                 if (codigoIn == 1)
                 {
                     carregarListaFuncionario();

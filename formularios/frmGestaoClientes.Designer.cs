@@ -31,7 +31,6 @@
             this.button_LimparCampos = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.button_Actualizar = new System.Windows.Forms.Button();
-            this.button_Adicionar = new System.Windows.Forms.Button();
             this.textBox_Nome = new System.Windows.Forms.TextBox();
             this.textBox_Id = new System.Windows.Forms.TextBox();
             this.label_Nome = new System.Windows.Forms.Label();
@@ -47,8 +46,6 @@
             this.label_Localidade = new System.Windows.Forms.Label();
             this.textBox_Contribuite = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox_PalavraChave = new System.Windows.Forms.TextBox();
-            this.label_PalavraChave = new System.Windows.Forms.Label();
             this.textBox_Foto = new System.Windows.Forms.TextBox();
             this.label_Fotografia = new System.Windows.Forms.Label();
             this.textBoxNumeroCliente = new System.Windows.Forms.TextBox();
@@ -58,7 +55,7 @@
             // 
             // button_LimparCampos
             // 
-            this.button_LimparCampos.Location = new System.Drawing.Point(349, 264);
+            this.button_LimparCampos.Location = new System.Drawing.Point(358, 236);
             this.button_LimparCampos.Name = "button_LimparCampos";
             this.button_LimparCampos.Size = new System.Drawing.Size(88, 23);
             this.button_LimparCampos.TabIndex = 25;
@@ -68,7 +65,7 @@
             // 
             // button_Delete
             // 
-            this.button_Delete.Location = new System.Drawing.Point(349, 236);
+            this.button_Delete.Location = new System.Drawing.Point(358, 208);
             this.button_Delete.Name = "button_Delete";
             this.button_Delete.Size = new System.Drawing.Size(88, 23);
             this.button_Delete.TabIndex = 24;
@@ -78,7 +75,7 @@
             // 
             // button_Actualizar
             // 
-            this.button_Actualizar.Location = new System.Drawing.Point(349, 210);
+            this.button_Actualizar.Location = new System.Drawing.Point(358, 182);
             this.button_Actualizar.Name = "button_Actualizar";
             this.button_Actualizar.Size = new System.Drawing.Size(88, 23);
             this.button_Actualizar.TabIndex = 23;
@@ -86,19 +83,9 @@
             this.button_Actualizar.UseVisualStyleBackColor = true;
             this.button_Actualizar.Click += new System.EventHandler(this.button_Actualizar_Click);
             // 
-            // button_Adicionar
-            // 
-            this.button_Adicionar.Location = new System.Drawing.Point(349, 182);
-            this.button_Adicionar.Name = "button_Adicionar";
-            this.button_Adicionar.Size = new System.Drawing.Size(88, 23);
-            this.button_Adicionar.TabIndex = 22;
-            this.button_Adicionar.Text = "Adicionar";
-            this.button_Adicionar.UseVisualStyleBackColor = true;
-            this.button_Adicionar.Click += new System.EventHandler(this.button_Adicionar_Click);
-            // 
             // textBox_Nome
             // 
-            this.textBox_Nome.Location = new System.Drawing.Point(126, 210);
+            this.textBox_Nome.Location = new System.Drawing.Point(142, 210);
             this.textBox_Nome.Name = "textBox_Nome";
             this.textBox_Nome.Size = new System.Drawing.Size(164, 20);
             this.textBox_Nome.TabIndex = 19;
@@ -106,7 +93,7 @@
             // textBox_Id
             // 
             this.textBox_Id.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox_Id.Location = new System.Drawing.Point(126, 182);
+            this.textBox_Id.Location = new System.Drawing.Point(142, 182);
             this.textBox_Id.Name = "textBox_Id";
             this.textBox_Id.ReadOnly = true;
             this.textBox_Id.Size = new System.Drawing.Size(164, 20);
@@ -140,10 +127,11 @@
             this.dataGridView_Especialidades.ReadOnly = true;
             this.dataGridView_Especialidades.Size = new System.Drawing.Size(476, 154);
             this.dataGridView_Especialidades.TabIndex = 13;
+            this.dataGridView_Especialidades.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Especialidades_MouseDoubleClick);
             // 
             // textBox_Morada
             // 
-            this.textBox_Morada.Location = new System.Drawing.Point(126, 236);
+            this.textBox_Morada.Location = new System.Drawing.Point(142, 236);
             this.textBox_Morada.Name = "textBox_Morada";
             this.textBox_Morada.Size = new System.Drawing.Size(164, 20);
             this.textBox_Morada.TabIndex = 27;
@@ -159,7 +147,7 @@
             // 
             // textBox_Email
             // 
-            this.textBox_Email.Location = new System.Drawing.Point(126, 289);
+            this.textBox_Email.Location = new System.Drawing.Point(142, 289);
             this.textBox_Email.Name = "textBox_Email";
             this.textBox_Email.Size = new System.Drawing.Size(164, 20);
             this.textBox_Email.TabIndex = 31;
@@ -175,7 +163,7 @@
             // 
             // textBox_Contacto
             // 
-            this.textBox_Contacto.Location = new System.Drawing.Point(126, 263);
+            this.textBox_Contacto.Location = new System.Drawing.Point(142, 263);
             this.textBox_Contacto.Name = "textBox_Contacto";
             this.textBox_Contacto.Size = new System.Drawing.Size(164, 20);
             this.textBox_Contacto.TabIndex = 29;
@@ -191,7 +179,7 @@
             // 
             // textBox_Localidade
             // 
-            this.textBox_Localidade.Location = new System.Drawing.Point(126, 341);
+            this.textBox_Localidade.Location = new System.Drawing.Point(142, 341);
             this.textBox_Localidade.Name = "textBox_Localidade";
             this.textBox_Localidade.Size = new System.Drawing.Size(164, 20);
             this.textBox_Localidade.TabIndex = 35;
@@ -207,7 +195,7 @@
             // 
             // textBox_Contribuite
             // 
-            this.textBox_Contribuite.Location = new System.Drawing.Point(126, 315);
+            this.textBox_Contribuite.Location = new System.Drawing.Point(142, 315);
             this.textBox_Contribuite.Name = "textBox_Contribuite";
             this.textBox_Contribuite.Size = new System.Drawing.Size(164, 20);
             this.textBox_Contribuite.TabIndex = 33;
@@ -221,26 +209,10 @@
             this.label7.TabIndex = 32;
             this.label7.Text = "Número  de Contribuinte";
             // 
-            // textBox_PalavraChave
-            // 
-            this.textBox_PalavraChave.Location = new System.Drawing.Point(126, 420);
-            this.textBox_PalavraChave.Name = "textBox_PalavraChave";
-            this.textBox_PalavraChave.PasswordChar = 'ª';
-            this.textBox_PalavraChave.Size = new System.Drawing.Size(164, 20);
-            this.textBox_PalavraChave.TabIndex = 41;
-            // 
-            // label_PalavraChave
-            // 
-            this.label_PalavraChave.AutoSize = true;
-            this.label_PalavraChave.Location = new System.Drawing.Point(11, 421);
-            this.label_PalavraChave.Name = "label_PalavraChave";
-            this.label_PalavraChave.Size = new System.Drawing.Size(77, 13);
-            this.label_PalavraChave.TabIndex = 40;
-            this.label_PalavraChave.Text = "Palavra Chave";
-            // 
             // textBox_Foto
             // 
-            this.textBox_Foto.Location = new System.Drawing.Point(126, 394);
+            this.textBox_Foto.Enabled = false;
+            this.textBox_Foto.Location = new System.Drawing.Point(142, 394);
             this.textBox_Foto.Name = "textBox_Foto";
             this.textBox_Foto.Size = new System.Drawing.Size(164, 20);
             this.textBox_Foto.TabIndex = 39;
@@ -256,7 +228,8 @@
             // 
             // textBoxNumeroCliente
             // 
-            this.textBoxNumeroCliente.Location = new System.Drawing.Point(126, 368);
+            this.textBoxNumeroCliente.Enabled = false;
+            this.textBoxNumeroCliente.Location = new System.Drawing.Point(142, 368);
             this.textBoxNumeroCliente.Name = "textBoxNumeroCliente";
             this.textBoxNumeroCliente.Size = new System.Drawing.Size(164, 20);
             this.textBoxNumeroCliente.TabIndex = 37;
@@ -275,8 +248,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 457);
-            this.Controls.Add(this.textBox_PalavraChave);
-            this.Controls.Add(this.label_PalavraChave);
             this.Controls.Add(this.textBox_Foto);
             this.Controls.Add(this.label_Fotografia);
             this.Controls.Add(this.textBoxNumeroCliente);
@@ -294,7 +265,6 @@
             this.Controls.Add(this.button_LimparCampos);
             this.Controls.Add(this.button_Delete);
             this.Controls.Add(this.button_Actualizar);
-            this.Controls.Add(this.button_Adicionar);
             this.Controls.Add(this.textBox_Nome);
             this.Controls.Add(this.textBox_Id);
             this.Controls.Add(this.label_Nome);
@@ -317,7 +287,6 @@
         private System.Windows.Forms.Button button_LimparCampos;
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.Button button_Actualizar;
-        private System.Windows.Forms.Button button_Adicionar;
         private System.Windows.Forms.TextBox textBox_Nome;
         private System.Windows.Forms.TextBox textBox_Id;
         private System.Windows.Forms.Label label_Nome;
@@ -333,8 +302,6 @@
         private System.Windows.Forms.Label label_Localidade;
         private System.Windows.Forms.TextBox textBox_Contribuite;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox_PalavraChave;
-        private System.Windows.Forms.Label label_PalavraChave;
         private System.Windows.Forms.TextBox textBox_Foto;
         private System.Windows.Forms.Label label_Fotografia;
         private System.Windows.Forms.TextBox textBoxNumeroCliente;

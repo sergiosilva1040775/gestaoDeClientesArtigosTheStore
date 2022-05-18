@@ -24,11 +24,12 @@ namespace gestaoDeClientesArtigosTheStore.Models
 
         public string fotografia { get; set; }
 
-        public string pass { get; set; }
 
 
 
-        public cliente(int _id, string _nome, string _morada, string _telefone, string _e_mail, string _contribuinte, string _localidade, int _num_cartao, string _fotografia, string _pass)
+
+
+        public cliente(int _id, string _nome, string _morada, string _telefone, string _e_mail, string _contribuinte, string _localidade, int _num_cartao, string _fotografia)
         //ctor cria construtor prop cria propriedade
         {
             this.id = _id;
@@ -40,8 +41,12 @@ namespace gestaoDeClientesArtigosTheStore.Models
             this.localidade = _localidade;
             this.num_cartao = _num_cartao;
             this.fotografia = _fotografia;
-            this.pass = _pass;
+
+
+
         }
+
+
 
         public cliente()
         {

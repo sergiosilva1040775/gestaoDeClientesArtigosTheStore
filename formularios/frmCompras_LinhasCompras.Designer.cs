@@ -37,6 +37,7 @@
             this.label_ProdutosComprados = new System.Windows.Forms.Label();
             this.dataGridView_ProdutosComprados = new System.Windows.Forms.DataGridView();
             this.button_Pesquisar = new System.Windows.Forms.Button();
+            this.textBox_NumeroCartao = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ComprasEfectuadas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ProdutosComprados)).BeginInit();
             this.SuspendLayout();
@@ -118,18 +119,28 @@
             // 
             // button_Pesquisar
             // 
-            this.button_Pesquisar.Location = new System.Drawing.Point(155, 29);
+            this.button_Pesquisar.Location = new System.Drawing.Point(149, 29);
             this.button_Pesquisar.Name = "button_Pesquisar";
             this.button_Pesquisar.Size = new System.Drawing.Size(88, 23);
             this.button_Pesquisar.TabIndex = 23;
             this.button_Pesquisar.Text = "Pesquisar";
             this.button_Pesquisar.UseVisualStyleBackColor = true;
             // 
+            // textBox_NumeroCartao
+            // 
+            this.textBox_NumeroCartao.Location = new System.Drawing.Point(179, 78);
+            this.textBox_NumeroCartao.MaxLength = 9;
+            this.textBox_NumeroCartao.Name = "textBox_NumeroCartao";
+            this.textBox_NumeroCartao.ReadOnly = true;
+            this.textBox_NumeroCartao.Size = new System.Drawing.Size(116, 20);
+            this.textBox_NumeroCartao.TabIndex = 24;
+            // 
             // frmCompras_LinhasCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(337, 470);
+            this.Controls.Add(this.textBox_NumeroCartao);
             this.Controls.Add(this.button_Pesquisar);
             this.Controls.Add(this.label_ProdutosComprados);
             this.Controls.Add(this.dataGridView_ProdutosComprados);
@@ -144,6 +155,7 @@
             this.Name = "frmCompras_LinhasCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestão do Cartão";
+            this.Load += new System.EventHandler(this.frmCompras_LinhasCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ComprasEfectuadas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ProdutosComprados)).EndInit();
             this.ResumeLayout(false);
@@ -162,5 +174,6 @@
         private System.Windows.Forms.Label label_ProdutosComprados;
         private System.Windows.Forms.DataGridView dataGridView_ProdutosComprados;
         private System.Windows.Forms.Button button_Pesquisar;
+        private System.Windows.Forms.TextBox textBox_NumeroCartao;
     }
 }

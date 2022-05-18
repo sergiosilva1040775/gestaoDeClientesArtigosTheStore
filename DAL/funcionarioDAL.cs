@@ -21,7 +21,7 @@ namespace gestaoDeClientesArtigosTheStore.DAL
         }
 
 
-        public (int registo, string erro) inserirfuncionario()
+        public (int registo, string erro) inserirFuncionario()
         {
             int registo = 0;
 
@@ -54,7 +54,7 @@ namespace gestaoDeClientesArtigosTheStore.DAL
 
         }
        
-        public (int registo, string erro) actualizarfuncionario()
+        public (int registo, string erro) actualizarFuncionario()
         {
             int registo = 0;
 
@@ -87,7 +87,7 @@ namespace gestaoDeClientesArtigosTheStore.DAL
 
         }
 
-        public (int registo, string erro) desactivarfuncionario()
+        public (int registo, string erro) desactivarFuncionario()
         {
             int registo = 0;
 
