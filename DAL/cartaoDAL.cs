@@ -26,7 +26,7 @@ namespace gestaoDeClientesArtigosTheStore.DAL
         {
             List<cliente> ListarCliente = new List<cliente>();
 
-            string query = "SELECT num_cartao, pontos	 FROM  cartao id_cliente = @id_cliente;
+            string query = "SELECT num_cartao, pontos	 FROM  cartao id_cliente = @id_cliente";
 
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
