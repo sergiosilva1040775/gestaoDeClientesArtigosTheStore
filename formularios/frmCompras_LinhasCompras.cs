@@ -20,7 +20,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         private void carregarListaClientes()
         {
 
-            List<cliente> cliente = clienteDALs.listarFuncionarioActivos();
+            List<cliente> cliente = clienteDALs.listarClientesActivos();
             comboBox_Cliente.DataSource = cliente;
             comboBox_Cliente.DisplayMember = "nome";
             comboBox_Cliente.ValueMember = "id";
@@ -33,7 +33,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
 
         private void button_Pesquisar_Click(object sender, EventArgs e)
         {
-            textBox_ID.Clear();
+            textBox_numeroPontos.Clear();
             textBox_NumeroCartao.Clear();
             dataGridView_ComprasEfectuadas.DataSource = null;
             dataGridView_ProdutosComprados.DataSource = null;
@@ -47,7 +47,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
                 (string numeroCartao, string numeroPontos) = cartaoDALs.obterPontosCartao();
                 if (numeroCartao.Length != 0)
                 {
-                    textBox_ID.Text = numeroPontos;
+                    textBox_numeroPontos.Text = numeroPontos;
                     textBox_NumeroCartao.Text =numeroCartao ;
                     compraDALs.cliente = clienteCC;
                     List<compra> ListarCompra = new List<compra>();

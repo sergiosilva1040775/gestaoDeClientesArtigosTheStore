@@ -28,23 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox_Cliente = new System.Windows.Forms.TextBox();
+            this.textBox_Contacto = new System.Windows.Forms.TextBox();
             this.comboBox_Cliente = new System.Windows.Forms.ComboBox();
             this.label_Contacto = new System.Windows.Forms.Label();
             this.label_Nome = new System.Windows.Forms.Label();
             this.label_NumeroCartao = new System.Windows.Forms.Label();
             this.textBox_NumeroCartao = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox_PontosAcumulados = new System.Windows.Forms.TextBox();
+            this.textBox_numeroPontos = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox_NumFuncionario = new System.Windows.Forms.TextBox();
             this.comboBox_NumeroFuncionario = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox_Id_Cliente = new System.Windows.Forms.TextBox();
+            this.button_pesquisar_cliente = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button_pesquisar_artigos = new System.Windows.Forms.Button();
             this.button_Adicionar = new System.Windows.Forms.Button();
             this.label_Quantidade = new System.Windows.Forms.Label();
             this.textBox_Quantidade = new System.Windows.Forms.TextBox();
@@ -62,14 +65,14 @@
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox_Cliente
+            // textBox_Contacto
             // 
-            this.textBox_Cliente.Location = new System.Drawing.Point(108, 16);
-            this.textBox_Cliente.MaxLength = 9999999;
-            this.textBox_Cliente.Name = "textBox_Cliente";
-            this.textBox_Cliente.Size = new System.Drawing.Size(200, 20);
-            this.textBox_Cliente.TabIndex = 26;
-            this.textBox_Cliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_Contacto.Location = new System.Drawing.Point(108, 16);
+            this.textBox_Contacto.MaxLength = 9999999;
+            this.textBox_Contacto.Name = "textBox_Contacto";
+            this.textBox_Contacto.Size = new System.Drawing.Size(200, 20);
+            this.textBox_Contacto.TabIndex = 26;
+            this.textBox_Contacto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // comboBox_Cliente
             // 
@@ -79,6 +82,7 @@
             this.comboBox_Cliente.Name = "comboBox_Cliente";
             this.comboBox_Cliente.Size = new System.Drawing.Size(200, 21);
             this.comboBox_Cliente.TabIndex = 17;
+            this.comboBox_Cliente.SelectedValueChanged += new System.EventHandler(this.comboBox_Cliente_SelectedValueChanged);
             // 
             // label_Contacto
             // 
@@ -126,15 +130,15 @@
             this.label7.TabIndex = 36;
             this.label7.Text = "Pontos Acumulados";
             // 
-            // textBox_PontosAcumulados
+            // textBox_numeroPontos
             // 
-            this.textBox_PontosAcumulados.Location = new System.Drawing.Point(108, 95);
-            this.textBox_PontosAcumulados.MaxLength = 2;
-            this.textBox_PontosAcumulados.Name = "textBox_PontosAcumulados";
-            this.textBox_PontosAcumulados.ReadOnly = true;
-            this.textBox_PontosAcumulados.Size = new System.Drawing.Size(200, 20);
-            this.textBox_PontosAcumulados.TabIndex = 35;
-            this.textBox_PontosAcumulados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_numeroPontos.Location = new System.Drawing.Point(108, 95);
+            this.textBox_numeroPontos.MaxLength = 2;
+            this.textBox_numeroPontos.Name = "textBox_numeroPontos";
+            this.textBox_numeroPontos.ReadOnly = true;
+            this.textBox_numeroPontos.Size = new System.Drawing.Size(200, 20);
+            this.textBox_numeroPontos.TabIndex = 35;
+            this.textBox_numeroPontos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -172,6 +176,7 @@
             this.comboBox_NumeroFuncionario.Name = "comboBox_NumeroFuncionario";
             this.comboBox_NumeroFuncionario.Size = new System.Drawing.Size(200, 21);
             this.comboBox_NumeroFuncionario.TabIndex = 37;
+            this.comboBox_NumeroFuncionario.SelectedValueChanged += new System.EventHandler(this.comboBox_NumeroFuncionario_SelectedValueChanged);
             // 
             // groupBox1
             // 
@@ -181,32 +186,54 @@
             this.groupBox1.Controls.Add(this.textBox_NumFuncionario);
             this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(325, 88);
+            this.groupBox1.Size = new System.Drawing.Size(413, 88);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Funcionário";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBox_Id_Cliente);
+            this.groupBox2.Controls.Add(this.button_pesquisar_cliente);
             this.groupBox2.Controls.Add(this.label_Contacto);
             this.groupBox2.Controls.Add(this.comboBox_Cliente);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox_Cliente);
-            this.groupBox2.Controls.Add(this.textBox_PontosAcumulados);
+            this.groupBox2.Controls.Add(this.textBox_Contacto);
+            this.groupBox2.Controls.Add(this.textBox_numeroPontos);
             this.groupBox2.Controls.Add(this.label_Nome);
             this.groupBox2.Controls.Add(this.label_NumeroCartao);
             this.groupBox2.Controls.Add(this.textBox_NumeroCartao);
             this.groupBox2.Location = new System.Drawing.Point(12, 102);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(325, 127);
+            this.groupBox2.Size = new System.Drawing.Size(413, 127);
             this.groupBox2.TabIndex = 43;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informção Cliente";
             // 
+            // textBox_Id_Cliente
+            // 
+            this.textBox_Id_Cliente.Location = new System.Drawing.Point(362, 107);
+            this.textBox_Id_Cliente.MaxLength = 2;
+            this.textBox_Id_Cliente.Name = "textBox_Id_Cliente";
+            this.textBox_Id_Cliente.ReadOnly = true;
+            this.textBox_Id_Cliente.Size = new System.Drawing.Size(45, 20);
+            this.textBox_Id_Cliente.TabIndex = 45;
+            this.textBox_Id_Cliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button_pesquisar_cliente
+            // 
+            this.button_pesquisar_cliente.Location = new System.Drawing.Point(314, 19);
+            this.button_pesquisar_cliente.Name = "button_pesquisar_cliente";
+            this.button_pesquisar_cliente.Size = new System.Drawing.Size(82, 58);
+            this.button_pesquisar_cliente.TabIndex = 44;
+            this.button_pesquisar_cliente.Text = "Pesquisar";
+            this.button_pesquisar_cliente.UseVisualStyleBackColor = true;
+            this.button_pesquisar_cliente.Click += new System.EventHandler(this.button_pesquisar_cliente_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(355, 12);
+            this.groupBox3.Location = new System.Drawing.Point(440, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(364, 312);
             this.groupBox3.TabIndex = 44;
@@ -223,6 +250,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button_pesquisar_artigos);
             this.groupBox4.Controls.Add(this.button_Adicionar);
             this.groupBox4.Controls.Add(this.label_Quantidade);
             this.groupBox4.Controls.Add(this.textBox_Quantidade);
@@ -232,10 +260,19 @@
             this.groupBox4.Controls.Add(this.textBox_ArtigoId);
             this.groupBox4.Location = new System.Drawing.Point(12, 235);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(325, 162);
+            this.groupBox4.Size = new System.Drawing.Size(413, 162);
             this.groupBox4.TabIndex = 45;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Artigos";
+            // 
+            // button_pesquisar_artigos
+            // 
+            this.button_pesquisar_artigos.Location = new System.Drawing.Point(314, 19);
+            this.button_pesquisar_artigos.Name = "button_pesquisar_artigos";
+            this.button_pesquisar_artigos.Size = new System.Drawing.Size(82, 58);
+            this.button_pesquisar_artigos.TabIndex = 45;
+            this.button_pesquisar_artigos.Text = "Pesquisar";
+            this.button_pesquisar_artigos.UseVisualStyleBackColor = true;
             // 
             // button_Adicionar
             // 
@@ -303,7 +340,7 @@
             // label_Total
             // 
             this.label_Total.AutoSize = true;
-            this.label_Total.Location = new System.Drawing.Point(479, 337);
+            this.label_Total.Location = new System.Drawing.Point(564, 337);
             this.label_Total.Name = "label_Total";
             this.label_Total.Size = new System.Drawing.Size(31, 13);
             this.label_Total.TabIndex = 47;
@@ -311,7 +348,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(513, 333);
+            this.textBox1.Location = new System.Drawing.Point(598, 333);
             this.textBox1.MaxLength = 9999999;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(200, 20);
@@ -320,7 +357,7 @@
             // 
             // button_FecharCompra
             // 
-            this.button_FecharCompra.Location = new System.Drawing.Point(630, 359);
+            this.button_FecharCompra.Location = new System.Drawing.Point(715, 359);
             this.button_FecharCompra.Name = "button_FecharCompra";
             this.button_FecharCompra.Size = new System.Drawing.Size(82, 58);
             this.button_FecharCompra.TabIndex = 44;
@@ -331,7 +368,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 424);
+            this.ClientSize = new System.Drawing.Size(821, 495);
             this.Controls.Add(this.button_FecharCompra);
             this.Controls.Add(this.label_Total);
             this.Controls.Add(this.textBox1);
@@ -359,14 +396,14 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox_Cliente;
+        private System.Windows.Forms.TextBox textBox_Contacto;
         private System.Windows.Forms.ComboBox comboBox_Cliente;
         private System.Windows.Forms.Label label_Contacto;
         private System.Windows.Forms.Label label_Nome;
         private System.Windows.Forms.Label label_NumeroCartao;
         private System.Windows.Forms.TextBox textBox_NumeroCartao;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox_PontosAcumulados;
+        private System.Windows.Forms.TextBox textBox_numeroPontos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox_NumFuncionario;
@@ -386,5 +423,8 @@
         private System.Windows.Forms.Label label_Total;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button_FecharCompra;
+        private System.Windows.Forms.Button button_pesquisar_cliente;
+        private System.Windows.Forms.Button button_pesquisar_artigos;
+        private System.Windows.Forms.TextBox textBox_Id_Cliente;
     }
 }

@@ -30,7 +30,7 @@
         {
             this.comboBox_Cliente = new System.Windows.Forms.ComboBox();
             this.label_Cliente = new System.Windows.Forms.Label();
-            this.textBox_ID = new System.Windows.Forms.TextBox();
+            this.textBox_numeroPontos = new System.Windows.Forms.TextBox();
             this.label_Pontos = new System.Windows.Forms.Label();
             this.dataGridView_ComprasEfectuadas = new System.Windows.Forms.DataGridView();
             this.label_ComprasEfectuadas = new System.Windows.Forms.Label();
@@ -59,14 +59,14 @@
             this.label_Cliente.TabIndex = 2;
             this.label_Cliente.Text = "Cliente";
             // 
-            // textBox_ID
+            // textBox_numeroPontos
             // 
-            this.textBox_ID.Location = new System.Drawing.Point(9, 78);
-            this.textBox_ID.MaxLength = 9;
-            this.textBox_ID.Name = "textBox_ID";
-            this.textBox_ID.ReadOnly = true;
-            this.textBox_ID.Size = new System.Drawing.Size(164, 20);
-            this.textBox_ID.TabIndex = 7;
+            this.textBox_numeroPontos.Location = new System.Drawing.Point(9, 78);
+            this.textBox_numeroPontos.MaxLength = 9;
+            this.textBox_numeroPontos.Name = "textBox_numeroPontos";
+            this.textBox_numeroPontos.ReadOnly = true;
+            this.textBox_numeroPontos.Size = new System.Drawing.Size(164, 20);
+            this.textBox_numeroPontos.TabIndex = 7;
             // 
             // label_Pontos
             // 
@@ -150,7 +150,7 @@
             this.Controls.Add(this.dataGridView_ProdutosComprados);
             this.Controls.Add(this.label_ComprasEfectuadas);
             this.Controls.Add(this.dataGridView_ComprasEfectuadas);
-            this.Controls.Add(this.textBox_ID);
+            this.Controls.Add(this.textBox_numeroPontos);
             this.Controls.Add(this.label_Pontos);
             this.Controls.Add(this.label_Cliente);
             this.Controls.Add(this.comboBox_Cliente);
@@ -171,7 +171,7 @@
 
         private System.Windows.Forms.ComboBox comboBox_Cliente;
         private System.Windows.Forms.Label label_Cliente;
-        private System.Windows.Forms.TextBox textBox_ID;
+        private System.Windows.Forms.TextBox textBox_numeroPontos;
         private System.Windows.Forms.Label label_Pontos;
         private System.Windows.Forms.DataGridView dataGridView_ComprasEfectuadas;
         private System.Windows.Forms.Label label_ComprasEfectuadas;

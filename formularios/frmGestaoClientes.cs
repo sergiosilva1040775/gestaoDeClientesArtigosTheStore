@@ -24,7 +24,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         private void carregarListaClientes()
         {
 
-            List<cliente> cliente = clienteDALs.listarFuncionarioActivos();
+            List<cliente> cliente = clienteDALs.listarClientesActivos();
 
             dataGridView_Especialidades.DataSource = cliente;
 

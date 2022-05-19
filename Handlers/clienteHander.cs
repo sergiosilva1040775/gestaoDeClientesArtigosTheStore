@@ -25,7 +25,7 @@ namespace gestaoDeClientesArtigosTheStore.Handlers
 
 
         Models.cliente clienteModel = new Models.cliente();
-       
+
         //public (int errorId, Models.cliente, string mensagemDeErro) ValidarClienteInsert(string _nome,
         //    string _morada,
         //    string _telefone,
@@ -71,12 +71,21 @@ namespace gestaoDeClientesArtigosTheStore.Handlers
 
         //}
 
+
+        public (int errorId, Models.cliente, string mensagemDeErro) ValidarSelectClienteByContacto(string _telefone)
+        {
+            if (_telefone.Length == 0 || !IsValidCellPhone(_telefone)) { return (4, null, "Formato do contacto incorrecto"); }
+            clienteModel.telefone = _telefone;
+            return (0, clienteModel, null);
+        }
+
+
         public (int errorId, Models.cliente, string mensagemDeErro) ValidarClienteUpdate(string _nome,
             string _morada,
             string _telefone,
             string _e_mail,
             string _contribuinte,
-            string _localidade,    
+            string _localidade,
             string _id_cliente)
         {
             if (_id_cliente.Length == 0) { return (1, null, "Falta  numero identificador do cliente"); }

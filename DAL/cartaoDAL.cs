@@ -54,7 +54,7 @@ namespace gestaoDeClientesArtigosTheStore.DAL
             return ( numeroCartao, numeroPontos);
         }
 
-
+   
 
     }
 }

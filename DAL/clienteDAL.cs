@@ -121,7 +121,7 @@ namespace gestaoDeClientesArtigosTheStore.DAL
 
         }
 
-        public List<cliente> listarFuncionarioActivos()
+        public List<cliente> listarClientesActivos()
         {
             List<cliente> ListarCliente = new List<cliente>();
 
@@ -162,5 +162,38 @@ namespace gestaoDeClientesArtigosTheStore.DAL
             }
             return ListarCliente;
         }
+
+
+        public string obterClienteByContacto()
+        {
+            string resultadoId = "";
+
+            string query = "SELECT * FROM  clientes Where ativo = 1 And telefone=@telefone";
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@telefone", _cliente.telefone);
+                    //cmd.Connection = conn;
+                    conn.Open();
+
+                    using (MySqlDataReader sdr = cmd.ExecuteReader())
+                    {
+
+                        if (sdr.HasRows)
+                        {
+                            while (sdr.Read())
+                            {
+                                resultadoId = sdr["id"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            return resultadoId;
+        }
+
+
     }
 }
