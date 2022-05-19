@@ -177,5 +177,44 @@ namespace gestaoDeClientesArtigosTheStore.DAL
             }
             return ListarArtigo;
         }
+
+
+     
+
+
+        public artigo listarArtigosActivosById()
+        {
+          
+
+            string query = "SELECT * FROM artigo Where ativo = 1 And id_artigo = @id_artigo;";
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id_artigo", _artigo.id_artigo);
+                    //cmd.Connection = conn;
+                    conn.Open();
+
+                    using (MySqlDataReader sdr = cmd.ExecuteReader())
+                    {
+
+                        if (sdr.HasRows)
+                        {
+                            while (sdr.Read())
+                            {
+                                artigo.id_artigo = Int32.Parse(sdr["id_artigo"].ToString());
+                                artigo.descricao = sdr["descricao"].ToString();
+                                artigo.valor_unitario = double.Parse(sdr["valor_unitario"].ToString());
+                                artigo.stock = double.Parse(sdr["stock"].ToString());
+                                
+                            }
+                        }
+                    }
+                }
+            }
+            return artigo;
+        }
+
     }
 }

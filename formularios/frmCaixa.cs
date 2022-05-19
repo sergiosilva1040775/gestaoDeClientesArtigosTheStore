@@ -13,7 +13,8 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         artigoDAL artigoDAL = new artigoDAL();
         cartaoDAL cartaoDAL = new cartaoDAL();
         clienteDAL clienteDAL = new clienteDAL();
-
+        linhaCompraDAL linhaCompraDAL = new linhaCompraDAL();
+        compraDAL compraDAL = new compraDAL();
         public frmCaixa()
         {
             InitializeComponent();
@@ -41,11 +42,18 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             comboBox_Descricao.DataSource = artigo;
             comboBox_Descricao.DisplayMember = "descricao";
             comboBox_Descricao.ValueMember = "id_artigo";
+            textBox_ArtigoId.Clear();
+            textBox_Preco.Clear();
+            textBox_Quantidade.Clear();
+            comboBox_Descricao.SelectedIndex = -1;
+
 
         }
         private void frmCaixa_Load(object sender, EventArgs e)
         {
             carregarListas();
+            textBox2.Text = DateTime.Now.ToString("yyyy") + DateTime.Now.ToString("MM") + DateTime.Now.ToString("dd")
+                + DateTime.Now.ToString("HH") + DateTime.Now.ToString("mm") + DateTime.Now.ToString("ss");
 
         }
 
@@ -66,7 +74,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
 
             if (codigoFTH > 0)
             {
-                MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);      
+                MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -80,9 +88,11 @@ namespace gestaoDeClientesArtigosTheStore.formularios
                     textBox_numeroPontos.Clear();
                     textBox_NumeroCartao.Clear();
                 }
-                else {                  
-                    comboBox_Cliente.SelectedValue= resultado;
-                    textBox_Id_Cliente.Text= resultado;
+                else
+                {
+
+                    comboBox_Cliente.SelectedValue = resultado;
+                    textBox_Id_Cliente.Text = resultado;
                     carregarInformacaoCartao(resultado);
                 }
             }
@@ -112,7 +122,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         {
             if (comboBox_Cliente.Text.Length != 0)
             {
-                textBox_Id_Cliente.Text = comboBox_Cliente.SelectedValue.ToString();       
+                textBox_Id_Cliente.Text = comboBox_Cliente.SelectedValue.ToString();
                 int Id_Cliente;
                 bool success = int.TryParse(textBox_Id_Cliente.Text, out Id_Cliente);
                 if (success)
@@ -120,6 +130,154 @@ namespace gestaoDeClientesArtigosTheStore.formularios
                     carregarInformacaoCartao(Id_Cliente.ToString());
                 }
             }
+        }
+
+        private void carregarInformacaoArtigo(string id_artigo)
+        {
+            Models.artigo artigoCC = new Models.artigo();
+            artigoCC.id_artigo = Convert.ToInt16(id_artigo);
+            artigoDAL.artigo = artigoCC;
+            artigo artigo = new artigo();
+            artigo = artigoDAL.listarArtigosActivosById();
+            textBox_ArtigoId.Text = artigo.id_artigo.ToString();
+            textBox_Preco.Text = artigo.valor_unitario.ToString();
+
+
+
+
+        }
+
+        private void comboBox_Descricao_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (comboBox_Descricao.Text.Length != 0)
+            {
+                textBox_Quantidade.Clear();
+                textBox_ArtigoId.Text = comboBox_Descricao.SelectedValue.ToString();
+                int Id_Cliente;
+                bool success = int.TryParse(textBox_ArtigoId.Text.ToString(), out Id_Cliente);
+                if (success)
+                {
+                    textBox_ArtigoId.Text = comboBox_Descricao.SelectedValue.ToString();
+                    carregarInformacaoArtigo(Id_Cliente.ToString());
+                }
+
+
+            }
+        }
+
+        private void button_pesquisar_artigos_Click(object sender, EventArgs e)
+        {
+            Handlers.artigoHander artigoHander = new Handlers.artigoHander();
+            (int codigoFTH, Models.artigo artigoCC, string mensagemDeErrooFTH) = artigoHander.ValidarArtigoSelectbyId(textBox_ArtigoId.Text);
+
+            if (codigoFTH > 0)
+            {
+                MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                carregarInformacaoArtigo(artigoCC.id_artigo.ToString());
+            }
+        }
+
+        private bool adicionarLinhaCompra()
+        {
+            Handlers.linhaCompraHandler linhaCompraHandler = new Handlers.linhaCompraHandler();
+            (int codigoFTH, Models.linhaCompra linhaCompraCC, string mensagemDeErrooFTH) = linhaCompraHandler.ValidarLinhaCompraInsert(
+                textBox2.Text, textBox_ArtigoId.Text, textBox_Quantidade.Text, textBox3.Text);
+            if (codigoFTH > 0)
+            {
+                MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                linhaCompraDAL.linhaCompra = linhaCompraCC;
+                (int registo, string erro) = linhaCompraDAL.inserirlinhaCompra();
+                if (erro.Length != 0)
+                {
+                    MessageBox.Show(erro, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            return true;
+        }
+
+        private bool adicionarCompra()
+        {
+            Handlers.compraHander compraHandler = new Handlers.compraHander();
+            (int codigoFTH, Models.compra CompraCC, string mensagemDeErrooFTH) = compraHandler.ValidarCompraSelectInicial(
+                textBox2.Text, textBox_Id_Cliente.Text, textBox_NumFuncionario.Text);
+            if (codigoFTH > 0)
+            {
+                MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                compraDAL.compra = CompraCC;
+                (int registo, string erro) = compraDAL.inserirCompra();
+                if (erro.Length != 0)
+                {
+                    MessageBox.Show(erro, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            return true;
+        }
+
+        private void button_Adicionar_Click(object sender, EventArgs e)
+        {
+            if (textBox4.Text == "0") { if (adicionarCompra()) {
+                   textBox4.Text = "1";
+                  if(adicionarLinhaCompra())
+                    {
+                        //Update stock
+                    }
+                } 
+            }
+
+            else { if (adicionarLinhaCompra()) {
+                    //Update stock
+                    textBox4.Text = "1"; 
+                } }
+
+
+        }
+
+
+        private bool actualizarStock(double quantidade, string id_artigo)
+        {
+
+            return true;
+        }
+        private void textBox_Quantidade_TextChanged(object sender, EventArgs e)
+        {
+            textBox3.Text = (Double.Parse(textBox_Quantidade.Text) * Double.Parse(textBox_Preco.Text)).ToString();
+        }
+
+        private void comboBox_Descricao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_FecharCompra_Click(object sender, EventArgs e)
+        {
+            //fechar compras pontos e valor 
+        }
+
+        private int calcularPontos(double valorFinal)
+        {
+
+            return 0;
+        }
+
+        private bool actualizarStock(double numeroPontos, string id_compra, double valorFinal)
+        {
+
+            return true;
         }
     }
 }

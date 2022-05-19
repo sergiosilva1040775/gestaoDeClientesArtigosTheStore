@@ -48,5 +48,40 @@ namespace gestaoDeClientesArtigosTheStore.DAL
             return ListarlinhaCompra;
         }
 
+
+        public (int registo, string erro) inserirlinhaCompra()
+        {
+            int registo = 0;
+
+            string query = "INSERT INTO linhascompras (id_compra, qdd, artigo, total )" +
+                                           "VALUES(@id_compra, @qdd, @artigo, @total)";
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query))
+                {
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    cmd.Parameters.AddWithValue("@id_compra", _linhaCompra.id_compra);
+                    cmd.Parameters.AddWithValue("@qdd", _linhaCompra.qdd );
+                    cmd.Parameters.AddWithValue("@artigo", _linhaCompra.artigo );
+                    cmd.Parameters.AddWithValue("@total", _linhaCompra.total );
+
+                    try
+                    {
+                        registo = cmd.ExecuteNonQuery();
+                        return (registo, "Artigo adicionado com sucesso");
+                    }
+                    catch (Exception e)
+                    {
+                        return (0, e.Message.ToString());
+                    }
+                }
+            }
+
+
+        }
+
+
     }
 }

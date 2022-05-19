@@ -16,7 +16,8 @@ namespace gestaoDeClientesArtigosTheStore.DAL
             get { return this._cliente; }
             set { this._cliente = value; }
         }
-        public Models.compra _compra
+        Models.compra _compra;
+        public Models.compra compra
         {
             get { return this._compra; }
             set { this._compra = value; }
@@ -44,7 +45,7 @@ namespace gestaoDeClientesArtigosTheStore.DAL
                             while (sdr.Read())
                             {
                                 ListarCompra.Add(new compra(
-                                    Int32.Parse(sdr["id_compras"].ToString()),
+                                    sdr["id_compras"].ToString(),
                                      Int32.Parse(sdr["valor"].ToString()),
                                     sdr["data"].ToString(),
                                      Int32.Parse(sdr["pontos"].ToString())));
@@ -54,6 +55,41 @@ namespace gestaoDeClientesArtigosTheStore.DAL
                 }
             }
             return ListarCompra;
+        }
+
+
+
+        public (int registo, string erro) inserirCompra()
+        {
+            int registo = 0;
+
+            string query = "INSERT INTO  compras (id_compras, data	, id_cliente, id_funcionario )" +
+                                           "VALUES(@id_compras, @data, @id_cliente, @id_funcionario)";
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query))
+                {
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    cmd.Parameters.AddWithValue("@id_compras", _compra.id_compras);
+                    cmd.Parameters.AddWithValue("@data", DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"));
+                    cmd.Parameters.AddWithValue("@id_cliente", _compra.id_cliente );
+                    cmd.Parameters.AddWithValue("@id_funcionario", _compra.id_funcionario );
+
+                    try
+                    {
+                        registo = cmd.ExecuteNonQuery();
+                        return (registo, "");
+                    }
+                    catch (Exception e)
+                    {
+                        return (0, e.Message.ToString());
+                    }
+                }
+            }
+
+
         }
 
 

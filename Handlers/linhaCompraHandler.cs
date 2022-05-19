@@ -16,10 +16,7 @@ namespace gestaoDeClientesArtigosTheStore.Handlers
             string _totalLinha)
         {
 
-            if (_id_compra.Length == 0) { return (2, null, "Falta  numero da compra"); }
-            int _id_compraOk = 0;
-            int.TryParse(_id_compra, out _id_compraOk);
-            if (_id_compraOk == 0) { return (2, null, "Falta  numero da compra"); }
+            if (_id_compra.Length == 0) { return (2, null, "Falta  numero da compra"); }      
 
             if (_id_Artigo.Length == 0) { return (3, null, "Falta  numero do artigo"); }
             int _id_ArtigoOk = 0;
@@ -40,7 +37,7 @@ namespace gestaoDeClientesArtigosTheStore.Handlers
 
 
 
-            linhaCompraModel.id_compra = _id_compraOk;
+            linhaCompraModel.id_compra = _id_compra;
             linhaCompraModel.artigo  = _id_ArtigoOk;
             linhaCompraModel.qdd  = _qddOk;
             linhaCompraModel.total  = _totalLinhaOk;
@@ -62,9 +59,7 @@ namespace gestaoDeClientesArtigosTheStore.Handlers
             if (_id_linhaCompraOk == 0) { return (1, null, "Falta  numero indentificativo da linha da compra"); }
 
             if (_id_compra.Length == 0) { return (2, null, "Falta  numero da compra"); }
-            int _id_compraOk = 0;
-            int.TryParse(_id_compra, out _id_compraOk);
-            if (_id_compraOk == 0) { return (2, null, "Falta  numero da compra"); }
+        
 
             if (_id_Artigo.Length == 0) { return (3, null, "Falta  numero do artigo"); }
             int _id_ArtigoOk = 0;
@@ -82,7 +77,7 @@ namespace gestaoDeClientesArtigosTheStore.Handlers
             if (_totalLinhaOk == 0) { return (5, null, "Valor quantidade da linha incorreto"); }
 
             linhaCompraModel.id  = _id_linhaCompraOk;
-            linhaCompraModel.id_compra = _id_compraOk;
+            linhaCompraModel.id_compra = _id_compra;
             linhaCompraModel.artigo = _id_ArtigoOk;
             linhaCompraModel.qdd = _qddOk;
             linhaCompraModel.total = _totalLinhaOk;

@@ -76,7 +76,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
             string idCompra;
             idCompra = dataGridView_ComprasEfectuadas[0, dataGridView_ComprasEfectuadas.CurrentRow.Index].Value.ToString();        
             Models.linhaCompra linhaCompraCC = new Models.linhaCompra();
-            linhaCompraCC.id_compra = Convert.ToInt16(idCompra);
+            linhaCompraCC.id_compra =idCompra;
             linhaCompraDALs.linhaCompra = linhaCompraCC;
             List<linhaCompra> ListarlinhaCompra = new List<linhaCompra>();
             ListarlinhaCompra = linhaCompraDALs.listarlinhaCompraById();

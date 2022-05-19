@@ -9,7 +9,7 @@ namespace gestaoDeClientesArtigosTheStore.Models
     {
         public int id { get; set; }
 
-        public int id_compra { get; set; }
+        public string id_compra { get; set; }
 
         public double qdd { get; set; }
 
@@ -19,7 +19,7 @@ namespace gestaoDeClientesArtigosTheStore.Models
 
         public double total { get; set; }
         
-        public linhaCompra(int _id, int _id_compra, double _qdd, int _artigo, double _total)
+        public linhaCompra(int _id, string _id_compra, double _qdd, int _artigo, double _total)
         //ctor cria construtor prop cria propriedade
         {
             this.id = _id;

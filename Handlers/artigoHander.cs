@@ -63,6 +63,20 @@
 
             return (0, artigoModel, null);
         }
+
+
+
+        public (int errorId, Models.artigo, string mensagemDeErro) ValidarArtigoSelectbyId(string _id_artigo)
+        {
+            if (_id_artigo.Length == 0) { return (1, null, "Falta  numero identificador do artigo"); }
+            int _id_artigoOk = 0;
+            int.TryParse(_id_artigo, out _id_artigoOk);
+            if (_id_artigoOk == 0) { return (1, null, "Falta  numero identificador do artigo"); }
+
+            artigoModel.id_artigo = _id_artigoOk;
+
+            return (0, artigoModel, null);
+        }
     }
 
 }

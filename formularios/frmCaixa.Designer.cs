@@ -58,6 +58,12 @@
             this.label_Total = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button_FecharCompra = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox_Preco = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -250,6 +256,12 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Controls.Add(this.label3);
+            this.groupBox4.Controls.Add(this.textBox3);
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.textBox_Preco);
             this.groupBox4.Controls.Add(this.button_pesquisar_artigos);
             this.groupBox4.Controls.Add(this.button_Adicionar);
             this.groupBox4.Controls.Add(this.label_Quantidade);
@@ -260,7 +272,7 @@
             this.groupBox4.Controls.Add(this.textBox_ArtigoId);
             this.groupBox4.Location = new System.Drawing.Point(12, 235);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(413, 162);
+            this.groupBox4.Size = new System.Drawing.Size(413, 217);
             this.groupBox4.TabIndex = 45;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Artigos";
@@ -273,20 +285,22 @@
             this.button_pesquisar_artigos.TabIndex = 45;
             this.button_pesquisar_artigos.Text = "Pesquisar";
             this.button_pesquisar_artigos.UseVisualStyleBackColor = true;
+            this.button_pesquisar_artigos.Click += new System.EventHandler(this.button_pesquisar_artigos_Click);
             // 
             // button_Adicionar
             // 
-            this.button_Adicionar.Location = new System.Drawing.Point(214, 98);
+            this.button_Adicionar.Location = new System.Drawing.Point(314, 148);
             this.button_Adicionar.Name = "button_Adicionar";
             this.button_Adicionar.Size = new System.Drawing.Size(82, 58);
             this.button_Adicionar.TabIndex = 43;
             this.button_Adicionar.Text = "Adicionar";
             this.button_Adicionar.UseVisualStyleBackColor = true;
+            this.button_Adicionar.Click += new System.EventHandler(this.button_Adicionar_Click);
             // 
             // label_Quantidade
             // 
             this.label_Quantidade.AutoSize = true;
-            this.label_Quantidade.Location = new System.Drawing.Point(32, 76);
+            this.label_Quantidade.Location = new System.Drawing.Point(32, 102);
             this.label_Quantidade.Name = "label_Quantidade";
             this.label_Quantidade.Size = new System.Drawing.Size(62, 13);
             this.label_Quantidade.TabIndex = 42;
@@ -294,12 +308,13 @@
             // 
             // textBox_Quantidade
             // 
-            this.textBox_Quantidade.Location = new System.Drawing.Point(96, 73);
+            this.textBox_Quantidade.Location = new System.Drawing.Point(96, 99);
             this.textBox_Quantidade.MaxLength = 9999999;
             this.textBox_Quantidade.Name = "textBox_Quantidade";
             this.textBox_Quantidade.Size = new System.Drawing.Size(200, 20);
             this.textBox_Quantidade.TabIndex = 41;
             this.textBox_Quantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_Quantidade.TextChanged += new System.EventHandler(this.textBox_Quantidade_TextChanged);
             // 
             // label_ArtigoId
             // 
@@ -318,6 +333,8 @@
             this.comboBox_Descricao.Name = "comboBox_Descricao";
             this.comboBox_Descricao.Size = new System.Drawing.Size(200, 21);
             this.comboBox_Descricao.TabIndex = 37;
+            this.comboBox_Descricao.SelectedIndexChanged += new System.EventHandler(this.comboBox_Descricao_SelectedIndexChanged);
+            this.comboBox_Descricao.SelectedValueChanged += new System.EventHandler(this.comboBox_Descricao_SelectedValueChanged);
             // 
             // label_Descricao
             // 
@@ -363,12 +380,74 @@
             this.button_FecharCompra.TabIndex = 44;
             this.button_FecharCompra.Text = "Fechar Compra";
             this.button_FecharCompra.UseVisualStyleBackColor = true;
+            this.button_FecharCompra.Click += new System.EventHandler(this.button_FecharCompra_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(58, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 47;
+            this.label2.Text = "Preço";
+            // 
+            // textBox_Preco
+            // 
+            this.textBox_Preco.Location = new System.Drawing.Point(96, 73);
+            this.textBox_Preco.MaxLength = 2;
+            this.textBox_Preco.Name = "textBox_Preco";
+            this.textBox_Preco.ReadOnly = true;
+            this.textBox_Preco.Size = new System.Drawing.Size(200, 20);
+            this.textBox_Preco.TabIndex = 46;
+            this.textBox_Preco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(345, 109);
+            this.textBox2.MaxLength = 2;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(51, 20);
+            this.textBox2.TabIndex = 48;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(58, 128);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 49;
+            this.label3.Text = "Preço";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(96, 125);
+            this.textBox3.MaxLength = 2;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(200, 20);
+            this.textBox3.TabIndex = 48;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(345, 83);
+            this.textBox4.MaxLength = 2;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(51, 20);
+            this.textBox4.TabIndex = 50;
+            this.textBox4.Text = "0";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox4.Visible = false;
             // 
             // frmCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 495);
+            this.ClientSize = new System.Drawing.Size(821, 466);
             this.Controls.Add(this.button_FecharCompra);
             this.Controls.Add(this.label_Total);
             this.Controls.Add(this.textBox1);
@@ -426,5 +505,11 @@
         private System.Windows.Forms.Button button_pesquisar_cliente;
         private System.Windows.Forms.Button button_pesquisar_artigos;
         private System.Windows.Forms.TextBox textBox_Id_Cliente;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox_Preco;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
