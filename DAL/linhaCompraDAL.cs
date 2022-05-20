@@ -70,7 +70,7 @@ namespace gestaoDeClientesArtigosTheStore.DAL
                     try
                     {
                         registo = cmd.ExecuteNonQuery();
-                        return (registo, "Artigo adicionado com sucesso");
+                        return (registo,"");
                     }
                     catch (Exception e)
                     {

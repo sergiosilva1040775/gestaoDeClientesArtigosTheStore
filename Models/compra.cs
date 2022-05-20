@@ -35,6 +35,15 @@
 
         }
 
+        public compra(string _id_compras, double _valor, int _pontos)
+        //ctor cria construtor prop cria propriedade
+        {
+            this.id_compras = _id_compras;
+            this.valor = _valor;      
+            this.pontos = _pontos;
+
+        }
+
         public compra()
         {
 

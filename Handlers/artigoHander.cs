@@ -65,6 +65,22 @@
         }
 
 
+        public (int errorId, Models.artigo, string mensagemDeErro) ValidarArtigoUpdateStockbyId(string _id_artigo, string _stock)
+        {
+            if (_stock.Length == 0) { return (4, null, "Falta  stock"); }
+            double _stockOk = 0;
+            double.TryParse(_stock, out _stockOk);
+            if (_stockOk == 0) { return (4, null, "Valor stock incorreto"); }     
+            if (_id_artigo.Length == 0) { return (1, null, "Falta  numero identificador do artigo"); }
+            int _id_artigoOk = 0;
+            int.TryParse(_id_artigo, out _id_artigoOk);
+            if (_id_artigoOk == 0) { return (1, null, "Falta  numero identificador do artigo"); }
+            artigoModel.stock = _stockOk;
+            artigoModel.id_artigo = _id_artigoOk;
+
+            return (0, artigoModel, null);
+        }
+
 
         public (int errorId, Models.artigo, string mensagemDeErro) ValidarArtigoSelectbyId(string _id_artigo)
         {

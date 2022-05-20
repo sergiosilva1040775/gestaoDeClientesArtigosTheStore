@@ -81,35 +81,7 @@ namespace gestaoDeClientesArtigosTheStore.DAL
 
         }
 
-        public (int registo, string erro) atualizarArtigStock()
-        {
-            int registo = 0;
-
-            string query = @"UPDATE artigo set  stock=@stock WHERE id_artigo =@id_artigo ";
-
-            using (MySqlConnection conn = new MySqlConnection(connStr))
-            {
-                using (MySqlCommand cmd = new MySqlCommand(query))
-                {
-                    cmd.Connection = conn;
-                    conn.Open();
-
-                    cmd.Parameters.AddWithValue("@stock", _artigo.stock);
-                    cmd.Parameters.AddWithValue("@id_artigo", _artigo.id_artigo);
-                    try
-                    {
-                        registo = cmd.ExecuteNonQuery();
-                        return (registo, "Artigo actualizado com sucesso");
-                    }
-                    catch (Exception e)
-                    {
-                        return (-1, e.Message.ToString());
-                    }
-                }
-            }
-
-        }
-
+   
         public (int registo, string erro) inserirArtigo()
         {
             int registo = 0;
@@ -179,7 +151,73 @@ namespace gestaoDeClientesArtigosTheStore.DAL
         }
 
 
-     
+        public (int registo, string erro) atualizarArtigStock()
+        {
+            double stockanterior = 0;
+            double stockActualizado = 0;
+
+            string query = "SELECT stock FROM artigo Where ativo = 1 And id_artigo = @id_artigo;";
+
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query))
+                {
+                    cmd.Connection = conn;
+                 
+                    cmd.Parameters.AddWithValue("@id_artigo", _artigo.id_artigo);
+ 
+                    conn.Open();
+
+                    using (MySqlDataReader sdr = cmd.ExecuteReader())
+                    {
+
+                        if (sdr.HasRows)
+                        {
+                            while (sdr.Read())
+                            {
+                                stockanterior = double .Parse( sdr["stock"].ToString());
+                             
+                            }
+                        }
+                    }
+
+
+                    stockActualizado = stockanterior - _artigo.stock;
+
+                    int registo = 0;
+
+
+                    string query_update = "UPDATE artigo set stock = @stock  where id_artigo = @id_artigo;";
+
+
+                    using (MySqlConnection conn_update = new MySqlConnection(connStr))
+                    {
+                        using (MySqlCommand cmd_update = new MySqlCommand(query_update))
+                        {
+                            cmd_update.Connection = conn_update;
+                            conn_update.Open();
+                            cmd_update.Parameters.AddWithValue("@id_artigo", _artigo.id_artigo );
+                            cmd_update.Parameters.AddWithValue("@stock", stockActualizado);
+                            try
+                            {
+                                registo = cmd_update.ExecuteNonQuery();
+                                return (registo, "Stock actualizado com sucesso");
+
+                            }
+                            catch (Exception e)
+                            {
+                                return (0, e.Message.ToString());
+                            }
+                        }
+                    }
+
+                }
+            }
+
+
+        }
+
 
 
         public artigo listarArtigosActivosById()

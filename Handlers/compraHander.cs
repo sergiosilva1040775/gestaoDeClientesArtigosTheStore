@@ -11,7 +11,6 @@
         {
             if (_id_compras.Length == 0) { return (1, null, "Falta  numero identificador da compra"); }
         
- 
 
    
 
@@ -35,6 +34,25 @@
 
             return (0, compraModel, null);
 
+        }
+
+
+
+        public (int errorId, Models.compra, string mensagemDeErro) ValidarFinalizarCompra(string _id_compras,string _valor, string _pontos)
+        {
+            if (_id_compras.Length == 0) { return (1, null, "Falta  numero identificador da compra"); }        
+            if (_valor.Length == 0) { return (2, null, "Falta o valor da compra"); }
+            double _valorOk = 0;
+            double.TryParse(_valor, out _valorOk);
+            if (_valorOk == 0) { return (2, null, "Formato do valor da compra incorrecto"); }      
+            if (_pontos.Length == 0) { return (4, null, "Falta  o valor dos pontos acumulados"); }
+            int _pontosOk = 0;
+            int.TryParse(_pontos, out _pontosOk);
+            if (_pontosOk <= -1) { return (4, null, "Valor dos pontos acumulados incorrecto"); }
+            compraModel.id_compras = _id_compras;
+            compraModel.valor = _valorOk;  
+            compraModel.pontos = _pontosOk;
+            return (0, compraModel, null);
         }
 
 

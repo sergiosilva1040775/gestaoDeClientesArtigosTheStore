@@ -93,5 +93,40 @@ namespace gestaoDeClientesArtigosTheStore.DAL
         }
 
 
+        public (int registo, string erro) actualizarPontosValor()
+        {
+            int registo = 0;
+
+            string query = "UPDATE compras set  id_compras=@id_compras";
+            query = query + ", valor=@valor";
+            query = query + ", pontos=@pontos";            
+            query = query + " WHERE id_compras = @id_compras;";
+
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query))
+                {
+                    cmd.Connection = conn;
+                    conn.Open();          
+                    cmd.Parameters.AddWithValue("@valor", _compra.valor );
+                    cmd.Parameters.AddWithValue("@pontos", _compra.pontos );               
+                    cmd.Parameters.AddWithValue("@id_compras", _compra.id_compras );
+                    try
+                    {
+                        registo = cmd.ExecuteNonQuery();
+                        return (registo, "");
+                    }
+                    catch (Exception e)
+                    {
+                        return (0, e.Message.ToString());
+                    }
+                }
+            }
+
+
+        }
+
+
     }
 }

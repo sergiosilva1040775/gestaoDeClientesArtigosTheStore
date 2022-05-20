@@ -52,8 +52,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         private void frmCaixa_Load(object sender, EventArgs e)
         {
             carregarListas();
-            textBox2.Text = DateTime.Now.ToString("yyyy") + DateTime.Now.ToString("MM") + DateTime.Now.ToString("dd")
-                + DateTime.Now.ToString("HH") + DateTime.Now.ToString("mm") + DateTime.Now.ToString("ss");
+
 
         }
 
@@ -184,7 +183,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         {
             Handlers.linhaCompraHandler linhaCompraHandler = new Handlers.linhaCompraHandler();
             (int codigoFTH, Models.linhaCompra linhaCompraCC, string mensagemDeErrooFTH) = linhaCompraHandler.ValidarLinhaCompraInsert(
-                textBox2.Text, textBox_ArtigoId.Text, textBox_Quantidade.Text, textBox3.Text);
+                textBox_IdCompra.Text, textBox_ArtigoId.Text, textBox_Quantidade.Text, textBox_precototalLinha.Text);
             if (codigoFTH > 0)
             {
                 MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -208,7 +207,7 @@ namespace gestaoDeClientesArtigosTheStore.formularios
         {
             Handlers.compraHander compraHandler = new Handlers.compraHander();
             (int codigoFTH, Models.compra CompraCC, string mensagemDeErrooFTH) = compraHandler.ValidarCompraSelectInicial(
-                textBox2.Text, textBox_Id_Cliente.Text, textBox_NumFuncionario.Text);
+                textBox_IdCompra.Text, textBox_Id_Cliente.Text, textBox_NumFuncionario.Text);
             if (codigoFTH > 0)
             {
                 MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -230,32 +229,91 @@ namespace gestaoDeClientesArtigosTheStore.formularios
 
         private void button_Adicionar_Click(object sender, EventArgs e)
         {
-            if (textBox4.Text == "0") { if (adicionarCompra()) {
-                   textBox4.Text = "1";
-                  if(adicionarLinhaCompra())
-                    {
-                        //Update stock
-                    }
-                } 
-            }
+            if (textBox_lihaAdicionada.Text == "0")
+            {
+                textBox_IdCompra.Text = DateTime.Now.ToString("yyyy") + DateTime.Now.ToString("MM") + DateTime.Now.ToString("dd")
+         + DateTime.Now.ToString("HH") + DateTime.Now.ToString("mm") + DateTime.Now.ToString("ss");
 
-            else { if (adicionarLinhaCompra()) {
-                    //Update stock
-                    textBox4.Text = "1"; 
-                } }
+                if (adicionarCompra())
+                {
+                    textBox_lihaAdicionada.Text = "1";
+                    if (adicionarLinhaCompra())
+                    {
+                        actualizarStock(textBox_Quantidade.Text, textBox_ArtigoId.Text);
+                        carregarLimpasDACompra();
+                    }
+                }
+            }
+            else
+            {
+                if (adicionarLinhaCompra())
+                {
+                    actualizarStock(textBox_Quantidade.Text, textBox_ArtigoId.Text);
+                    textBox_lihaAdicionada.Text = "1";
+                    carregarLimpasDACompra();
+                }
+            }
 
 
         }
 
 
-        private bool actualizarStock(double quantidade, string id_artigo)
+        private void carregarLimpasDACompra()
+        {
+            textBox_ValotTotalCompra.Text = (Math.Round(double.Parse(textBox_ValotTotalCompra.Text) + double.Parse(textBox_precototalLinha.Text), 2)).ToString();
+
+            textBox_Quantidade.Clear();
+            textBox_precototalLinha.Clear();
+            comboBox_Descricao.SelectedIndex = -1;
+            textBox_Preco.Clear();
+            textBox_ArtigoId.Clear();
+            textBox_pontos.Text = calcularPontos(double.Parse(textBox_ValotTotalCompra.Text)).ToString();
+
+
+            string idCompra;
+            idCompra = textBox_IdCompra.Text;
+            Models.linhaCompra linhaCompraCC = new Models.linhaCompra();
+            linhaCompraCC.id_compra = idCompra;
+            linhaCompraDAL.linhaCompra = linhaCompraCC;
+            List<linhaCompra> ListarlinhaCompra = new List<linhaCompra>();
+            ListarlinhaCompra = linhaCompraDAL.listarlinhaCompraById();
+            dataGridView_ProdutosComprados.DataSource = ListarlinhaCompra;
+            dataGridView_ProdutosComprados.Columns["id"].Visible = false;
+            dataGridView_ProdutosComprados.Columns["id_compra"].Visible = false;
+            //dataGridView_ComprasEfectuadas.Columns["artigo"].Visible = false;
+
+
+        }
+
+        private bool actualizarStock(string quantidade, string id_artigo)
         {
 
+            Handlers.artigoHander artigoHandler = new Handlers.artigoHander();
+            (int codigoFTH, Models.artigo artigoCC, string mensagemDeErrooFTH) = artigoHandler.ValidarArtigoUpdateStockbyId(id_artigo, quantidade);
+            if (codigoFTH > 0)
+            {
+                MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                artigoDAL.artigo = artigoCC;
+                (int registo, string erro) = artigoDAL.atualizarArtigStock();
+                if (registo == 0)
+                {
+                    MessageBox.Show(erro, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
             return true;
         }
         private void textBox_Quantidade_TextChanged(object sender, EventArgs e)
         {
-            textBox3.Text = (Double.Parse(textBox_Quantidade.Text) * Double.Parse(textBox_Preco.Text)).ToString();
+            if (textBox_Quantidade.Text.Length != 0)
+            {
+                textBox_precototalLinha.Text = (Double.Parse(textBox_Quantidade.Text) * Double.Parse(textBox_Preco.Text)).ToString();
+            }
         }
 
         private void comboBox_Descricao_SelectedIndexChanged(object sender, EventArgs e)
@@ -265,18 +323,48 @@ namespace gestaoDeClientesArtigosTheStore.formularios
 
         private void button_FecharCompra_Click(object sender, EventArgs e)
         {
-            //fechar compras pontos e valor 
+            if (actualizarPontosValorCompras(textBox_pontos.Text, textBox_IdCompra.Text, textBox_ValotTotalCompra.Text))
+            {
+                textBox_Contacto.Clear();
+                textBox_NumeroCartao.Clear();
+                comboBox_Cliente.SelectedIndex = -1;
+                textBox_numeroPontos.Clear();
+                textBox_Id_Cliente.Clear();
+                textBox_lihaAdicionada.Text = "0";
+                textBox_IdCompra.Clear();
+                textBox_ValotTotalCompra.Text = "0";
+                textBox_pontos.Clear();
+                dataGridView_ProdutosComprados.DataSource = null;
+            }
         }
 
         private int calcularPontos(double valorFinal)
         {
-
-            return 0;
+            int valor = 50;
+            double pontos = valorFinal / 50;
+            return (int)Math.Round(pontos, 0);
         }
 
-        private bool actualizarStock(double numeroPontos, string id_compra, double valorFinal)
+        private bool actualizarPontosValorCompras(string numeroPontos, string id_compra, string valorFinal)
         {
+            Handlers.compraHander compraHander = new Handlers.compraHander();
+            (int codigoFTH, Models.compra compraCC, string mensagemDeErrooFTH) = compraHander.ValidarFinalizarCompra(id_compra, valorFinal, numeroPontos);
+            if (codigoFTH > 0)
+            {
+                MessageBox.Show(mensagemDeErrooFTH, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                compraDAL.compra = compraCC;
+                (int registo, string erro) = compraDAL.actualizarPontosValor();
+                if (erro.Length  != 0)
+                {
+                    MessageBox.Show(erro, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
 
+            }
             return true;
         }
     }

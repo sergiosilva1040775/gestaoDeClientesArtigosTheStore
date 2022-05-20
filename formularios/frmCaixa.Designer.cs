@@ -45,8 +45,14 @@
             this.textBox_Id_Cliente = new System.Windows.Forms.TextBox();
             this.button_pesquisar_cliente = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_ProdutosComprados = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBox_lihaAdicionada = new System.Windows.Forms.TextBox();
+            this.textBox_IdCompra = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox_precototalLinha = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox_Preco = new System.Windows.Forms.TextBox();
             this.button_pesquisar_artigos = new System.Windows.Forms.Button();
             this.button_Adicionar = new System.Windows.Forms.Button();
             this.label_Quantidade = new System.Windows.Forms.Label();
@@ -56,18 +62,14 @@
             this.label_Descricao = new System.Windows.Forms.Label();
             this.textBox_ArtigoId = new System.Windows.Forms.TextBox();
             this.label_Total = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_ValotTotalCompra = new System.Windows.Forms.TextBox();
             this.button_FecharCompra = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox_Preco = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_pontos = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ProdutosComprados)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -218,13 +220,14 @@
             // 
             // textBox_Id_Cliente
             // 
-            this.textBox_Id_Cliente.Location = new System.Drawing.Point(362, 107);
+            this.textBox_Id_Cliente.Location = new System.Drawing.Point(336, 96);
             this.textBox_Id_Cliente.MaxLength = 2;
             this.textBox_Id_Cliente.Name = "textBox_Id_Cliente";
             this.textBox_Id_Cliente.ReadOnly = true;
             this.textBox_Id_Cliente.Size = new System.Drawing.Size(45, 20);
             this.textBox_Id_Cliente.TabIndex = 45;
             this.textBox_Id_Cliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_Id_Cliente.Visible = false;
             // 
             // button_pesquisar_cliente
             // 
@@ -238,7 +241,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.dataGridView_ProdutosComprados);
             this.groupBox3.Location = new System.Drawing.Point(440, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(364, 312);
@@ -246,20 +249,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lista de produtos";
             // 
-            // dataGridView1
+            // dataGridView_ProdutosComprados
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(352, 287);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView_ProdutosComprados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_ProdutosComprados.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView_ProdutosComprados.Name = "dataGridView_ProdutosComprados";
+            this.dataGridView_ProdutosComprados.Size = new System.Drawing.Size(352, 287);
+            this.dataGridView_ProdutosComprados.TabIndex = 0;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox4);
-            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Controls.Add(this.textBox_lihaAdicionada);
+            this.groupBox4.Controls.Add(this.textBox_IdCompra);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.textBox3);
+            this.groupBox4.Controls.Add(this.textBox_precototalLinha);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.textBox_Preco);
             this.groupBox4.Controls.Add(this.button_pesquisar_artigos);
@@ -276,6 +279,67 @@
             this.groupBox4.TabIndex = 45;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Artigos";
+            // 
+            // textBox_lihaAdicionada
+            // 
+            this.textBox_lihaAdicionada.Location = new System.Drawing.Point(345, 83);
+            this.textBox_lihaAdicionada.MaxLength = 2;
+            this.textBox_lihaAdicionada.Name = "textBox_lihaAdicionada";
+            this.textBox_lihaAdicionada.ReadOnly = true;
+            this.textBox_lihaAdicionada.Size = new System.Drawing.Size(51, 20);
+            this.textBox_lihaAdicionada.TabIndex = 50;
+            this.textBox_lihaAdicionada.Text = "0";
+            this.textBox_lihaAdicionada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_lihaAdicionada.Visible = false;
+            // 
+            // textBox_IdCompra
+            // 
+            this.textBox_IdCompra.Location = new System.Drawing.Point(345, 109);
+            this.textBox_IdCompra.MaxLength = 2;
+            this.textBox_IdCompra.Name = "textBox_IdCompra";
+            this.textBox_IdCompra.ReadOnly = true;
+            this.textBox_IdCompra.Size = new System.Drawing.Size(51, 20);
+            this.textBox_IdCompra.TabIndex = 48;
+            this.textBox_IdCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_IdCompra.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(58, 128);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 49;
+            this.label3.Text = "Preço";
+            // 
+            // textBox_precototalLinha
+            // 
+            this.textBox_precototalLinha.Location = new System.Drawing.Point(96, 125);
+            this.textBox_precototalLinha.MaxLength = 2;
+            this.textBox_precototalLinha.Name = "textBox_precototalLinha";
+            this.textBox_precototalLinha.ReadOnly = true;
+            this.textBox_precototalLinha.Size = new System.Drawing.Size(200, 20);
+            this.textBox_precototalLinha.TabIndex = 48;
+            this.textBox_precototalLinha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(58, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 47;
+            this.label2.Text = "Preço";
+            // 
+            // textBox_Preco
+            // 
+            this.textBox_Preco.Location = new System.Drawing.Point(96, 73);
+            this.textBox_Preco.MaxLength = 2;
+            this.textBox_Preco.Name = "textBox_Preco";
+            this.textBox_Preco.ReadOnly = true;
+            this.textBox_Preco.Size = new System.Drawing.Size(200, 20);
+            this.textBox_Preco.TabIndex = 46;
+            this.textBox_Preco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button_pesquisar_artigos
             // 
@@ -363,14 +427,15 @@
             this.label_Total.TabIndex = 47;
             this.label_Total.Text = "Total";
             // 
-            // textBox1
+            // textBox_ValotTotalCompra
             // 
-            this.textBox1.Location = new System.Drawing.Point(598, 333);
-            this.textBox1.MaxLength = 9999999;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 46;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ValotTotalCompra.Location = new System.Drawing.Point(598, 333);
+            this.textBox_ValotTotalCompra.MaxLength = 9999999;
+            this.textBox_ValotTotalCompra.Name = "textBox_ValotTotalCompra";
+            this.textBox_ValotTotalCompra.Size = new System.Drawing.Size(200, 20);
+            this.textBox_ValotTotalCompra.TabIndex = 46;
+            this.textBox_ValotTotalCompra.Text = "0";
+            this.textBox_ValotTotalCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button_FecharCompra
             // 
@@ -382,75 +447,35 @@
             this.button_FecharCompra.UseVisualStyleBackColor = true;
             this.button_FecharCompra.Click += new System.EventHandler(this.button_FecharCompra_Click);
             // 
-            // label2
+            // textBox_pontos
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 47;
-            this.label2.Text = "Preço";
+            this.textBox_pontos.Location = new System.Drawing.Point(556, 383);
+            this.textBox_pontos.MaxLength = 2;
+            this.textBox_pontos.Name = "textBox_pontos";
+            this.textBox_pontos.ReadOnly = true;
+            this.textBox_pontos.Size = new System.Drawing.Size(153, 20);
+            this.textBox_pontos.TabIndex = 51;
+            this.textBox_pontos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox_Preco
+            // label4
             // 
-            this.textBox_Preco.Location = new System.Drawing.Point(96, 73);
-            this.textBox_Preco.MaxLength = 2;
-            this.textBox_Preco.Name = "textBox_Preco";
-            this.textBox_Preco.ReadOnly = true;
-            this.textBox_Preco.Size = new System.Drawing.Size(200, 20);
-            this.textBox_Preco.TabIndex = 46;
-            this.textBox_Preco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(345, 109);
-            this.textBox2.MaxLength = 2;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(51, 20);
-            this.textBox2.TabIndex = 48;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 128);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 49;
-            this.label3.Text = "Preço";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(96, 125);
-            this.textBox3.MaxLength = 2;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(200, 20);
-            this.textBox3.TabIndex = 48;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(345, 83);
-            this.textBox4.MaxLength = 2;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(51, 20);
-            this.textBox4.TabIndex = 50;
-            this.textBox4.Text = "0";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox4.Visible = false;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(579, 367);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(130, 13);
+            this.label4.TabIndex = 52;
+            this.label4.Text = "Total Pontos Arrecadados";
             // 
             // frmCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 466);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox_pontos);
             this.Controls.Add(this.button_FecharCompra);
             this.Controls.Add(this.label_Total);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox_ValotTotalCompra);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -466,7 +491,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ProdutosComprados)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
@@ -498,18 +523,20 @@
         private System.Windows.Forms.Button button_Adicionar;
         private System.Windows.Forms.Label label_Quantidade;
         private System.Windows.Forms.TextBox textBox_Quantidade;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_ProdutosComprados;
         private System.Windows.Forms.Label label_Total;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_ValotTotalCompra;
         private System.Windows.Forms.Button button_FecharCompra;
         private System.Windows.Forms.Button button_pesquisar_cliente;
         private System.Windows.Forms.Button button_pesquisar_artigos;
         private System.Windows.Forms.TextBox textBox_Id_Cliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_Preco;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_IdCompra;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox_precototalLinha;
+        private System.Windows.Forms.TextBox textBox_lihaAdicionada;
+        private System.Windows.Forms.TextBox textBox_pontos;
+        private System.Windows.Forms.Label label4;
     }
 }
